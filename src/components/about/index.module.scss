@@ -1,0 +1,38 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  padding-top: 120px;
+  .mainContent {
+    display: flex;
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .name {
+        font-size: 130px;
+        font-family: Peace;
+        line-height: 130px;
+        letter-spacing: 2px;
+      }
+      .position {
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+      .description {
+        font-size: 16px;
+      }
+    }
+    .images {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      .socialStrip {
+        display: flex;
+      }
+    }
+  }
+}

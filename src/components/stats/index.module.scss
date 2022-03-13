@@ -1,0 +1,20 @@
+.strip {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+  .stat {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .value {
+      font-size: 40px;
+      font-family: Peace;
+      line-height: 20px;
+      padding-bottom: 6px;
+    }
+    .title {
+      font-size: 21px;
+      font-weight: 600;
+    }
+  }
+}

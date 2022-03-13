@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import '../styles/globals.scss'
 
 const About = dynamic(() => import('../components/about'))
 const Achievements = dynamic(() => import('../components/achievements'))
@@ -11,7 +12,7 @@ const Footer = dynamic(() => import('../components/footer'))
 
 const App = (): JSX.Element => {
 	return (
-		<div>
+		<main className='main'>
 			<About />
 			<Experience />
 			<Skills />
@@ -20,7 +21,7 @@ const App = (): JSX.Element => {
 			<Publications />
 			<Contact />
 			<Footer />
-		</div>
+		</main>
 	)
 }
 

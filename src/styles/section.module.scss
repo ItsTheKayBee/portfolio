@@ -1,0 +1,27 @@
+.section {
+  .sectionTitle {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  .subSection {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .subTitle {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .subSubTitle {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .description {
+      font-size: 15px;
+    }
+  }
+}
