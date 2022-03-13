@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import sectionStyles from 'styles/section.module.scss'
 
 const Achievements = (): JSX.Element => {
 	return (
-		<div>
-			<h1>Achievements</h1>
+		<div className={sectionStyles.section}>
+			<h1 className={sectionStyles.sectionTitle}>Achievements</h1>
 			<div>
 				<Achievement />
 				<Achievement />

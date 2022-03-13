@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import sectionStyles from 'styles/section.module.scss'
 
 const Skills = (): JSX.Element => {
 	return (
-		<div>
-			<h1>Skills</h1>
+		<div className={sectionStyles.section}>
+			<h1 className={sectionStyles.sectionTitle}>Skills</h1>
 			<div>
 				<Skill />
 				<Skill />

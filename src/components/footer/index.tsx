@@ -1,5 +1,11 @@
+import styles from './index.module.scss'
+
 const Footer = (): JSX.Element => {
-	return <div>oiiendoeoucnenvnruonvoeuun</div>
+	return (
+		<div className={styles.footer}>
+			<p className={styles.footerText}>oiiendoeoucnenvnruonvoeuun</p>
+		</div>
+	)
 }
 
 export default Footer

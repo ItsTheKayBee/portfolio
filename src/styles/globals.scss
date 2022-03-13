@@ -86,5 +86,11 @@ a {
   padding: 0 10%;
   .col {
     flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+  }
+  .a-center {
+    align-items: center;
   }
 }
