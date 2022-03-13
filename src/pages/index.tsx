@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.scss'
 import App from './_app'
 import dynamic from 'next/dynamic'
 
-const Footer = dynamic(() => import('../components/footer'))
 
 const Home: NextPage = () => {
 	return (
@@ -19,7 +18,6 @@ const Home: NextPage = () => {
 				<App />
 			</main>
 
-			<Footer />
 		</div>
 	)
 }
