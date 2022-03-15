@@ -1,3 +1,5 @@
+import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
@@ -17,20 +19,36 @@ const Skills = (): JSX.Element => {
 }
 
 const Skill = () => {
+	const renderStars = (count: number): JSX.Element => {
+		if (count % 1 === 0) {
+			return (
+				<div>
+					{Array(count)
+						.fill(0)
+						.map(_ => (
+							<FontAwesomeIcon icon={faStar} />
+						))}
+				</div>
+			)
+		}
+		return (
+			<div>
+				{Array(Math.floor(count))
+					.fill(0)
+					.map(_ => (
+						<FontAwesomeIcon icon={faStar} />
+					))}
+				<FontAwesomeIcon icon={faStarHalf} />
+			</div>
+		)
+	}
+
 	return (
 		<div>
 			<Image src='https://via.placeholder.com/50' height={50} width={50} />
-			<div>
-				<Star />
-				<Star />
-				<Star />
-			</div>
+			{renderStars(2.5)}
 		</div>
 	)
-}
-
-const Star = (): JSX.Element => {
-	return <div>Star</div>
 }
 
 export default Skills

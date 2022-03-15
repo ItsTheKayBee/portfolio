@@ -17,7 +17,6 @@ const Contact = (): JSX.Element => {
 					<ContactButton />
 					<ContactButton />
 					<ContactButton />
-					<ContactButton />
 				</div>
 			</div>
 		</div>
@@ -25,12 +24,7 @@ const Contact = (): JSX.Element => {
 }
 
 const ContactButton = (): JSX.Element => {
-	return (
-		<button>
-			<Image src='https://via.placeholder.com/40' height={40} width={40} />
-			kbohra89@gmail.com
-		</button>
-	)
+	return <button className='button'>kbohra89@gmail.com</button>
 }
 
 export default Contact

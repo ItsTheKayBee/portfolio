@@ -1,3 +1,5 @@
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
@@ -19,7 +21,10 @@ const Project = (): JSX.Element => {
 		<div className={sectionStyles.subSection}>
 			<div className='col a-center'>
 				<Image src='https://via.placeholder.com/200' height={200} width={200} />
-				<button>View project</button>
+				<button className='button'>
+					<h3>View project</h3>
+					<FontAwesomeIcon icon={faArrowRightLong} />
+				</button>
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>Assess</h2>

@@ -1,3 +1,5 @@
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
@@ -20,7 +22,10 @@ const Publication = (): JSX.Element => {
 				<h2 className={sectionStyles.title}>Title</h2>
 				<h3 className={sectionStyles.subTitle}>Sutitle</h3>
 				<h4 className={sectionStyles.description}>description</h4>
-				<button>View</button>
+				<button className='button'>
+					<h3>View</h3>
+					<FontAwesomeIcon icon={faArrowRightLong} />
+				</button>
 			</div>
 		</div>
 	)

@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import Stats from 'components/stats'
 import styles from './index.module.scss'
+import { ArrowDownCircle, GitHub } from 'react-feather'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const About = (): JSX.Element => {
 	return (
@@ -27,7 +31,7 @@ const About = (): JSX.Element => {
 				<div className={styles.images}>
 					<Image
 						src='https://via.placeholder.com/200'
-						height={200}
+						height={300}
 						width={200}
 					/>
 					<SocialMediaStrip />
@@ -43,17 +47,24 @@ export default About
 const SocialMediaStrip = (): JSX.Element => {
 	return (
 		<div className={styles.socialStrip}>
-			<div>
-				<Image src='https://via.placeholder.com/50' height={50} width={50} />
+			<div className={styles.socialButtons}>
+				<div className={`button ${styles.socialButton}`}>
+					<GitHub color='white' />
+				</div>
+				<div className={`button ${styles.socialButton}`}>
+					{/* @ts-ignore*/}
+					<FontAwesomeIcon icon={faLinkedinIn} color='white' size='xl' />
+				</div>
+				<div className={`button ${styles.socialButton}`}>
+					{/* @ts-ignore*/}
+					<FontAwesomeIcon color='white' icon={faEnvelope} size='xl' />
+				</div>
 			</div>
-			<div>
-				<Image src='https://via.placeholder.com/50' height={50} width={50} />
-			</div>
-			<div>
-				<Image src='https://via.placeholder.com/50' height={50} width={50} />
-			</div>
-			<div>
-				<Image src='https://via.placeholder.com/50' height={50} width={50} />
+			<div className={styles.downloadResume}>
+				<button className={`button ${styles.downloadButton}`}>
+					<h3 className={styles.buttonText}>Resume</h3>
+					<ArrowDownCircle />
+				</button>
 			</div>
 		</div>
 	)
