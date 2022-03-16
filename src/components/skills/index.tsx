@@ -25,8 +25,8 @@ const Skill = () => {
 				<div>
 					{Array(count)
 						.fill(0)
-						.map(_ => (
-							<FontAwesomeIcon icon={faStar} />
+						.map((_, key) => (
+							<FontAwesomeIcon icon={faStar} key={key} />
 						))}
 				</div>
 			)
