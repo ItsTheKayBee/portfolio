@@ -22,6 +22,8 @@ module.exports = {
 			{ vars: 'all', args: 'after-used', ignoreRestSiblings: false }
 		],
 		'@typescript-eslint/explicit-function-return-type': 'warn',
-		'no-empty': 'warn'
+		'no-empty': 'warn',
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'warn'
 	}
 }

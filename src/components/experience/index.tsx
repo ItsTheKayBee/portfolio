@@ -1,34 +1,39 @@
-import { ExperiencesType } from 'data/interface'
+import { DataWithDates, ExperiencesType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const ExperienceSection = (props: ExperiencesType): JSX.Element => {
+const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
-			<h1 className={sectionStyles.sectionTitle}>Experience</h1>
-			<Experience />
-			<Experience />
-			<Experience />
+			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			{data.map((exp, key) => (
+				<Experience key={key} {...exp} />
+			))}
 		</div>
 	)
 }
 
-const Experience = (): JSX.Element => {
+const Experience = ({
+	title,
+	subTitle,
+	description,
+	dates,
+	image
+}: DataWithDates): JSX.Element => {
 	return (
 		<div className={sectionStyles.subSection}>
 			<div className='col'>
-				<Image src='https://via.placeholder.com/200' height={200} width={200} />
+				<Image src={image.url} alt={image.alt} height={200} width={200} />
 			</div>
 			<div className='col'>
-				<h2 className={sectionStyles.title}>LazyPay</h2>
-				<h3 className={sectionStyles.subTitle}>
-					Software development Engineer | Full time
-				</h3>
+				<h2 className={sectionStyles.title}>{title}</h2>
+				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<h4 className={sectionStyles.subSubTitle}>
-					Aug 2021 - Present (8 months)
+					{dates.startDate.toLocaleDateString('en-IN')} -{' '}
+					{dates.endDate?.toLocaleDateString('en-IN') ?? 'Present'}
 				</h4>
-				<p className={sectionStyles.description}>description</p>
+				<p className={sectionStyles.description}>{description}</p>
 			</div>
 		</div>
 	)

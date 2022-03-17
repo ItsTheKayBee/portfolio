@@ -2,22 +2,26 @@ import { PortfolioData } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
 	about: {
-		position: '',
-		description: '',
+		position: 'Software Development Engineer',
+		description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
+			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
+			I like to explore new technologies and I am passionate about trying out new experiences. I have built
+			several websites and apps in the process and I am always looking to hone my skills further in order to
+			become a better Software Development Engineer.`,
 		social: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				alt: 'GitHub'
 			},
 			{
 				link: 'https://www.linkedin.com/in/itsthekaybee/',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				alt: 'LinkedIn'
 			},
 			{
 				link: 'mailto:kbohra89@gmail.com',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				alt: 'Email'
 			}
 		],
@@ -25,7 +29,7 @@ export const portfolioDataObject: PortfolioData = {
 			link: 'https://drive.google.com/drive/u/0/folders/13EMLSkV8yxmknLw26W1ryhhuwaLo2zoT'
 		},
 		image: {
-			url: '',
+			url: 'https://via.placeholder.com/200',
 			alt: 'My picture'
 		}
 	},
@@ -42,7 +46,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
 				image: {
 					alt: 'LazyPay logo',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -56,7 +60,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
 				image: {
 					alt: 'Arcon logo',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -70,7 +74,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',
 				image: {
 					alt: 'GREedge logo',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			}
 		]
@@ -81,70 +85,70 @@ export const portfolioDataObject: PortfolioData = {
 			{
 				image: {
 					alt: 'Python',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'React',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Next.js',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Sass',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Java',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Flutter',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Firebase',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 1.5
 			},
 			{
 				image: {
 					alt: 'TypeScript',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 1
 			},
 			{
 				image: {
 					alt: 'React Native',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Blockchain',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				ratings: 1.5
 			}
@@ -166,7 +170,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Flutter'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -180,7 +184,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['React', 'Sass', 'Firebase', 'Python', 'Flask'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -192,7 +196,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['HTML', 'CSS', 'JS', 'Python'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/TorBot',
@@ -209,7 +213,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android', 'Solidity'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/DePay',
@@ -223,7 +227,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Javascript', 'Three.js'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://kunalbohra.netlify.app/',
@@ -238,7 +242,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Dialogflow', 'Twilio', 'Flask', 'Python', 'HTML'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/EssentialsKart',
@@ -254,7 +258,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/InstaNote',
@@ -268,7 +272,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Blockchain', 'Solidity', 'React'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FundEasy',
@@ -283,7 +287,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FacultyManagementSystem',
@@ -298,7 +302,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/Xervixx',
@@ -321,7 +325,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -335,7 +339,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -349,7 +353,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -363,7 +367,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			},
 			{
@@ -377,7 +381,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: ''
+					url: 'https://via.placeholder.com/200'
 				}
 			}
 		]
@@ -394,7 +398,7 @@ export const portfolioDataObject: PortfolioData = {
 					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
 				},
 				image: {
-					url: '',
+					url: 'https://via.placeholder.com/200',
 					alt: 'Assess image'
 				},
 				description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -421,25 +425,25 @@ export const portfolioDataObject: PortfolioData = {
 		data: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				alt: 'GitHub',
 				text: 'ItsTheKayBee'
 			},
 			{
 				link: 'https://www.linkedin.com/in/itsthekaybee/',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				text: 'itsthekaybee',
 				alt: 'LinkedIn'
 			},
 			{
 				link: 'mailto:kbohra89@gmail.com',
-				url: '',
+				url: 'https://via.placeholder.com/200',
 				alt: 'Email',
 				text: 'kbohra89@gmail.com'
 			}
 		],
 		image: {
-			url: '',
+			url: 'https://via.placeholder.com/200',
 			alt: ''
 		}
 	},

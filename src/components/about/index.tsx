@@ -51,7 +51,7 @@ const SocialMediaStrip = ({
 							key={key}
 							className={`button ${styles.socialButton}`}
 						>
-							<Image src={option.url} alt={option.alt} />
+							<Image src={option.url} alt={option.alt} height={50} width={50} />
 						</a>
 					)
 				})}
