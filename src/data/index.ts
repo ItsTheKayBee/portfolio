@@ -1,6 +1,6 @@
 import { PortfolioData } from './interface'
 
-export const data: PortfolioData = {
+export const portfolioDataObject: PortfolioData = {
 	about: {
 		position: '',
 		description: '',

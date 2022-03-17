@@ -1,9 +1,9 @@
 import styles from './index.module.scss'
 
-const Footer = (): JSX.Element => {
+const Footer = ({ title }: { title: String }): JSX.Element => {
 	return (
 		<div className={styles.footer}>
-			<p className={styles.footerText}>oiiendoeoucnenvnruonvoeuun</p>
+			<p className={styles.footerText}>{title}</p>
 		</div>
 	)
 }

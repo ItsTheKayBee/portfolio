@@ -1,52 +1,40 @@
 import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Image as ImageType, SkillsType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
-const Skills = (): JSX.Element => {
+const Skills = ({ title, data }: SkillsType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
-			<h1 className={sectionStyles.sectionTitle}>Skills</h1>
+			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div>
-				<Skill />
-				<Skill />
-				<Skill />
-				<Skill />
-				<Skill />
+				{data.map((skill, key) => {
+					return <Skill key={key} image={skill.image} ratings={skill.ratings} />
+				})}
 			</div>
 		</div>
 	)
 }
 
-const Skill = () => {
-	const renderStars = (count: number): JSX.Element => {
-		if (count % 1 === 0) {
-			return (
-				<div>
-					{Array(count)
-						.fill(0)
-						.map((_, key) => (
-							<FontAwesomeIcon icon={faStar} key={key} />
-						))}
-				</div>
-			)
-		}
-		return (
-			<div>
-				{Array(Math.floor(count))
-					.fill(0)
-					.map(_ => (
-						<FontAwesomeIcon icon={faStar} />
-					))}
-				<FontAwesomeIcon icon={faStarHalf} />
-			</div>
-		)
-	}
-
+const Skill = ({ image, ratings }: { image: ImageType; ratings: number }) => {
 	return (
 		<div>
-			<Image src='https://via.placeholder.com/50' height={50} width={50} />
-			{renderStars(2.5)}
+			<Image src={image.url} alt={image.alt} height={50} width={50} />
+			<Stars count={ratings} />
+		</div>
+	)
+}
+
+const Stars = ({ count }: { count: number }): JSX.Element => {
+	return (
+		<div>
+			{Array(Math.floor(count))
+				.fill(0)
+				.map((_, key) => (
+					<FontAwesomeIcon icon={faStar} key={key} />
+				))}
+			{count % 1 !== 0 && <FontAwesomeIcon icon={faStarHalf} />}
 		</div>
 	)
 }

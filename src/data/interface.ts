@@ -1,77 +1,100 @@
 export interface PortfolioData {
-	about: {
-		position: String
-		description: String
-		image: Image
-		social: IconButton[]
-		resume: Button
-	}
-	experiences: {
-		title: String
-		data: DataWithDates[]
-	}
-	skills: {
-		title: String
-		data: {
-			image: Image
-			ratings: number
-		}[]
-	}
-	projects: {
-		title: String
-		data: ProjectsData[]
-	}
-	achievements: {
-		title: String
-		data: DataWithButton[]
-	}
-	publications: {
-		title: String
-		data: DataWithButton[]
-	}
-	contact: {
-		title: String
-		data: IconTextButton[]
-		image: Image
-	}
+	about: AboutType
+	experiences: ExperiencesType
+	skills: SkillsType
+	projects: ProjectsType
+	achievements: AchievementsType
+	publications: PublicationsType
+	contact: ContactType
 	footer: {
-		title: String
+		title: string
 	}
 }
 
-type Image = {
-	url: String
-	alt: String
+export type ProjectsType = {
+	title: string
+	data: ProjectsData[]
 }
 
-type Button = {
-	link: String
+export type AchievementsType = {
+	title: string
+	data: DataWithButton[]
 }
-type IconButton = Button & Image
 
-interface TextButton extends Button {
-	text: String
+export type PublicationsType = {
+	title: string
+	data: DataWithButton[]
 }
-type IconTextButton = IconButton & TextButton
 
-type Data = {
+export type ContactType = {
+	title: string
+	data: IconTextButton[]
 	image: Image
-	title: String
-	subTitle: String
-	description: String
 }
 
-interface DataWithDates extends Data {
+export type SkillsType = {
+	title: string
+	data: {
+		image: Image
+		ratings: number
+	}[]
+}
+
+export type AboutType = {
+	position: string
+	description: string
+	image: Image
+	social: IconButton[]
+	resume: Button
+}
+
+export type StatsType = {
+	stats: KeyValue[]
+}
+
+export type KeyValue = {
+	title: string
+	value: number
+}
+
+export type ExperiencesType = {
+	title: string
+	data: DataWithDates[]
+}
+
+export type Image = {
+	url: string
+	alt: string
+}
+
+export type Button = {
+	link: string
+}
+export type IconButton = Button & Image
+
+export interface TextButton extends Button {
+	text: string
+}
+export type IconTextButton = IconButton & TextButton
+
+export type Data = {
+	image: Image
+	title: string
+	subTitle: string
+	description: string
+}
+
+export interface DataWithDates extends Data {
 	dates: {
 		startDate: Date
 		endDate?: Date
 	}
 }
 
-interface DataWithButton extends Data {
+export interface DataWithButton extends Data {
 	button?: TextButton
 }
 
-interface ProjectsData extends DataWithButton {
-	technologies: String[]
+export interface ProjectsData extends DataWithButton {
+	technologies: string[]
 }

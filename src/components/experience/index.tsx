@@ -1,8 +1,9 @@
+import { ExperiencesType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const ExperienceSection = (): JSX.Element => {
+const ExperienceSection = (props: ExperiencesType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>Experience</h1>

@@ -1,7 +1,8 @@
+import { ContactType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
-const Contact = (): JSX.Element => {
+const Contact = (props: ContactType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>Contact me</h1>
