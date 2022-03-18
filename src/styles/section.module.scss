@@ -34,14 +34,84 @@
     }
     &:hover {
       .arrowIcon {
-        animation: arrowAnim 0.5s ease-out;
+        animation: arrowAnim 0.3s ease-out;
+      }
+      .emailIcon {
+        animation: emailTurn 0.35s ease-out;
+        .flap {
+          animation: flapAnim 0.3s ease-out 0.35s;
+        }
+      }
+      .linkedinIcon {
+        .letterI {
+          animation: letterIAnim 0.3s ease-in;
+        }
+        .dot {
+          animation: dotFallAnim 0.6s ease-out;
+        }
+      }
+      .githubIcon {
+        .tail {
+          transform-origin: 15px 35px;
+          animation: tailAnim 0.3s ease-out;
+        }
+        .head {
+          transform-origin: center bottom;
+          animation: headAnim 0.5s ease 0.3s;
+        }
       }
     }
     .arrowIcon {
-      width: 32px;
+      width: 26px;
       height: 16px;
       .arrow {
         fill: white;
+      }
+    }
+    .emailIcon {
+      width: 27px;
+      height: 16px;
+      .base {
+        fill: white;
+      }
+      .outline {
+        fill: $blue-color;
+      }
+    }
+    .linkedinIcon {
+      height: 15px;
+      width: 15px;
+      .letterN,
+      .letterI,
+      .dot {
+        fill: white;
+      }
+    }
+    .githubIcon {
+      height: 15px;
+      width: 15px;
+      .head,
+      .body,
+      .tail {
+        fill: white;
+      }
+    }
+    &.social {
+      .emailIcon {
+        width: 33px;
+        height: 20px;
+
+        .outline {
+          fill: black;
+        }
+      }
+      .linkedinIcon {
+        height: 24px;
+        width: 24px;
+      }
+      .githubIcon {
+        height: 28px;
+        width: 28px;
       }
     }
   }
@@ -49,12 +119,78 @@
 
 @keyframes arrowAnim {
   0% {
-    transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scaleX(0);
     transform-origin: left;
     opacity: 0;
   }
   100% {
-    transform: translateX(0) scale(1);
+    transform: translateX(0) scaleX(1);
     opacity: 1;
+  }
+}
+
+@keyframes emailTurn {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(20deg) scale(1.05);
+  }
+}
+
+@keyframes flapAnim {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+  50% {
+    transform: rotateX(60deg);
+  }
+}
+
+@keyframes dotFallAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px) scaleY(1.2);
+  }
+}
+
+@keyframes letterIAnim {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+@keyframes tailAnim {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(10deg);
+  }
+  50% {
+    transform: rotateZ(-6deg);
+  }
+  75% {
+    transform: rotateZ(6deg);
+  }
+}
+@keyframes headAnim {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-6deg);
+  }
+  50% {
+    transform: rotateZ(3deg);
+  }
+  75% {
+    transform: rotateZ(-3deg);
   }
 }

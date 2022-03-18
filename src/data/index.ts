@@ -1,3 +1,6 @@
+import Email from 'components/icon/Email'
+import Github from 'components/icon/Github'
+import LinkedIn from 'components/icon/LinkedIn'
 import { PortfolioData } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
@@ -11,18 +14,15 @@ export const portfolioDataObject: PortfolioData = {
 		social: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
-				url: 'https://via.placeholder.com/200',
-				alt: 'GitHub'
+				component: Github
 			},
 			{
 				link: 'https://www.linkedin.com/in/itsthekaybee/',
-				url: 'https://via.placeholder.com/200',
-				alt: 'LinkedIn'
+				component: LinkedIn
 			},
 			{
 				link: 'mailto:kbohra89@gmail.com',
-				url: '/icons/email.svg',
-				alt: 'Email'
+				component: Email
 			}
 		],
 		resume: {
@@ -425,20 +425,17 @@ export const portfolioDataObject: PortfolioData = {
 		data: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
-				url: 'https://via.placeholder.com/200',
-				alt: 'GitHub',
+				component: Github,
 				text: 'ItsTheKayBee'
 			},
 			{
 				link: 'https://www.linkedin.com/in/itsthekaybee/',
-				url: 'https://via.placeholder.com/200',
-				text: 'itsthekaybee',
-				alt: 'LinkedIn'
+				component: LinkedIn,
+				text: 'itsthekaybee'
 			},
 			{
 				link: 'mailto:kbohra89@gmail.com',
-				url: 'https://via.placeholder.com/200',
-				alt: 'Email',
+				component: Email,
 				text: 'kbohra89@gmail.com'
 			}
 		],

@@ -1,5 +1,4 @@
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Arrow from 'components/icon/Arrow'
 import { DataWithButton, PublicationsType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
@@ -32,9 +31,9 @@ const Publication = ({
 				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<h4 className={sectionStyles.description}>{description}</h4>
 				{button && (
-					<a className='button' href={button.link}>
-						<h3>{button.text}</h3>
-						<FontAwesomeIcon icon={faArrowRightLong} />
+					<a className={`button ${sectionStyles.link}`} href={button.link}>
+						<h3 className={sectionStyles.linkText}>{button.text}</h3>
+						<Arrow />
 					</a>
 				)}
 			</div>

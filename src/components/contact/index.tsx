@@ -23,12 +23,11 @@ const Contact = ({ title, data, image }: ContactType): JSX.Element => {
 const ContactButton = ({
 	text,
 	link,
-	alt,
-	url
+	component: Component
 }: IconTextButton): JSX.Element => {
 	return (
-		<a href={link} className='button'>
-			<Image src={url} alt={alt} height={50} width={50} />
+		<a href={link} className={`button ${sectionStyles.link}`}>
+			<Component />
 			<h3>{text}</h3>
 		</a>
 	)

@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Stats from 'components/stats'
 import styles from './index.module.scss'
+import sectionStyles from 'styles/section.module.scss'
 import { AboutType, Button, IconButton, StatsType } from 'data/interface'
-import Download from 'components/icon/download'
+import Download from 'components/icon/Download'
 
 const About = ({
 	position,
@@ -13,7 +14,7 @@ const About = ({
 	stats
 }: AboutType & StatsType): JSX.Element => {
 	return (
-		<div className={styles.about}>
+		<div className={`${styles.about} ${sectionStyles.section}`}>
 			<div className={styles.mainContent}>
 				<div className={styles.content}>
 					<h1 className={styles.name}>
@@ -45,13 +46,14 @@ const SocialMediaStrip = ({
 		<div className={styles.socialStrip}>
 			<div className={styles.socialButtons}>
 				{social.map((option, key) => {
+					const { component: Component } = option
 					return (
 						<a
 							href={option.link}
 							key={key}
-							className={`button ${styles.socialButton}`}
+							className={`button ${styles.socialButton} ${sectionStyles.link} ${sectionStyles.social}`}
 						>
-							<Image src={option.url} alt={option.alt} height={50} width={50} />
+							<Component />
 						</a>
 					)
 				})}

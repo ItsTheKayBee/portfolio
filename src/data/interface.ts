@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 export interface PortfolioData {
 	about: AboutType
 	experiences: ExperiencesType
@@ -70,7 +72,12 @@ export type Image = {
 export type Button = {
 	link: string
 }
-export type IconButton = Button & Image
+
+type Comp = {
+	component: FC
+}
+
+export type IconButton = Button & Comp
 
 export interface TextButton extends Button {
 	text: string
