@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Stats from 'components/stats'
 import styles from './index.module.scss'
-import { ArrowDownCircle } from 'react-feather'
 import { AboutType, Button, IconButton, StatsType } from 'data/interface'
+import Download from 'components/icon/download'
 
 const About = ({
 	position,
@@ -59,7 +59,7 @@ const SocialMediaStrip = ({
 			<div className={styles.downloadResume}>
 				<a className={`button ${styles.downloadButton}`} href={resume.link}>
 					<h3 className={styles.buttonText}>Resume</h3>
-					<ArrowDownCircle />
+					<Download />
 				</a>
 			</div>
 		</div>

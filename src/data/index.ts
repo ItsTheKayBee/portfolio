@@ -21,12 +21,12 @@ export const portfolioDataObject: PortfolioData = {
 			},
 			{
 				link: 'mailto:kbohra89@gmail.com',
-				url: 'https://via.placeholder.com/200',
+				url: '/icons/email.svg',
 				alt: 'Email'
 			}
 		],
 		resume: {
-			link: 'https://drive.google.com/drive/u/0/folders/13EMLSkV8yxmknLw26W1ryhhuwaLo2zoT'
+			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
 		},
 		image: {
 			url: 'https://via.placeholder.com/200',
@@ -40,7 +40,7 @@ export const portfolioDataObject: PortfolioData = {
 				title: 'LazyPay (PayU)',
 				subTitle: 'Software Development Engineer | Full Time',
 				dates: {
-					startDate: new Date('1/8/2021')
+					startDate: new Date('August 2021')
 				},
 				description:
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
@@ -53,8 +53,8 @@ export const portfolioDataObject: PortfolioData = {
 				title: 'Arcon',
 				subTitle: 'Software Development Intern',
 				dates: {
-					startDate: new Date('1/12/2019'),
-					endDate: new Date('6/1/2020')
+					startDate: new Date('December 2019'),
+					endDate: new Date('January 2020')
 				},
 				description:
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
@@ -67,8 +67,8 @@ export const portfolioDataObject: PortfolioData = {
 				title: 'GREedge',
 				subTitle: 'External Content Developer',
 				dates: {
-					startDate: new Date('1/10/2018'),
-					endDate: new Date('31/12/2018')
+					startDate: new Date('October 2018'),
+					endDate: new Date('December 2018')
 				},
 				description:
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',

@@ -1,3 +1,5 @@
+@import "styles/variables.scss";
+
 .section {
   .sectionTitle {
     text-align: center;
@@ -23,5 +25,36 @@
     .description {
       font-size: 15px;
     }
+  }
+  .link {
+    background-color: $blue-color;
+    .linkText {
+      color: white;
+      padding-right: 12px;
+    }
+    &:hover {
+      .arrowIcon {
+        animation: arrowAnim 0.5s ease-out;
+      }
+    }
+    .arrowIcon {
+      width: 32px;
+      height: 16px;
+      .arrow {
+        fill: white;
+      }
+    }
+  }
+}
+
+@keyframes arrowAnim {
+  0% {
+    transform: translateX(-50%) scale(0);
+    transform-origin: left;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
 }

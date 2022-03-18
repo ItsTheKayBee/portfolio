@@ -31,7 +31,6 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      // align-items: center;
       .socialStrip {
         display: flex;
         margin-top: 24px;
@@ -57,14 +56,44 @@
             display: flex;
             align-items: center;
             .buttonText {
-              padding-right: 8px;
+              padding-right: 12px;
               font-weight: 600;
               font-size: 18px;
               line-height: 28px;
+            }
+            .icon {
+              width: 22px;
+              height: 22px;
+              .line {
+                stroke: white;
+                stroke-width: 5px;
+              }
+            }
+            &:hover {
+              .arrow {
+                animation: arrowAnim 0.5s ease-out;
+              }
             }
           }
         }
       }
     }
+  }
+}
+
+@keyframes arrowAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
   }
 }

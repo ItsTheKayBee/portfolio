@@ -1,5 +1,6 @@
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Arrow from 'components/icon/Arrow'
 import { ProjectsData, ProjectsType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
@@ -28,9 +29,9 @@ const Project = ({
 			<div className='col a-center'>
 				<Image src={image.url} alt={image.alt} height={200} width={200} />
 				{button && (
-					<a className='button' href={button.link}>
-						<h3>{button.text}</h3>
-						<FontAwesomeIcon icon={faArrowRightLong} />
+					<a className={`button ${sectionStyles.link}`} href={button.link}>
+						<h3 className={sectionStyles.linkText}>{button.text}</h3>
+						<Arrow />
 					</a>
 				)}
 			</div>
