@@ -11,12 +11,14 @@ const About = ({
 	resume,
 	image,
 	social,
-	stats
+	stats,
+	subTitle
 }: AboutType & StatsType): JSX.Element => {
 	return (
 		<div className={`${styles.about} ${sectionStyles.section}`}>
 			<div className={styles.mainContent}>
 				<div className={styles.content}>
+					<p className={styles.subTitle}>{subTitle}</p>
 					<h1 className={styles.name}>
 						KUNAL
 						<br />

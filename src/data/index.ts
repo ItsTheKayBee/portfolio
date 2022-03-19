@@ -1,7 +1,9 @@
 import Email from 'components/icon/Email'
 import Github from 'components/icon/Github'
 import LinkedIn from 'components/icon/LinkedIn'
-import { PortfolioData } from './interface'
+import { EXPERIENCE_START_DATE } from 'helpers/constants'
+import { getDateDifference } from 'helpers/utils'
+import { PortfolioData, StatsType } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
 	about: {
@@ -11,6 +13,7 @@ export const portfolioDataObject: PortfolioData = {
 			I like to explore new technologies and I am passionate about trying out new experiences. I have built
 			several websites and apps in the process and I am always looking to hone my skills further in order to
 			become a better Software Development Engineer.`,
+		subTitle: 'Hey there! I am',
 		social: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
@@ -447,4 +450,30 @@ export const portfolioDataObject: PortfolioData = {
 	footer: {
 		title: `Website and all images have been developed by Yours Truly. ©${new Date().getFullYear()}. All rights reserved.`
 	}
+}
+
+const totalExp = getDateDifference(new Date(), EXPERIENCE_START_DATE)
+
+export const statsData: StatsType = {
+	stats: [
+		{
+			title: 'Projects',
+			value: portfolioDataObject.projects.data.length
+		},
+		{
+			title: `${totalExp.title} Experience`,
+			value: totalExp.value
+		},
+		{
+			title: 'Awards',
+			value: portfolioDataObject.achievements.data.length
+		},
+		{
+			title:
+				portfolioDataObject.publications.data.length === 1
+					? 'Publication'
+					: 'Publications',
+			value: portfolioDataObject.publications.data.length
+		}
+	]
 }

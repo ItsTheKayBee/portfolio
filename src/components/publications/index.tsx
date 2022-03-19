@@ -8,7 +8,7 @@ const Publications = ({ title, data }: PublicationsType): JSX.Element => {
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((pub, key) => (
-				<Publication key={key} {...pub} />
+				<Publication key={key} {...pub} id={key} />
 			))}
 		</div>
 	)
@@ -19,10 +19,15 @@ const Publication = ({
 	subTitle,
 	description,
 	button,
-	image
+	image,
+	id = 0
 }: DataWithButton): JSX.Element => {
 	return (
-		<div className={sectionStyles.subSection}>
+		<div
+			className={`${sectionStyles.subSection} ${
+				id !== 0 ? sectionStyles.reverse : ''
+			}`}
+		>
 			<div className='col'>
 				<Image src={image.url} alt={image.alt} height={200} width={200} />
 			</div>

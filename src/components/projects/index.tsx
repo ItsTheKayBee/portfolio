@@ -10,7 +10,7 @@ const Projects = ({ title, data }: ProjectsType): JSX.Element => {
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((project, key) => {
-				return <Project key={key} {...project} />
+				return <Project key={key} {...project} id={key} />
 			})}
 		</div>
 	)
@@ -22,10 +22,15 @@ const Project = ({
 	subTitle,
 	description,
 	technologies,
-	button
+	button,
+	id = 0
 }: ProjectsData): JSX.Element => {
 	return (
-		<div className={sectionStyles.subSection}>
+		<div
+			className={`${sectionStyles.subSection} ${
+				id % 2 !== 0 ? sectionStyles.reverse : ''
+			}`}
+		>
 			<div className='col a-center'>
 				<Image src={image.url} alt={image.alt} height={200} width={200} />
 				{button && (

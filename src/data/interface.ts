@@ -48,6 +48,7 @@ export type AboutType = {
 	image: Image
 	social: IconButton[]
 	resume: Button
+	subTitle: string
 }
 
 export type StatsType = {
@@ -89,6 +90,7 @@ export type Data = {
 	title: string
 	subTitle: string
 	description: string
+	id?: number
 }
 
 export interface DataWithDates extends Data {

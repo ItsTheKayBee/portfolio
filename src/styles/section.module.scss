@@ -2,17 +2,21 @@
 
 .section {
   padding: 40px 0;
+  margin-bottom: 30px;
   .sectionTitle {
     text-align: center;
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 950;
+    margin-bottom: 40px;
+    font-family: Fuse;
+    letter-spacing: 1.5px;
   }
 
   .subSection {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 48px;
+    margin-bottom: 64px;
     .title {
       font-size: 28px;
       line-height: 30px;
@@ -32,6 +36,9 @@
     .description {
       font-size: 14px;
       margin-top: 12px;
+    }
+    &.reverse {
+      flex-direction: row-reverse;
     }
   }
   .link {
