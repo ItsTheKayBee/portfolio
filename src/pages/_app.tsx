@@ -9,7 +9,6 @@ const Experience = dynamic(() => import('../components/experience'))
 const Projects = dynamic(() => import('../components/projects'))
 const Publications = dynamic(() => import('../components/publications'))
 const Skills = dynamic(() => import('../components/skills'))
-const Footer = dynamic(() => import('../components/footer'))
 
 const App = (): JSX.Element => {
 	return (
@@ -21,7 +20,6 @@ const App = (): JSX.Element => {
 			<Achievements {...portfolioDataObject.achievements} />
 			<Publications {...portfolioDataObject.publications} />
 			<Contact {...portfolioDataObject.contact} />
-			<Footer {...portfolioDataObject.footer} />
 		</main>
 	)
 }

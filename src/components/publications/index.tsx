@@ -2,6 +2,7 @@ import Arrow from 'components/icon/Arrow'
 import { DataWithButton, PublicationsType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
+import styles from './index.module.scss'
 
 const Publications = ({ title, data }: PublicationsType): JSX.Element => {
 	return (
@@ -24,7 +25,7 @@ const Publication = ({
 }: DataWithButton): JSX.Element => {
 	return (
 		<div
-			className={`${sectionStyles.subSection} ${
+			className={`${sectionStyles.subSection} ${styles.publication} ${
 				id !== 0 ? sectionStyles.reverse : ''
 			}`}
 		>
@@ -36,7 +37,7 @@ const Publication = ({
 				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<h4 className={sectionStyles.description}>{description}</h4>
 				{button && (
-					<a className={`button ${sectionStyles.link}`} href={button.link}>
+					<a className={`button ${styles.button} ${sectionStyles.link}`} href={button.link}>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>
 						<Arrow />
 					</a>

@@ -8,9 +8,6 @@ export interface PortfolioData {
 	achievements: AchievementsType
 	publications: PublicationsType
 	contact: ContactType
-	footer: {
-		title: string
-	}
 }
 
 export type ProjectsType = {

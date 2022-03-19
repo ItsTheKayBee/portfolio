@@ -21,6 +21,7 @@
       font-size: 28px;
       line-height: 30px;
       font-weight: 800;
+      margin-bottom: 4px;
     }
     .subTitle {
       font-size: 17px;
@@ -36,6 +37,7 @@
     .description {
       font-size: 14px;
       margin-top: 12px;
+      font-weight: 400;
     }
     &.reverse {
       flex-direction: row-reverse;
@@ -84,7 +86,7 @@
       }
     }
     .emailIcon {
-      width: 27px;
+      width: 26px;
       height: 16px;
       .base {
         fill: white;
@@ -94,8 +96,8 @@
       }
     }
     .linkedinIcon {
-      height: 15px;
-      width: 15px;
+      height: 18px;
+      width: 18px;
       .letterN,
       .letterI,
       .dot {
@@ -103,8 +105,8 @@
       }
     }
     .githubIcon {
-      height: 15px;
-      width: 15px;
+      height: 18px;
+      width: 18px;
       .head,
       .body,
       .tail {

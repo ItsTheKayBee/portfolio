@@ -446,9 +446,6 @@ export const portfolioDataObject: PortfolioData = {
 			url: 'https://via.placeholder.com/200',
 			alt: ''
 		}
-	},
-	footer: {
-		title: `Website and all images have been developed by Yours Truly. ©${new Date().getFullYear()}. All rights reserved.`
 	}
 }
 
