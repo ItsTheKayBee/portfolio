@@ -9,6 +9,9 @@
     padding: 24px;
     border-radius: 32px;
     flex-direction: column;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
     .title {
       font-size: 21px;
       line-height: 28px;

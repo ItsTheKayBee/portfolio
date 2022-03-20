@@ -13,7 +13,7 @@ export const portfolioDataObject: PortfolioData = {
 			I like to explore new technologies and I am passionate about trying out new experiences. I have built
 			several websites and apps in the process and I am always looking to hone my skills further in order to
 			become a better Software Development Engineer.`,
-		subTitle: 'Hey there! I am',
+		subTitle: "Hey! I'm",
 		social: [
 			{
 				link: 'https://github.com/ItsTheKayBee',

@@ -31,17 +31,20 @@ const Publication = ({
 		>
 			<div className='col'>
 				<Image src={image.url} alt={image.alt} height={200} width={200} />
+				{button && (
+					<a
+						className={`button ${styles.button} ${sectionStyles.link}`}
+						href={button.link}
+					>
+						<h3 className={sectionStyles.linkText}>{button.text}</h3>
+						<Arrow />
+					</a>
+				)}
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>
 				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<h4 className={sectionStyles.description}>{description}</h4>
-				{button && (
-					<a className={`button ${styles.button} ${sectionStyles.link}`} href={button.link}>
-						<h3 className={sectionStyles.linkText}>{button.text}</h3>
-						<Arrow />
-					</a>
-				)}
 			</div>
 		</div>
 	)

@@ -3,6 +3,9 @@
 .section {
   padding: 40px 0;
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    margin-bottom: 0px;
+  }
   .sectionTitle {
     text-align: center;
     font-size: 40px;
@@ -17,6 +20,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 64px;
+    gap: 20px 100px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .title {
       font-size: 28px;
       line-height: 30px;
@@ -41,8 +48,12 @@
     }
     &.reverse {
       flex-direction: row-reverse;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
     }
   }
+
   .link {
     background-color: $blue-color;
     .linkText {

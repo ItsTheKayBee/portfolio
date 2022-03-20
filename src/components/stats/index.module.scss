@@ -2,10 +2,20 @@
   display: flex;
   justify-content: space-between;
   padding: 24px 0;
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 120px 120px;
+    gap: 32px;
+    padding: 48px 0;
+    justify-content: space-around;
+  }
   .stat {
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media (max-width: 768px) {
+      flex: 1;
+    }
     .value {
       font-size: 40px;
       font-family: Peace;
@@ -17,6 +27,7 @@
       line-height: 21px;
       font-weight: 500;
       text-transform: uppercase;
+      text-align: center;
     }
   }
 }

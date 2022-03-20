@@ -16,7 +16,7 @@ const About = ({
 }: AboutType & StatsType): JSX.Element => {
 	return (
 		<div className={`${styles.about} ${sectionStyles.section}`}>
-			<div className={styles.mainContent}>
+			<div className={`${styles.mainContent} dWeb`}>
 				<div className={styles.content}>
 					<p className={styles.subTitle}>{subTitle}</p>
 					<h1 className={styles.name}>
@@ -31,6 +31,29 @@ const About = ({
 					<Image src={image.url} alt={image.alt} height={300} width={200} />
 					<SocialMediaStrip resume={resume} social={social} />
 				</div>
+			</div>
+			<div className={`${styles.mainContent} mWeb`}>
+				<div className={styles.content}>
+					<Image
+						src={image.url}
+						alt={image.alt}
+						layout='fill'
+						className={styles.mImage}
+					/>
+					<div className={styles.mContent}>
+						<p className={styles.subTitle}>{subTitle}</p>
+						<h1 className={styles.name}>
+							KUNAL
+							<br />
+							BOHRA
+						</h1>
+						<h2 className={styles.position}>{position}</h2>
+					</div>
+				</div>
+				{/* <div className={styles.images}> */}
+				<p className={styles.description}>{description}</p>
+				<SocialMediaStrip resume={resume} social={social} />
+				{/* </div> */}
 			</div>
 			<Stats stats={stats} />
 		</div>

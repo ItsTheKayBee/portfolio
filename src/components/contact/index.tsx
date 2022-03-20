@@ -8,7 +8,7 @@ const Contact = ({ title, data, image }: ContactType): JSX.Element => {
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={`${sectionStyles.subSection} ${styles.contact}`}>
-				<div className='col'>
+				<div className='col a-center'>
 					<Image src={image.url} alt={image.alt} height={200} width={200} />
 				</div>
 				<div className='col'>

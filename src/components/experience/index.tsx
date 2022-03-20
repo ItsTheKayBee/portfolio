@@ -29,7 +29,7 @@ const Experience = ({
 				id % 2 !== 0 ? sectionStyles.reverse : ''
 			}`}
 		>
-			<div className='col'>
+			<div className='col a-center'>
 				<Image src={image.url} alt={image.alt} height={200} width={200} />
 			</div>
 			<div className='col'>

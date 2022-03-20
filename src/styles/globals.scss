@@ -103,4 +103,19 @@ a {
     justify-content: center;
     align-items: center;
   }
+
+  .dWeb {
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+  }
+  .mWeb {
+    @media (min-width: 769px) {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 32px;
+  }
 }
