@@ -1,3 +1,6 @@
+@import "variables.scss";
+@import "utils.scss";
+
 @font-face {
   font-family: Fuse;
   src: url("../fonts/Fuse-Black.ttf");
@@ -71,6 +74,7 @@ body {
   font-family: OpenSans, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 a {
@@ -83,7 +87,35 @@ a {
 }
 
 .main {
+  background-color: $bg-color;
   padding: 0 10%;
+  overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  .bg {
+    .aurora {
+      position: absolute;
+      border-radius: 50%;
+    }
+    @for $j from 1 through 7 {
+      @for $i from 1 through 5 {
+        .aurora-#{$j}:nth-child(#{$i}) {
+          @if $i % 2 == 0 {
+            top: #{rand(-100, 100)}px;
+            left: #{rand(-100, 100)}px;
+          } @else {
+            bottom: #{rand(-150, 150)}px;
+            right: #{rand(-150, 200)}px;
+          }
+          width: #{rand(300, 500)}px;
+          height: #{rand(300, 500)}px;
+          background-color: nth($aurora-array, rand(1, length($aurora-array)));
+          filter: blur(#{rand(150, 200)}px);
+        }
+      }
+    }
+  }
   .col {
     flex: 1;
     flex-direction: column;
