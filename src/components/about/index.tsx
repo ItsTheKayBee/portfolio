@@ -12,10 +12,15 @@ const About = ({
 	image,
 	social,
 	stats,
-	subTitle
+	subTitle,
+	isActive
 }: AboutType & StatsType): JSX.Element => {
 	return (
-		<div className={`${styles.about} ${sectionStyles.section}`}>
+		<div
+			className={`${styles.about} ${sectionStyles.section} ${
+				isActive ? sectionStyles.active : ''
+			}`}
+		>
 			<div className={`${styles.mainContent} dWeb`}>
 				<div className={styles.content}>
 					<p className={styles.subTitle}>{subTitle}</p>

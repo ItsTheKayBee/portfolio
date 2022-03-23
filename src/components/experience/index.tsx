@@ -4,9 +4,17 @@ import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
+const ExperienceSection = ({
+	title,
+	data,
+	isActive
+}: ExperiencesType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div
+			className={`${sectionStyles.section} ${
+				isActive ? sectionStyles.active : ''
+			}`}
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((exp, key) => (
 				<Experience key={key} {...exp} id={key} />

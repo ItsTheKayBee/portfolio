@@ -6,9 +6,13 @@ import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { SVG_CLIP_PATHS } from 'helpers/constants'
 
-const Skills = ({ title, data }: SkillsType): JSX.Element => {
+const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div
+			className={`${sectionStyles.section} ${
+				isActive ? sectionStyles.active : ''
+			}`}
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.skills}>
 				{data.map((skill, key) => {

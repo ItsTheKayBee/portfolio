@@ -4,9 +4,13 @@ import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const Projects = ({ title, data }: ProjectsType): JSX.Element => {
+const Projects = ({ title, data, isActive }: ProjectsType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div
+			className={`${sectionStyles.section} ${
+				isActive ? sectionStyles.active : ''
+			}`}
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((project, key) => {
 				return <Project key={key} {...project} id={key} />

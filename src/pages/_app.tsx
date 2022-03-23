@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { portfolioDataObject, statsData } from 'data'
 import '../styles/globals.scss'
-import { useEffect, useState } from 'react'
+import { UIEvent, useEffect, useState } from 'react'
 import { TOTAL_NUMBER_OF_SECTIONS } from 'helpers/constants'
 
 const About = dynamic(() => import('../components/about'))
@@ -14,6 +14,7 @@ const Skills = dynamic(() => import('../components/skills'))
 
 const App = (): JSX.Element => {
 	const [currentSection, setCurrentSection] = useState(0)
+	let isScrolling = true
 
 	useEffect(() => {
 		window.addEventListener('wheel', scroller)
@@ -21,12 +22,18 @@ const App = (): JSX.Element => {
 	}, [])
 
 	const scroller = (e: WheelEvent) => {
-		console.log(e)
-		setCurrentSection(s => {
-			if (e.deltaY > 0 && s < TOTAL_NUMBER_OF_SECTIONS - 1) return s + 1
-			else if (e.deltaY < 0 && s > 0) return s - 1
-			else return s
-		})
+		console.log(1)
+		if (isScrolling) {
+			isScrolling = false
+			setTimeout(() => {
+				setCurrentSection(s => {
+					if (e.deltaY > 0 && s < TOTAL_NUMBER_OF_SECTIONS - 1) return s + 1
+					else if (e.deltaY < 0 && s > 0) return s - 1
+					else return s
+				})
+				isScrolling = true
+			}, 350)
+		}
 	}
 
 	return (
@@ -42,13 +49,35 @@ const App = (): JSX.Element => {
 					))}
 			</div>
 			<div>
-				<About {...portfolioDataObject.about} stats={statsData.stats} />
-				<Experience {...portfolioDataObject.experiences} />
-				<Skills {...portfolioDataObject.skills} />
-				<Projects {...portfolioDataObject.projects} />
-				<Achievements {...portfolioDataObject.achievements} />
-				<Publications {...portfolioDataObject.publications} />
-				<Contact {...portfolioDataObject.contact} />
+				<About
+					{...portfolioDataObject.about}
+					stats={statsData.stats}
+					isActive={currentSection === 0}
+				/>
+				<Experience
+					{...portfolioDataObject.experiences}
+					isActive={currentSection === 1}
+				/>
+				<Skills
+					{...portfolioDataObject.skills}
+					isActive={currentSection === 2}
+				/>
+				<Projects
+					{...portfolioDataObject.projects}
+					isActive={currentSection === 3}
+				/>
+				<Achievements
+					{...portfolioDataObject.achievements}
+					isActive={currentSection === 4}
+				/>
+				<Publications
+					{...portfolioDataObject.publications}
+					isActive={currentSection === 5}
+				/>
+				<Contact
+					{...portfolioDataObject.contact}
+					isActive={currentSection === 6}
+				/>
 			</div>
 		</main>
 	)

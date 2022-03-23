@@ -3,9 +3,17 @@ import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
+const Achievements = ({
+	title,
+	data,
+	isActive
+}: AchievementsType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div
+			className={`${sectionStyles.section} ${
+				isActive ? sectionStyles.active : ''
+			}`}
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.achievementsContainer}>
 				{data.map((achievement, key) => {
