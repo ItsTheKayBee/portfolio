@@ -1,8 +1,9 @@
 import dynamic from 'next/dynamic'
 import { portfolioDataObject, statsData } from 'data'
 import '../styles/globals.scss'
-import { UIEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TOTAL_NUMBER_OF_SECTIONS } from 'helpers/constants'
+import ParticleTest from 'ParticleTest'
 
 const About = dynamic(() => import('../components/about'))
 const Achievements = dynamic(() => import('../components/achievements'))
@@ -17,22 +18,21 @@ const App = (): JSX.Element => {
 	let isScrolling = true
 
 	useEffect(() => {
-		window.addEventListener('wheel', scroller)
+		window.addEventListener('wheel', scroller, { passive: true })
 		return () => window.removeEventListener('wheel', scroller)
 	}, [])
 
 	const scroller = (e: WheelEvent) => {
-		console.log(1)
 		if (isScrolling) {
 			isScrolling = false
+			setCurrentSection(s => {
+				if (e.deltaY > 0 && s < TOTAL_NUMBER_OF_SECTIONS - 1) return s + 1
+				else if (e.deltaY < 0 && s > 0) return s - 1
+				else return s
+			})
 			setTimeout(() => {
-				setCurrentSection(s => {
-					if (e.deltaY > 0 && s < TOTAL_NUMBER_OF_SECTIONS - 1) return s + 1
-					else if (e.deltaY < 0 && s > 0) return s - 1
-					else return s
-				})
 				isScrolling = true
-			}, 350)
+			}, 2000)
 		}
 	}
 
@@ -48,7 +48,7 @@ const App = (): JSX.Element => {
 						/>
 					))}
 			</div>
-			<div>
+			{/* <div>
 				<About
 					{...portfolioDataObject.about}
 					stats={statsData.stats}
@@ -78,7 +78,8 @@ const App = (): JSX.Element => {
 					{...portfolioDataObject.contact}
 					isActive={currentSection === 6}
 				/>
-			</div>
+			</div> */}
+			<ParticleTest />
 		</main>
 	)
 }

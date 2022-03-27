@@ -1,3 +1,5 @@
+@import 'styles/variables';
+
 .strip {
   display: flex;
   justify-content: space-between;
@@ -30,6 +32,7 @@
       font-weight: 500;
       text-transform: uppercase;
       text-align: center;
+      color: $text-color-200;
     }
   }
 }

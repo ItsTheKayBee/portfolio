@@ -95,6 +95,7 @@ export type Data = {
 	subTitle: string
 	description: string
 	id?: number
+	isActive?: boolean
 }
 
 export interface DataWithDates extends Data {
@@ -110,4 +111,13 @@ export interface DataWithButton extends Data {
 
 export interface ProjectsData extends DataWithButton {
 	technologies: string[]
+}
+
+export type Position = {
+	x: number
+	y: number
+	originX?: number
+	originY?: number
+	noiseOffsetX?: number
+	noiseOffsetY?: number
 }

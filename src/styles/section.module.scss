@@ -1,9 +1,8 @@
 @import "styles/variables.scss";
 
 .section {
-  padding: 40px 0;
+  padding: 40px 10%;
   margin-bottom: 30px;
-
   width: 100% !important;
   height: 100vh;
   position: absolute;
@@ -12,8 +11,11 @@
   visibility: hidden;
   opacity: 0;
   z-index: 0;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-out;
 
+  @media (max-width: 768px) {
+    padding: 40px 32px;
+  }
   &.active {
     visibility: visible;
     opacity: 1;
@@ -31,13 +33,54 @@
     margin-bottom: 40px;
     font-family: Fuse;
     letter-spacing: 1.5px;
+    color: $text-color;
+  }
+
+  .slidesContainer {
+    display: flex;
+    .arrowButton {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @media (max-width: 768px) {
+        display: none;
+      }
+      &.left {
+        left: 5%;
+      }
+      &.right {
+        right: 5%;
+      }
+    }
   }
 
   .subSection {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 64px;
+    align-items: center;
+    padding: 0 10%;
     gap: 20px 100px;
+
+    width: 100% !important;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.7s ease-out;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+
     @media (max-width: 768px) {
       flex-direction: column;
     }
@@ -46,22 +89,26 @@
       line-height: 30px;
       font-weight: 800;
       margin-bottom: 4px;
+      color: $text-color;
     }
     .subTitle {
       font-size: 17px;
       line-height: 28px;
       font-weight: 600;
+      color: $text-color-100;
     }
     .subSubTitle {
       font-size: 15px;
       line-height: 22px;
       font-weight: 500;
       margin-bottom: 4px;
+      color: $text-color-200;
     }
     .description {
       font-size: 14px;
       margin-top: 12px;
       font-weight: 400;
+      color: $text-color-200;
     }
     &.reverse {
       flex-direction: row-reverse;

@@ -88,7 +88,6 @@ a {
 
 .main {
   background-color: $bg-color;
-  padding: 0 10%;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -102,16 +101,16 @@ a {
       @for $i from 1 through 5 {
         .aurora-#{$j}:nth-child(#{$i}) {
           @if $i % 2 == 0 {
-            top: #{rand(-100, 100)}px;
-            left: #{rand(-100, 100)}px;
+            top: #{rand(-50, 200)}px;
+            left: #{rand(-50, 200)}px;
           } @else {
-            bottom: #{rand(-150, 150)}px;
-            right: #{rand(-150, 200)}px;
+            bottom: #{rand(-50, 250)}px;
+            right: #{rand(-50, 250)}px;
           }
-          width: #{rand(300, 500)}px;
-          height: #{rand(300, 500)}px;
+          width: #{rand(100, 300)}px;
+          height: #{rand(100, 300)}px;
           background-color: nth($aurora-array, rand(1, length($aurora-array)));
-          filter: blur(#{rand(150, 200)}px);
+          filter: blur(#{rand(140, 180)}px);
         }
       }
     }
@@ -145,9 +144,5 @@ a {
     @media (min-width: 769px) {
       display: none !important;
     }
-  }
-
-  @media (max-width: 768px) {
-    padding: 0 32px;
   }
 }

@@ -1,7 +1,7 @@
+import Image from 'next/image'
 import HalfStar from 'components/icon/HalfStar'
 import Star from 'components/icon/Star'
 import { Image as ImageType, SkillsType } from 'data/interface'
-import Image from 'next/image'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { SVG_CLIP_PATHS } from 'helpers/constants'
@@ -44,8 +44,8 @@ const Skill = ({
 			<Image
 				src={image.url}
 				alt={image.alt}
-				height={300}
-				width={300}
+				height={150}
+				width={150}
 				className={styles[`skillImage${id + 1}`]}
 			/>
 			<svg viewBox='0 0 200 200' fill='none' className={styles.blob}>
@@ -57,7 +57,7 @@ const Skill = ({
 					<path d={SVG_CLIP_PATHS[id]} />
 				</clipPath>
 			</svg>
-			<Stars count={ratings} />
+			{/* <Stars count={ratings} /> */}
 		</div>
 	)
 }

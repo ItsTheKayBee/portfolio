@@ -1,16 +1,18 @@
 @import "styles/variables";
+@import "styles/utils";
 
 .skills {
-  display: flex;
-  gap: 48px 0px;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  // display: flex;
+  // gap: 48px 0px;
+  // flex-wrap: wrap;
+  // justify-content: space-evenly;
   .skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // background-color: $blue-color;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     cursor: pointer;
+    position: absolute;
+    animation: randomMotion 5s ease-out infinite;
     @for $i from 1 through 11 {
       .skillImage#{$i} {
         clip-path: url(#clipper#{$i});
@@ -18,32 +20,30 @@
     }
     .blob {
       position: absolute;
-      height: 300px;
-      width: 300px;
       .clipPath {
         transform: scale(0.005, 0.005);
         path {
-          transform: translate(100px, 100px);
+          transform: translate(75px, 75px);
         }
       }
     }
-    .starsContainer {
-      .starIcon,
-      .halfStarIcon {
-        height: 40px;
-        width: 40px;
-        fill: $star-color;
-        transform-origin: center center;
-      }
-      $delay: 0s;
-      @for $i from 1 to 4 {
-        .starIcon:nth-child(#{$i}),
-        .halfStarIcon {
-          animation: starAnim-#{$i} 1s ease-out $delay infinite;
-        }
-        $delay: $delay + 0.1s;
-      }
-    }
+    // .starsContainer {
+    //   .starIcon,
+    //   .halfStarIcon {
+    //     height: 40px;
+    //     width: 40px;
+    //     fill: $star-color;
+    //     transform-origin: center center;
+    //   }
+    //   $delay: 0s;
+    //   @for $i from 1 to 4 {
+    //     .starIcon:nth-child(#{$i}),
+    //     .halfStarIcon {
+    //       animation: starAnim-#{$i} 1s ease-out $delay infinite;
+    //     }
+    //     $delay: $delay + 0.1s;
+    //   }
+    // }
     &:hover {
       .starsContainer {
         $current-anim-time: 0.3s;
@@ -85,5 +85,16 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes randomMotion {
+  0% {
+    top: #{rand(0, 100)}vh;
+    left: #{rand(0, 100)}vw;
+  }
+  100% {
+    top: #{rand(0, 100)}vh;
+    left: #{rand(0, 100)}vw;
   }
 }
