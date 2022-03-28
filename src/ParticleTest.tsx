@@ -1,12 +1,13 @@
 import { createRef, RefObject, useEffect, useRef } from 'react'
 import SimplexNoise from 'simplex-noise'
-import { Position } from 'data/interface'
+import { Particle, Point } from 'data/interface'
 import { SVG_CLIP_PATHS } from 'helpers/constants'
 import {
 	detectCollision,
 	distance,
 	getRandomNumber,
-	mapInRange
+	mapInRange,
+	resolveCollision
 } from 'helpers/utils'
 import spline from 'helpers/spline'
 
@@ -58,38 +59,11 @@ const ParticleTest = () => {
 		}
 	}
 
-	const simplex = new SimplexNoise()
-
-	// how fast we progress through "time"
-	const noiseStep = 0.005
-
-	// return a value at {x point in time} {y point in time}
-	const noise = (x: number, y: number) => simplex.noise2D(x, y)
-
 	const animate = () => {
 		context!.clearRect(0, 0, innerWidth, innerHeight)
 		blobs.forEach(blob => {
-			blob.update()
+			blob.update(blobs)
 		})
-
-		// for (let i = 0; i < points.length; i++) {
-		// 	const point = points[i]
-
-		// 	// return a pseudo random value between -1 / 1 based on this point's current x, y positions in "time"
-		// 	const nX = noise(point.noiseOffsetX, point.noiseOffsetX)
-		// 	const nY = noise(point.noiseOffsetY, point.noiseOffsetY)
-		// 	// map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
-		// 	const x = mapInRange(nX, -1, 1, point.originX - 20, point.originX + 20)
-		// 	const y = mapInRange(nY, -1, 1, point.originY - 20, point.originY + 20)
-
-		// 	// update the point's current coordinates
-		// 	point.x = x
-		// 	point.y = y
-
-		// 	// progress the point's x, y values through "time"
-		// 	point.noiseOffsetX += noiseStep
-		// 	point.noiseOffsetY += noiseStep
-		// }
 
 		// const hueNoise = noise(hueNoiseOffset, hueNoiseOffset)
 		// const hue = map(hueNoise, -1, 1, 0, 360)
@@ -116,8 +90,24 @@ class Blob {
 	y: number
 	radius: number
 	color: string
-	velocityX: number = getRandomNumber(-0.5, 0.5)
-	velocityY: number = getRandomNumber(-0.5, 0.5)
+	velocity = {
+		x: getRandomNumber(-0.5, 0.5),
+		y: getRandomNumber(-0.5, 0.5)
+	}
+	mass = 1
+	points: Point[] = []
+	simplex: SimplexNoise
+
+	// how fast we progress through "time"
+	noiseStep = 0.003
+
+	// return a value at {x point in time} {y point in time}
+	private noise = (x: number, y: number) => this.simplex.noise2D(x, y)
+
+	// how many points do we need
+	numPoints = 6
+	// used to equally space each point around the circle
+	angleStep = (Math.PI * 2) / this.numPoints
 
 	constructor(
 		context: CanvasRenderingContext2D,
@@ -131,13 +121,15 @@ class Blob {
 		this.y = y
 		this.radius = radius
 		this.color = color
+		this.points = this.getCirclePoints()
+		this.simplex = new SimplexNoise()
 	}
 
-	private draw = (points: Position[]) => {
+	private draw = () => {
 		this.context.fillStyle = this.color //sets fill color
 
 		//creates path for blob
-		const pathData = spline(points, 1)
+		const pathData = spline(this.points, 1)
 
 		//sets and fills the path
 		const path = new Path2D(pathData)
@@ -146,21 +138,17 @@ class Blob {
 	}
 
 	private getCirclePoints = () => {
-		const points = []
-		// how many points do we need
-		const numPoints = 6
-		// used to equally space each point around the circle
-		const angleStep = (Math.PI * 2) / numPoints
+		const p = []
 
-		for (let i = 1; i <= numPoints; i++) {
+		for (let i = 1; i <= this.numPoints; i++) {
 			// x & y coordinates of the current point
-			const theta = i * angleStep
+			const theta = i * this.angleStep
 
 			const x = this.x + Math.cos(theta) * this.radius
 			const y = this.y + Math.sin(theta) * this.radius
 
 			// store the point
-			points.push({
+			p.push({
 				x: x,
 				y: y,
 				originX: x,
@@ -169,28 +157,69 @@ class Blob {
 				noiseOffsetY: getRandomNumber(0, 1000)
 			})
 		}
-
-		return points
+		return p
 	}
 
 	private containInside = () => {
 		if (this.x - this.radius <= 0 || this.radius + this.x >= innerWidth) {
-			this.velocityX *= -1
-		} else if (
-			this.y - this.radius <= 0 ||
-			this.radius + this.y >= innerHeight
-		) {
-			this.velocityY *= -1
+			this.velocity.x *= -1
+		}
+		if (this.y - this.radius <= 0 || this.radius + this.y >= innerHeight) {
+			this.velocity.y *= -1
 		}
 	}
 
-	update = () => {
-		this.draw(this.getCirclePoints())
+	private updateShape = () => {
+		for (let i = 0; i < this.points.length; i++) {
+			const point = this.points[i]
+
+			// return a pseudo random value between -1 / 1 based on this point's current x, y Particles in "time"
+			const nX = this.noise(point.noiseOffsetX, point.noiseOffsetX)
+			const nY = this.noise(point.noiseOffsetY, point.noiseOffsetY)
+
+			// map this noise value to a new value, somewhere between it's original location -20 and it's original location + 20
+			const x = mapInRange(nX, -1, 1, point.originX - 5, point.originX + 5)
+			const y = mapInRange(nY, -1, 1, point.originY - 5, point.originY + 5)
+
+			// update the point's current coordinates
+			point.x = x
+			point.y = y
+
+			const theta = i * this.angleStep
+			point.originX = this.x + Math.cos(theta) * this.radius
+			point.originY = this.y + Math.sin(theta) * this.radius
+
+			// progress the point's x, y values through "time"
+			point.noiseOffsetX += this.noiseStep
+			point.noiseOffsetY += this.noiseStep
+		}
+	}
+
+	private handleCollision = (blobs: Blob[]) => {
+		blobs.forEach(blob => {
+			if (
+				this !== blob &&
+				detectCollision(
+					this,
+					{ x: blob.x, y: blob.y },
+					this.radius,
+					blob.radius
+				)
+			) {
+				resolveCollision(this, blob)
+			}
+		})
+	}
+
+	update = (blobs: Blob[]) => {
+		this.updateShape()
+		this.draw()
 
 		this.containInside()
+		this.handleCollision(blobs)
 
-		this.x += this.velocityX
-		this.y += this.velocityY
+		this.x += this.velocity.x
+		this.y += this.velocity.y
 	}
 }
 

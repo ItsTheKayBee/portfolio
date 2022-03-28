@@ -113,11 +113,21 @@ export interface ProjectsData extends DataWithButton {
 	technologies: string[]
 }
 
-export type Position = {
+export type Particle = {
 	x: number
 	y: number
-	originX?: number
-	originY?: number
-	noiseOffsetX?: number
-	noiseOffsetY?: number
+	velocity?: {
+		x: number
+		y: number
+	}
+	mass?: number
+}
+
+export type Point = {
+	x: number
+	y: number
+	originX: number
+	originY: number
+	noiseOffsetX: number
+	noiseOffsetY: number
 }
