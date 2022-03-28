@@ -1,6 +1,6 @@
-import { Position } from 'data/interface'
+import { Particle } from 'data/interface'
 
-const formatPoints = (positions: Position[], close: boolean) => {
+const formatPoints = (positions: Particle[], close: boolean) => {
 	const points = positions.map(({ x, y }) => [x, y])
 
 	if (close) {
@@ -20,7 +20,7 @@ const formatPoints = (positions: Position[], close: boolean) => {
 	return points.flat()
 }
 
-const spline = (positions: Position[], tension = 1) => {
+const spline = (positions: Particle[], tension = 1) => {
 	const close = true
 	const points = formatPoints(positions, close)
 
