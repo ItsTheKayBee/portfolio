@@ -1,5 +1,5 @@
 import SimplexNoise from 'simplex-noise'
-import { Point } from 'data/interface'
+import { Image as ImageType, Point } from 'data/interface'
 import spline from 'helpers/spline'
 import {
 	detectCollision,
@@ -32,6 +32,9 @@ export default class Blob {
 	mass: number
 	points: Point[] = []
 	simplex: SimplexNoise
+	ratings: number
+	image: ImageType
+	img: HTMLImageElement
 
 	// return a value at {x point in time} {y point in time}
 	private noise = (x: number, y: number) => this.simplex.noise2D(x, y)
@@ -41,7 +44,9 @@ export default class Blob {
 		x: number,
 		y: number,
 		radius: number,
-		color: string
+		color: string,
+		image: ImageType,
+		ratings: number
 	) {
 		this.context = context
 		this.x = x
@@ -51,6 +56,9 @@ export default class Blob {
 		this.points = this.getCirclePoints()
 		this.simplex = new SimplexNoise()
 		this.mass = radius / MAX_RADIUS
+		this.image = image
+		this.ratings = ratings
+		this.img = new Image()
 	}
 
 	private draw = () => {
@@ -62,7 +70,20 @@ export default class Blob {
 		//sets and fills the path
 		const path = new Path2D(pathData)
 
+		this.renderImage()
+
 		this.context.fill(path)
+	}
+
+	private renderImage = () => {
+		if (!this.img.src) {
+			this.img.onload = () => {
+				this.context.drawImage(this.img, 0, 0, this.img.height, this.img.width)
+			}
+			this.img.src = this.image.url
+			this.img.alt = this.image.alt
+			this.img.style.zIndex = '10'
+		}
 	}
 
 	private getCirclePoints = () => {

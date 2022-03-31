@@ -3,7 +3,6 @@ import { portfolioDataObject, statsData } from 'data'
 import '../styles/globals.scss'
 import { useEffect, useState } from 'react'
 import { TOTAL_NUMBER_OF_SECTIONS } from 'helpers/constants'
-import ParticleTest from 'ParticleTest'
 
 const About = dynamic(() => import('../components/about'))
 const Achievements = dynamic(() => import('../components/achievements'))
@@ -48,7 +47,7 @@ const App = (): JSX.Element => {
 						/>
 					))}
 			</div>
-			{/* <div>
+			<div>
 				<About
 					{...portfolioDataObject.about}
 					stats={statsData.stats}
@@ -78,8 +77,7 @@ const App = (): JSX.Element => {
 					{...portfolioDataObject.contact}
 					isActive={currentSection === 6}
 				/>
-			</div> */}
-			<ParticleTest />
+			</div>
 		</main>
 	)
 }

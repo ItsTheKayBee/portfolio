@@ -1,6 +1,12 @@
 @import "styles/variables";
 @import "styles/utils";
 
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .skills {
   // display: flex;
   // gap: 48px 0px;
