@@ -31,7 +31,7 @@ const App = (): JSX.Element => {
 			})
 			setTimeout(() => {
 				isScrolling = true
-			}, 2000)
+			}, 200)
 		}
 	}
 

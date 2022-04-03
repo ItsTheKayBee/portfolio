@@ -117,3 +117,8 @@ export const resolveCollision = (
 		otherParticle.velocity!.y = vFinal2.y
 	}
 }
+
+/*
+ *	Negative safe mod
+ */
+export const mod = (n: number, m: number) => ((n % m) + m) % m

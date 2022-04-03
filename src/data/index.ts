@@ -88,70 +88,91 @@ export const portfolioDataObject: PortfolioData = {
 			{
 				image: {
 					alt: 'Python',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Python.svg'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'React',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/React.svg'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
+					alt: 'Javascript',
+					url: '/logos/Javascript.svg'
+				},
+				ratings: 2.5
+			},
+			{
+				image: {
+					alt: 'Android',
+					url: '/logos/Android.svg'
+				},
+				ratings: 2
+			},
+			{
+				image: {
+					alt: 'Dart',
+					url: '/logos/Dart.svg'
+				},
+				ratings: 2
+			},
+			{
+				image: {
 					alt: 'Next.js',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Nextjs.svg'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Sass',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Sass.svg'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Java',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Java.svg'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Flutter',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Flutter.svg'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Firebase',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Firebase.svg'
 				},
 				ratings: 1.5
 			},
 			{
 				image: {
 					alt: 'TypeScript',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Typescript.svg'
 				},
 				ratings: 1
 			},
 			{
 				image: {
 					alt: 'React Native',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/React_Native.svg'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Blockchain',
-					url: 'https://via.placeholder.com/200'
+					url: '/logos/Ethereum.svg'
 				},
 				ratings: 1.5
 			}

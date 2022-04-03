@@ -1,103 +1,76 @@
+import Image from 'next/image'
+import { CSSProperties, RefObject, useEffect, useRef, useState } from 'react'
 import HalfStar from 'components/icon/HalfStar'
 import Star from 'components/icon/Star'
 import { Image as ImageType, SkillsType } from 'data/interface'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { MAX_RADIUS, MIN_RADIUS, SVG_CLIP_PATHS } from 'helpers/constants'
-import { getRandomNumber, detectCollision } from 'helpers/utils'
-import { RefObject, useRef, useEffect } from 'react'
-import Blob from './Blob'
+import { SVG_CLIP_PATHS } from 'helpers/constants'
+import { animated, easings, useSpring } from 'react-spring'
+import { mod } from 'helpers/utils'
+import Skill from './skill'
 
 const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
-	const canvasRef: RefObject<HTMLCanvasElement> = useRef(null)
-	let context: CanvasRenderingContext2D | null
-	const blobs: Blob[] = []
-	const OFFSET = 15
-	let canvas: HTMLCanvasElement | null
+	const [currImage, setCurrImage] = useState(0)
+	const [styleObject, setStyleObject] = useState<CSSProperties[]>([])
+	const figureRef: RefObject<HTMLDivElement> = useRef(null)
+
+	const n = data.length
+	const theta = (2 * Math.PI) / n
+
+	const handleRotation = (e: React.MouseEvent<HTMLElement>, s: number) => {
+		e.stopPropagation()
+
+		setCurrImage(c => c + s)
+	}
 
 	useEffect(() => {
-		canvas = canvasRef.current
-		if (canvas !== null) {
-			context = canvas.getContext('2d')!
-			context.canvas.width = innerWidth
-			context.canvas.height = innerHeight
-			const img = document.getElementById('img')!
+		carousel()
 
-			context!.drawImage(img as HTMLImageElement, 0, 0)
+		window.addEventListener('resize', carousel)
 
-			// renderBlobs()
+		return () => {
+			window.removeEventListener('resize', carousel)
 		}
-		return () => {}
 	}, [])
 
-	const renderBlobs = (): void => {
-		for (let i = 0; i < data.length; i++) {
-			const color = `rgb(${getRandomNumber(0, 255)},${getRandomNumber(
-				0,
-				255
-			)},${getRandomNumber(0, 255)})`
-			const r = getRandomNumber(MIN_RADIUS, MAX_RADIUS)
-			const vRadius = r + OFFSET
-			let tempX = getRandomNumber(vRadius, innerWidth - vRadius)
-			let tempY = getRandomNumber(vRadius, innerHeight - vRadius)
+	const carousel = () => {
+		const skills = figureRef.current!.children
+		setupCarousel(parseFloat(getComputedStyle(skills[0]).width))
+	}
 
-			// Generate a non-overlapping position
-			if (i !== 0) {
-				for (let j = 0; j < blobs.length; j++) {
-					const { x, y, radius } = blobs[j]
-					if (
-						detectCollision(
-							{ x: tempX, y: tempY },
-							{ x: x, y: y },
-							radius,
-							vRadius
-						)
-					) {
-						tempX = getRandomNumber(vRadius, innerWidth - vRadius)
-						tempY = getRandomNumber(vRadius, innerHeight - vRadius)
-						j--
-					}
+	const setupCarousel = (s: number) => {
+		const apothem = s / (2 * Math.tan(Math.PI / n))
+		figureRef.current!.style.transformOrigin = `50% 50% ${-apothem}px`
+
+		for (let i = 1; i < n; i++) {
+			setStyleObject(s => {
+				const tempArray = [...s]
+				tempArray[i] = {
+					...s[i],
+					transformOrigin: `50% 50% ${-apothem}px`,
+					transform: `rotateY(${i * theta}rad)`
 				}
-			}
-
-			blobs.push(
-				new Blob(
-					context!,
-					tempX,
-					tempY,
-					r,
-					color,
-					data[i].image,
-					data[i].ratings
-				)
-			)
+				return tempArray
+			})
 		}
+		// if (bfc)
+		// 	for (let i = 0; i < n; i++)
+		// 		setStyleObject(s => {
+		// 			const tempArray = [...s]
+		// 			tempArray[i] = {
+		// 				...s[i],
+		// 				backfaceVisibility: 'hidden'
+		// 			}
+		// 			return tempArray
+		// 		})
 	}
 
-	const animate = () => {
-		//clear old state of canvas
-		context!.clearRect(0, 0, innerWidth, innerHeight)
-
-		// for each blob, call update method
-		blobs.forEach(blob => {
-			blob.update(blobs)
-		})
-
-		// const hueNoise = noise(hueNoiseOffset, hueNoiseOffset)
-		// const hue = map(hueNoise, -1, 1, 0, 360)
-
-		// root.style.setProperty('--startColor', `hsl(${hue}, 100%, 75%)`)
-		// root.style.setProperty('--stopColor', `hsl(${hue + 60}, 100%, 75%)`)
-		// document.body.style.background = `hsl(${hue + 60}, 75%, 5%)`
-
-		// hueNoiseOffset += noiseStep / 6
-
-		requestAnimationFrame(animate)
-	}
-
-	useEffect(() => {
-		animate()
-	}, [])
+	const animatedProps = useSpring({
+		to: {
+			rotateY: `${currImage * -theta}rad`
+		}
+	})
 
 	return (
 		<div
@@ -106,55 +79,56 @@ const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 			}`}
 		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
-			<img src='https://www.w3schools.com/html/pic_trulli.jpg' id='img' />
-			<canvas ref={canvasRef} className={styles.canvas} />
+			<div className={styles.carousel}>
+				<animated.figure
+					className={styles.skills}
+					style={animatedProps}
+					ref={figureRef}
+				>
+					{data.map(({ image, ratings }, key) => {
+						const safeCurr = mod(currImage, n)
+						return (
+							<Skill
+								image={image}
+								ratings={ratings}
+								id={key}
+								key={key}
+								style={styleObject[key]}
+								isCurrent={safeCurr === key}
+							/>
+						)
+					})}
+				</animated.figure>
+				<nav>
+					<button
+						onClick={(e: React.MouseEvent<HTMLElement>) =>
+							handleRotation(e, -1)
+						}
+					>
+						Prev
+					</button>
+					<button
+						onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, 1)}
+					>
+						Next
+					</button>
+				</nav>
+			</div>
 		</div>
 	)
 }
 
-// const Skill = ({
-// 	image,
-// 	ratings,
-// 	id
-// }: {
-// 	image: ImageType
-// 	ratings: number
-// 	id: number
-// }) => {
-// 	return (
-// 		<div className={styles.skill}>
-// 			<Image
-// 				src={image.url}
-// 				alt={image.alt}
-// 				height={150}
-// 				width={150}
-// 				className={styles[`skillImage${id + 1}`]}
-// 			/>
-// 			<svg viewBox='0 0 200 200' fill='none' className={styles.blob}>
-// 				<clipPath
-// 					id={`clipper${id + 1}`}
-// 					clipPathUnits='objectBoundingBox'
-// 					className={styles.clipPath}
-// 				>
-// 					<path d={SVG_CLIP_PATHS[id]} />
-// 				</clipPath>
-// 			</svg>
-// 			{/* <Stars count={ratings} /> */}
-// 		</div>
-// 	)
-// }
-
-// const Stars = ({ count }: { count: number }): JSX.Element => {
-// 	return (
-// 		<div className={styles.starsContainer}>
-// 			{Array(Math.floor(count))
-// 				.fill(0)
-// 				.map((_, key) => (
-// 					<Star key={key} />
-// 				))}
-// 			{count % 1 !== 0 && <HalfStar />}
-// 		</div>
-// 	)
-// }
+const Stars = ({ count }: { count: number }): JSX.Element => {
+	return (
+		<div className={styles.starsContainer}>
+			{Array(Math.floor(count))
+				.fill(0)
+				.map((_, key) => (
+					<Star key={key} />
+				))}
+			{count % 1 !== 0 && <HalfStar />}
+		</div>
+	)
+}
 
 export default Skills
