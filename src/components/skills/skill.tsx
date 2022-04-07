@@ -43,14 +43,11 @@ const Skill = ({
 	}, [])
 
 	const resize = () => {
-		setTranslatePath(
-			parseFloat(getComputedStyle(skillRef.current!).width) / 3.5
-		)
+		// setTranslatePath(parseFloat(getComputedStyle(skillRef.current!).width) / 2)
 	}
 
 	const animatedProps = useSpring({
 		path: SVG_CLIP_PATHS[pathIndex],
-
 		config: {
 			duration: duration,
 			easing: easings.easeInOutQuad
@@ -58,37 +55,41 @@ const Skill = ({
 	})
 
 	return (
-		<div className={styles.skill} style={style} ref={skillRef}>
-			<div className={styles.background}>
-				<svg viewBox='0 0 200 200' fill='white' className={styles.glow}>
-					<animated.path
-						d={animatedProps.path}
-						style={{
-							transform: `translate(${translatePath}px, ${translatePath}px)`
-						}}
-					/>
-				</svg>
-				<svg viewBox='0 0 200 200' fill='white' className={styles.blob}>
-					<clipPath
-						id={`clipper${id + 1}`}
-						clipPathUnits='objectBoundingBox'
-						className={styles.clipPath}
-					>
-						<animated.path
-							d={animatedProps.path}
-							style={{
-								transform: `translate(${translatePath}px, ${translatePath}px)`
-							}}
-						/>
-					</clipPath>
-				</svg>
-				<Image
-					src={image.url}
-					alt={image.alt}
-					layout='fill'
-					className={styles[`skillImage${id + 1}`]}
+		<div className={styles.skill} style={style}>
+			<svg viewBox='0 0 200 200' className={styles.glow}>
+				<animated.path
+					d={animatedProps.path}
+					style={{
+						transform: `translate(50%, 50%)`
+					}}
 				/>
-			</div>
+			</svg>
+			<svg viewBox='0 0 200 200' className={styles.border}>
+				<animated.path
+					d={animatedProps.path}
+					style={{
+						transform: `translate(50%, 50%)`
+					}}
+				/>
+				<defs>
+					<linearGradient id='gradient' x1='0' y1='0' x2='1' y2='1'>
+						<stop offset='0%' stop-color='red' />
+						<stop offset='50%' stop-color='black' stop-opacity='0' />
+						<stop offset='100%' stop-color='yellow' />
+					</linearGradient>
+				</defs>
+			</svg>
+			<svg viewBox='0 0 200 200' className={styles.blob}>
+				<animated.path
+					d={animatedProps.path}
+					style={{
+						transform: `translate(50%, 50%)`
+					}}
+					className={styles.path}
+				/>
+			</svg>
+
+			<img src={image.url} alt={image.alt} className={styles.skillImage} />
 
 			{/* <Stars count={ratings} /> */}
 		</div>
