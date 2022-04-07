@@ -6,6 +6,28 @@ $item-width: 40%; // Width of an image. In the Js version this value can be a pe
 $item-separation: 0; // The space between the images. This will decrease the effective item width
 $viewer-distance: 500px;
 
+$glow-offset: 10px;
+$border-offset: 2px;
+
+.arrowButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @media (max-width: 768px) {
+    display: none;
+  }
+  &.left {
+    left: 5%;
+  }
+  &.right {
+    right: 5%;
+  }
+}
+
 .carousel {
   padding: 20px;
 
@@ -41,8 +63,8 @@ $viewer-distance: 500px;
 
       .skillImage {
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 50% !important;
+        left: 50% !important;
         transform: translate(-50%, -50%);
         width: 30%;
       }
@@ -56,10 +78,10 @@ $viewer-distance: 500px;
       }
       .border {
         position: absolute;
-        top: -2px;
-        left: -2px;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
+        top: -1 * $border-offset;
+        left: -1 * $border-offset;
+        width: calc(100% + 2 * $border-offset);
+        height: calc(100% + 2 * $border-offset);
         fill: url(#gradient);
         z-index: -1;
       }
@@ -67,6 +89,11 @@ $viewer-distance: 500px;
         width: 100%;
         height: 100%;
         z-index: -2;
+        position: absolute;
+        top: -1 * $glow-offset;
+        left: -1 * $glow-offset;
+        width: calc(100% + 2 * $glow-offset);
+        height: calc(100% + 2 * $glow-offset);
         filter: blur(30px);
         fill: url(#gradient);
       }

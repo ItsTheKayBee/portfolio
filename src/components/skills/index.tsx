@@ -1,14 +1,12 @@
-import Image from 'next/image'
 import { CSSProperties, RefObject, useEffect, useRef, useState } from 'react'
-import HalfStar from 'components/icon/HalfStar'
-import Star from 'components/icon/Star'
-import { Image as ImageType, SkillsType } from 'data/interface'
+import { Image, SkillsType } from 'data/interface'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { SVG_CLIP_PATHS } from 'helpers/constants'
-import { animated, easings, useSpring } from 'react-spring'
+import { animated, useSpring } from 'react-spring'
 import { mod } from 'helpers/utils'
 import Skill from './skill'
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 	const [currImage, setCurrImage] = useState(0)
@@ -43,27 +41,18 @@ const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 		const apothem = s / (2 * Math.tan(Math.PI / n))
 		figureRef.current!.style.transformOrigin = `50% 50% ${-apothem}px`
 
-		for (let i = 1; i < n; i++) {
+		for (let i = 0; i < n; i++) {
 			setStyleObject(s => {
 				const tempArray = [...s]
 				tempArray[i] = {
 					...s[i],
 					transformOrigin: `50% 50% ${-apothem}px`,
-					transform: `rotateY(${i * theta}rad)`
+					transform: `rotateY(${i * theta}rad)`,
+					backfaceVisibility: 'hidden'
 				}
 				return tempArray
 			})
 		}
-		// if (bfc)
-		// 	for (let i = 0; i < n; i++)
-		// 		setStyleObject(s => {
-		// 			const tempArray = [...s]
-		// 			tempArray[i] = {
-		// 				...s[i],
-		// 				backfaceVisibility: 'hidden'
-		// 			}
-		// 			return tempArray
-		// 		})
 	}
 
 	const animatedProps = useSpring({
@@ -79,54 +68,40 @@ const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 			}`}
 		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
-			<div className={styles.carousel}>
-				<animated.figure
-					className={styles.skills}
-					style={animatedProps}
-					ref={figureRef}
+			<div>
+				<button
+					onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, -1)}
+					className={`${styles.arrowButton} ${styles.left}`}
 				>
-					{data.map(({ image, ratings }, key) => {
-						const safeCurr = mod(currImage, n)
-						return (
-							<Skill
-								image={image}
-								ratings={ratings}
-								id={key}
-								key={key}
-								style={styleObject[key]}
-								isCurrent={safeCurr === key}
-							/>
-						)
-					})}
-				</animated.figure>
-				<nav>
-					<button
-						onClick={(e: React.MouseEvent<HTMLElement>) =>
-							handleRotation(e, -1)
-						}
+					<FontAwesomeIcon icon={faCaretLeft} color='white' size='3x' />
+				</button>
+				<div className={styles.carousel}>
+					<animated.figure
+						className={styles.skills}
+						style={animatedProps}
+						ref={figureRef}
 					>
-						Prev
-					</button>
-					<button
-						onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, 1)}
-					>
-						Next
-					</button>
-				</nav>
+						{data.map(({ image }, key) => {
+							const safeCurr = mod(currImage, n)
+							return (
+								<Skill
+									image={image}
+									id={key}
+									key={key}
+									style={styleObject[key]}
+									isCurrent={safeCurr === key}
+								/>
+							)
+						})}
+					</animated.figure>
+				</div>
+				<button
+					onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, 1)}
+					className={`${styles.arrowButton} ${styles.right}`}
+				>
+					<FontAwesomeIcon icon={faCaretRight} color='white' size='3x' />
+				</button>
 			</div>
-		</div>
-	)
-}
-
-const Stars = ({ count }: { count: number }): JSX.Element => {
-	return (
-		<div className={styles.starsContainer}>
-			{Array(Math.floor(count))
-				.fill(0)
-				.map((_, key) => (
-					<Star key={key} />
-				))}
-			{count % 1 !== 0 && <HalfStar />}
 		</div>
 	)
 }
