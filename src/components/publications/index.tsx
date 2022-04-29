@@ -4,17 +4,9 @@ import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const Publications = ({
-	title,
-	data,
-	isActive
-}: PublicationsType): JSX.Element => {
+const Publications = ({ title, data }: PublicationsType): JSX.Element => {
 	return (
-		<div
-			className={`${sectionStyles.section} ${
-				isActive ? sectionStyles.active : ''
-			}`}
-		>
+		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((pub, key) => (
 				<Publication key={key} {...pub} id={key} />

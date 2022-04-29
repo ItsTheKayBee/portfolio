@@ -8,12 +8,12 @@ const Skill = ({
 	image,
 	id,
 	style,
-	isCurrent
+	isSeen
 }: {
 	image: ImageType
 	id: number
 	style: CSSProperties
-	isCurrent: boolean
+	isSeen: boolean
 }) => {
 	const duration = 2000
 	const [pathIndex, setPathIndex] = useState(id)
@@ -23,7 +23,7 @@ const Skill = ({
 	})
 
 	useEffect(() => {
-		if (isCurrent) {
+		if (isSeen) {
 			const changePath = setInterval(() => {
 				setPathIndex(p => (p + 1) % SVG_CLIP_PATHS.length)
 			}, duration)
@@ -51,7 +51,7 @@ const Skill = ({
 				clearInterval(changePath)
 			}
 		}
-	}, [isCurrent])
+	}, [isSeen])
 
 	const blobAnimProps = useSpring({
 		path: SVG_CLIP_PATHS[pathIndex],
@@ -74,7 +74,7 @@ const Skill = ({
 
 	return (
 		<div className={styles.skill} style={style}>
-			{isCurrent && (
+			{isSeen && (
 				<>
 					<svg viewBox='0 0 200 200' className={styles.glow}>
 						<animated.path

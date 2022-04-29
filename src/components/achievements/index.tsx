@@ -6,13 +6,10 @@ import styles from './index.module.scss'
 const Achievements = ({
 	title,
 	data,
-	isActive
 }: AchievementsType): JSX.Element => {
 	return (
 		<div
-			className={`${sectionStyles.section} ${
-				isActive ? sectionStyles.active : ''
-			}`}
+			className={sectionStyles.section}
 		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.achievementsContainer}>

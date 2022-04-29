@@ -1,14 +1,11 @@
 import { CSSProperties, RefObject, useEffect, useRef, useState } from 'react'
-import { Image, SkillsType } from 'data/interface'
+import { SkillsType } from 'data/interface'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { animated, useSpring } from 'react-spring'
 import { mod } from 'helpers/utils'
 import Skill from './skill'
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
+const Skills = ({ title, data }: SkillsType): JSX.Element => {
 	const [currImage, setCurrImage] = useState(0)
 	const [styleObject, setStyleObject] = useState<CSSProperties[]>([])
 	const figureRef: RefObject<HTMLDivElement> = useRef(null)
@@ -55,30 +52,14 @@ const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 		}
 	}
 
-	const animatedProps = useSpring({
-		to: {
-			rotateY: `${currImage * -theta}rad`
-		}
-	})
-
 	return (
-		<div
-			className={`${sectionStyles.section} ${
-				isActive ? sectionStyles.active : ''
-			}`}
-		>
+		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div>
-				<button
-					onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, -1)}
-					className={`${styles.arrowButton} ${styles.left}`}
-				>
-					<FontAwesomeIcon icon={faCaretLeft} color='white' size='3x' />
-				</button>
 				<div className={styles.carousel}>
-					<animated.figure
+					<figure
 						className={styles.skills}
-						style={animatedProps}
+						style={{ transform: `rotateY(${currImage * -theta}rad)` }}
 						ref={figureRef}
 					>
 						{data.map(({ image }, key) => {
@@ -89,18 +70,12 @@ const Skills = ({ title, data, isActive }: SkillsType): JSX.Element => {
 									id={key}
 									key={key}
 									style={styleObject[key]}
-									isCurrent={safeCurr === key}
+									isSeen={safeCurr === key}
 								/>
 							)
 						})}
-					</animated.figure>
+					</figure>
 				</div>
-				<button
-					onClick={(e: React.MouseEvent<HTMLElement>) => handleRotation(e, 1)}
-					className={`${styles.arrowButton} ${styles.right}`}
-				>
-					<FontAwesomeIcon icon={faCaretRight} color='white' size='3x' />
-				</button>
 			</div>
 		</div>
 	)

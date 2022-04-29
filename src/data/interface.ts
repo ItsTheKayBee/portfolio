@@ -13,26 +13,22 @@ export interface PortfolioData {
 export type ProjectsType = {
 	title: string
 	data: ProjectsData[]
-	isActive?: boolean
 }
 
 export type AchievementsType = {
 	title: string
 	data: DataWithButton[]
-	isActive?: boolean
 }
 
 export type PublicationsType = {
 	title: string
 	data: DataWithButton[]
-	isActive?: boolean
 }
 
 export type ContactType = {
 	title: string
 	data: IconTextButton[]
 	image: Image
-	isActive?: boolean
 }
 
 export type SkillsType = {
@@ -41,7 +37,6 @@ export type SkillsType = {
 		image: Image
 		ratings: number
 	}[]
-	isActive?: boolean
 }
 
 export type AboutType = {
@@ -51,7 +46,6 @@ export type AboutType = {
 	social: IconButton[]
 	resume: Button
 	subTitle: string
-	isActive?: boolean
 }
 
 export type StatsType = {
@@ -66,7 +60,6 @@ export type KeyValue = {
 export type ExperiencesType = {
 	title: string
 	data: DataWithDates[]
-	isActive?: boolean
 }
 
 export type Image = {
@@ -95,7 +88,6 @@ export type Data = {
 	subTitle: string
 	description: string
 	id?: number
-	isActive?: boolean
 }
 
 export interface DataWithDates extends Data {

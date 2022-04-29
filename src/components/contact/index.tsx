@@ -3,18 +3,9 @@ import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const Contact = ({
-	title,
-	data,
-	image,
-	isActive
-}: ContactType): JSX.Element => {
+const Contact = ({ title, data, image }: ContactType): JSX.Element => {
 	return (
-		<div
-			className={`${sectionStyles.section} ${
-				isActive ? sectionStyles.active : ''
-			}`}
-		>
+		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={`${sectionStyles.subSection} ${styles.contact}`}>
 				<div className='col a-center'>
