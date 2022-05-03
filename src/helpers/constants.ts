@@ -33,3 +33,13 @@ export const TOTAL_NUMBER_OF_SECTIONS = 7
 
 export const MIN_RADIUS = 65
 export const MAX_RADIUS = 85
+
+export const ROUTES = {
+	publications: '/publications',
+	about: '/about',
+	experiences: '/experiences',
+	achievements: '/achievements',
+	contact: '/contact',
+	skills: '/skills',
+	projects: '/projects'
+}

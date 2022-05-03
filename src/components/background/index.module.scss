@@ -3,7 +3,16 @@
   overflow-y: hidden;
   .svg {
     .objects {
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
+
+      .objectImage {
+        transition: all 0.5s ease-out;
+        &:hover {
+          transform: translateY(-50px);
+        }
+      }
     }
 
     .moon {

@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { ROUTES } from 'helpers/constants'
+import { useRouter } from 'next/router'
+import { RefObject, useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import {
 	ABOUT,
@@ -19,6 +21,10 @@ import {
 
 const Background = () => {
 	const container = useRef<HTMLDivElement>(null)
+	const skillsRef = useRef<SVGGElement>(null)
+	const experienceRef = useRef<SVGGElement>(null)
+	const achievementsRef = useRef<SVGGElement>(null)
+
 	const [windowDims, setWindow] = useState({
 		innerHeight: 0,
 		innerWidth: 0,
@@ -29,7 +35,7 @@ const Background = () => {
 	const [totalWidth, setTotalWidth] = useState(0)
 	const [scrollPosition, setScrollPosition] = useState(0)
 
-	const ease = 0.5
+	const ease = 0.3
 
 	const lerp = (start: number, end: number, t: number) =>
 		start * (1 - t) + end * t
@@ -47,12 +53,31 @@ const Background = () => {
 		)
 		setScrollPosition(container.current?.scrollLeft ?? 0)
 
-		updateSkyHue((container.current!.scrollLeft / totalWidth) * 405)
+		updateSkyHue((container.current!.scrollLeft / totalWidth) * 400)
 		updateGroundHue((container.current!.scrollLeft / totalWidth) * 400)
 	}
 
 	const getSpeed = (factor: number) =>
 		`translateX(${scrollPosition * factor}px)`
+
+	const router = useRouter()
+
+	const inView = (elem: RefObject<SVGElement>) => {
+		const properties = elem.current?.getBoundingClientRect() ?? {
+			left: 0,
+			width: 0
+		}
+		const left = properties.left
+		const elemSize = -properties.width
+
+		return left >= 0 && left - elemSize <= windowDims.innerWidth
+	}
+
+	const route = (href: string) => {
+		setTimeout(() => {
+			router.push(href)
+		}, 2000)
+	}
 
 	return (
 		<div className={styles.bgWrapper} ref={container} onWheel={scroll}>
@@ -191,7 +216,7 @@ const Background = () => {
 							width='112'
 							height='111'
 							xlinkHref={MOON1}
-							style={{ transform: getSpeed(1.25) }}
+							style={{ transform: getSpeed(1.025) }}
 						/>
 						<image
 							id='moon'
@@ -201,7 +226,7 @@ const Background = () => {
 							width='266'
 							height='252'
 							xlinkHref={MOON}
-							style={{ transform: getSpeed(1.2) }}
+							style={{ transform: getSpeed(1) }}
 						/>
 						<image
 							id='clouds'
@@ -235,11 +260,15 @@ const Background = () => {
 							style={{ filter: `hue-rotate(${groundHue}deg)` }}
 						/>
 					</g>
-					<g id='Publications'>
+					<g
+						id='Publications'
+						className={`${styles.publications} ${styles.objects}`}
+						onClick={() => route(ROUTES.publications)}
+					>
 						<image
 							id='publications-2'
-							className={`${styles.publications} ${styles.objects}`}
 							data-name='publications'
+							className={styles.objectImage}
 							x='4222'
 							y='740'
 							width='445'
@@ -254,12 +283,17 @@ const Background = () => {
 							transform='translate(-11714)'
 						/>
 					</g>
-					<g id='Contact' style={{ transform: getSpeed(-0.1) }}>
+					<g
+						id='Contact'
+						style={{ transform: getSpeed(-0.1) }}
+						onClick={() => route(ROUTES.contact)}
+						className={`${styles.contact} ${styles.objects}`}
+					>
 						<image
 							id='contact-2'
 							data-name='contact'
-							className={`${styles.contact} ${styles.objects}`}
 							x='4702'
+							className={styles.objectImage}
 							y='58'
 							width='810'
 							height='579'
@@ -273,14 +307,19 @@ const Background = () => {
 							transform='translate(-11714)'
 						/>
 					</g>
-					<g id='Achievements' style={{ transform: getSpeed(-0.2) }}>
+					<g
+						id='Achievements'
+						onClick={() => route(ROUTES.achievements)}
+						style={{ transform: getSpeed(-0.2) }}
+						className={`${styles.achievements} ${styles.objects}`}
+					>
 						<image
 							id='achievements-2'
 							data-name='achievements'
-							className={`${styles.achievements} ${styles.objects}`}
 							x='3070'
 							y='77'
 							width='652'
+							className={styles.objectImage}
 							height='542'
 							xlinkHref={ACHIEVEMENTS}
 						/>
@@ -292,12 +331,17 @@ const Background = () => {
 							transform='translate(-11714)'
 						/>
 					</g>
-					<g id='Skills'>
+					<g
+						id='Skills'
+						onClick={() => route(ROUTES.skills)}
+						ref={skillsRef}
+						className={`${styles.skills} ${styles.objects}`}
+					>
 						<image
 							id='skills-2'
 							data-name='skills'
-							className={`${styles.skills} ${styles.objects}`}
 							x='2289'
+							className={styles.objectImage}
 							y='573'
 							width='561'
 							height='361'
@@ -312,13 +356,17 @@ const Background = () => {
 						/>
 					</g>
 
-					<g id='Projects'>
+					<g
+						id='Projects'
+						className={`${styles.projects} ${styles.objects}`}
+						onClick={() => route(ROUTES.projects)}
+					>
 						<image
 							id='projects-2'
 							data-name='projects'
-							className={`${styles.projects} ${styles.objects}`}
 							x='1031'
 							y='590'
+							className={styles.objectImage}
 							width='285'
 							height='358'
 							xlinkHref={PROJECTS}
@@ -331,14 +379,19 @@ const Background = () => {
 							transform='translate(-11714)'
 						/>
 					</g>
-					<g id='About' style={{ transform: getSpeed(-0.2) }}>
+					<g
+						id='About'
+						onClick={() => route(ROUTES.about)}
+						style={{ transform: getSpeed(-0.2) }}
+						className={`${styles.about} ${styles.objects}`}
+					>
 						<image
 							id='about-2'
 							data-name='about'
-							className={`${styles.about} ${styles.objects}`}
 							x='1409'
 							y='111'
 							width='436'
+							className={styles.objectImage}
 							height='244'
 							xlinkHref={ABOUT}
 						/>
@@ -350,16 +403,21 @@ const Background = () => {
 							transform='translate(-11714)'
 						/>
 					</g>
-					<g id='Experiences' style={{ transform: getSpeed(0.4) }}>
+					<g
+						id='Experiences'
+						onClick={() => route(ROUTES.experiences)}
+						style={{ transform: getSpeed(0.4) }}
+						className={`${styles.experiences} ${styles.objects}`}
+					>
 						<image
 							id='experiences-2'
 							data-name='experiences'
-							className={`${styles.experiences} ${styles.objects}`}
 							x='151'
 							y='215'
 							width='660'
 							height='397'
 							xlinkHref={EXPERIENCE}
+							className={styles.objectImage}
 						/>
 						<path
 							id='EXPERIENCES-3'

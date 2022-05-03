@@ -464,11 +464,6 @@ balanced-match@^1.0.0:
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-bezier-easing@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
-  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
-
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
@@ -1487,13 +1482,6 @@ p-try@^1.0.0:
   resolved "https://registry.npmjs.org/p-try/-/p-try-1.0.0.tgz"
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
-parallax-controller@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/parallax-controller/-/parallax-controller-1.4.0.tgz#2588383010688742d489de86442d8c8162817bff"
-  integrity sha512-sNDvyww8gS5glisJLuSC1ZdMXkvMkQnenkFLbQWZ3HzOzimtW99oAHXJacyGijh1d7PfEJlGofBM97iMNhh8NQ==
-  dependencies:
-    bezier-easing "^2.1.0"
-
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz"
@@ -1592,17 +1580,15 @@ react-feather@^2.0.9:
   dependencies:
     prop-types "^15.7.2"
 
+react-intersection-observer@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.1.0.tgz#27e66be9113fdf6fc6d745e849e1ad6ef20f97f1"
+  integrity sha512-XSDWQGzgJ4/B4eW39+qa3S+uc4Gb+m6lxXR54m/uD5lqeL5sLrgYdntbjl4BlTYAblgUhz+JB5obINhZaD+c0Q==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-
-react-scroll-parallax@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-scroll-parallax/-/react-scroll-parallax-3.1.0.tgz#087cb641c1d4f6ee321f73952ab74f2d6cf1d985"
-  integrity sha512-L9vMS5zEsBlIPTfREJ7UuFF0chC+VH7sjUK6IficDTBhKF2hJDTJJcYyE7H/BTYTVj7TwsoVDRWsnJj2kcYjCA==
-  dependencies:
-    parallax-controller "^1.4.0"
 
 react-spring@^9.4.4:
   version "9.4.4"

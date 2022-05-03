@@ -2,29 +2,27 @@ import dynamic from 'next/dynamic'
 import { portfolioDataObject, statsData } from 'data'
 import '../styles/globals.scss'
 import Background from 'components/background'
-import { ParallaxProvider } from 'react-scroll-parallax'
 
-const About = dynamic(() => import('../components/about'))
-const Achievements = dynamic(() => import('../components/achievements'))
-const Contact = dynamic(() => import('../components/contact'))
-const Experience = dynamic(() => import('../components/experience'))
-const Projects = dynamic(() => import('../components/projects'))
-const Publications = dynamic(() => import('../components/publications'))
-const Skills = dynamic(() => import('../components/skills'))
+const About = dynamic(() => import('./about'))
+const Achievements = dynamic(() => import('./achievements'))
+const Contact = dynamic(() => import('./contact'))
+const Experience = dynamic(() => import('./experience'))
+const Projects = dynamic(() => import('./projects'))
+const Publications = dynamic(() => import('./publications'))
+const Skills = dynamic(() => import('./skills'))
 
 const App = (): JSX.Element => {
 	return (
-		<ParallaxProvider>
-			<main className='main'>
-				<Background />
-				{/* <div className='bg'>
+		<main className='main'>
+			<Background />
+			{/* <div className='bg'>
 				{Array(4)
 					.fill(0)
 					.map((_, key) => (
 						<div className='aurora aurora-1' key={key} />
 						))}
 					</div> */}
-				{/* <div>
+			{/* <div>
 				<About {...portfolioDataObject.about} stats={statsData.stats} />
 				<Experience {...portfolioDataObject.experiences} />
 				<Skills {...portfolioDataObject.skills} />
@@ -33,8 +31,7 @@ const App = (): JSX.Element => {
 				<Publications {...portfolioDataObject.publications} />
 				<Contact {...portfolioDataObject.contact} />
 			</div> */}
-			</main>
-		</ParallaxProvider>
+		</main>
 	)
 }
 
