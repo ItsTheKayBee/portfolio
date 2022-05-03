@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic'
 import { portfolioDataObject, statsData } from 'data'
 import '../styles/globals.scss'
+import Background from 'components/background'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const About = dynamic(() => import('../components/about'))
 const Achievements = dynamic(() => import('../components/achievements'))
@@ -12,15 +14,17 @@ const Skills = dynamic(() => import('../components/skills'))
 
 const App = (): JSX.Element => {
 	return (
-		<main className='main'>
-			<div className='bg'>
+		<ParallaxProvider>
+			<main className='main'>
+				<Background />
+				{/* <div className='bg'>
 				{Array(4)
 					.fill(0)
 					.map((_, key) => (
 						<div className='aurora aurora-1' key={key} />
-					))}
-			</div>
-			<div>
+						))}
+					</div> */}
+				{/* <div>
 				<About {...portfolioDataObject.about} stats={statsData.stats} />
 				<Experience {...portfolioDataObject.experiences} />
 				<Skills {...portfolioDataObject.skills} />
@@ -28,8 +32,9 @@ const App = (): JSX.Element => {
 				<Achievements {...portfolioDataObject.achievements} />
 				<Publications {...portfolioDataObject.publications} />
 				<Contact {...portfolioDataObject.contact} />
-			</div>
-		</main>
+			</div> */}
+			</main>
+		</ParallaxProvider>
 	)
 }
 

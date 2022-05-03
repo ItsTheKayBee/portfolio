@@ -1,0 +1,64 @@
+.bgWrapper {
+  height: 100vh;
+  overflow-y: hidden;
+  .svg {
+    .objects {
+      cursor: pointer;
+    }
+
+    .moon {
+      opacity: 0.6;
+    }
+
+    .moon1 {
+      opacity: 0.55;
+    }
+
+    .clouds {
+      opacity: 0.8;
+    }
+
+    .stars {
+      opacity: 0.7;
+    }
+
+    .cls10,
+    .cls11,
+    .cls5,
+    .cls6,
+    .cls7,
+    .cls8,
+    .cls9 {
+      fill: #fff;
+      fill-rule: evenodd;
+    }
+
+    .cls5 {
+      filter: url(#filter);
+    }
+
+    .cls6 {
+      filter: url(#filter2);
+    }
+
+    .cls7 {
+      filter: url(#filter3);
+    }
+
+    .cls8 {
+      filter: url(#filter4);
+    }
+
+    .cls9 {
+      filter: url(#filter5);
+    }
+
+    .cls10 {
+      filter: url(#filter6);
+    }
+
+    .cls11 {
+      filter: url(#filter7);
+    }
+  }
+}

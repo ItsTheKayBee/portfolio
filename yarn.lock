@@ -464,6 +464,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+bezier-easing@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
+  integrity sha1-wE3+i5JtbsrKGBPWn/F5t8ICXYY=
+
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
@@ -1482,6 +1487,13 @@ p-try@^1.0.0:
   resolved "https://registry.npmjs.org/p-try/-/p-try-1.0.0.tgz"
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
+parallax-controller@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/parallax-controller/-/parallax-controller-1.4.0.tgz#2588383010688742d489de86442d8c8162817bff"
+  integrity sha512-sNDvyww8gS5glisJLuSC1ZdMXkvMkQnenkFLbQWZ3HzOzimtW99oAHXJacyGijh1d7PfEJlGofBM97iMNhh8NQ==
+  dependencies:
+    bezier-easing "^2.1.0"
+
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz"
@@ -1585,6 +1597,13 @@ react-is@^16.13.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-scroll-parallax@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-parallax/-/react-scroll-parallax-3.1.0.tgz#087cb641c1d4f6ee321f73952ab74f2d6cf1d985"
+  integrity sha512-L9vMS5zEsBlIPTfREJ7UuFF0chC+VH7sjUK6IficDTBhKF2hJDTJJcYyE7H/BTYTVj7TwsoVDRWsnJj2kcYjCA==
+  dependencies:
+    parallax-controller "^1.4.0"
+
 react-spring@^9.4.4:
   version "9.4.4"
   resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-9.4.4.tgz#0a53440013f97c1ebaa739a24a902487f36a5c1e"
@@ -1596,14 +1615,6 @@ react-spring@^9.4.4:
     "@react-spring/three" "~9.4.4"
     "@react-spring/web" "~9.4.4"
     "@react-spring/zdog" "~9.4.4"
-
-react-tsparticles@^1.42.4:
-  version "1.42.4"
-  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-1.42.4.tgz#da35107241aaa7ed1936563bdeacafd63bb42539"
-  integrity sha512-+k9YII74PmgMXMi0Ei8A0O1e5g4zisF13Ux5TJWe0MQKUtjzt7Cf4dHd+HulxJMPRQ5W46z2F54f7k7VO4iPEg==
-  dependencies:
-    fast-deep-equal "^3.1.3"
-    tsparticles "^1.42.4"
 
 react@17.0.2:
   version "17.0.2"
@@ -1834,11 +1845,6 @@ tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tsparticles@^1.42.4:
-  version "1.42.4"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.42.4.tgz#63f0615c44d88c6e7d5e10e7ea1fb7eba1164b76"
-  integrity sha512-tfjh6hZFID+5mIdqIvAvmpGymG5kFIxB2k1fs0SIDemo7iL9qnQyvI3HankxfRtCblcwRoEYj/g5phdIhqY8vA==
 
 tsutils@^3.21.0:
   version "3.21.0"
