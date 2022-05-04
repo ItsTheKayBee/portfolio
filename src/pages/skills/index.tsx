@@ -4,8 +4,11 @@ import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { mod } from 'helpers/utils'
 import Skill from './skill'
+import { portfolioDataObject } from 'data'
 
-const Skills = ({ title, data }: SkillsType): JSX.Element => {
+const Skills = (): JSX.Element => {
+	const { title, data }: SkillsType = portfolioDataObject.skills
+
 	const [currImage, setCurrImage] = useState(0)
 	const [styleObject, setStyleObject] = useState<CSSProperties[]>([])
 	const figureRef: RefObject<HTMLDivElement> = useRef(null)

@@ -1,8 +1,11 @@
+import { statsData } from 'data'
 import { KeyValue, StatsType } from 'data/interface'
 import { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 
-const Stats = ({ stats }: StatsType): JSX.Element => {
+const Stats = (): JSX.Element => {
+	const { stats }: StatsType = statsData
+
 	return (
 		<div className={styles.strip}>
 			{stats.map((stat, key) => {

@@ -1,16 +1,18 @@
+import { portfolioDataObject } from 'data'
 import { DataWithDates, ExperiencesType } from 'data/interface'
 import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 
-const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
+const ExperienceSection = (): JSX.Element => {
+	const { title, data }: ExperiencesType = portfolioDataObject.experiences
+
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div>
-				{data.map((exp, key) => (
-					<Experience key={key} {...exp} id={key} />
-				))}
+				{data &&
+					data.map((exp, key) => <Experience key={key} {...exp} id={key} />)}
 			</div>
 		</div>
 	)

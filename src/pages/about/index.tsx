@@ -2,18 +2,14 @@ import Image from 'next/image'
 import Stats from 'components/stats'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { AboutType, Button, IconButton, StatsType } from 'data/interface'
+import { AboutType, Button, IconButton } from 'data/interface'
 import Download from 'components/icon/Download'
+import { portfolioDataObject } from 'data'
 
-const About = ({
-	position,
-	description,
-	resume,
-	image,
-	social,
-	stats,
-	subTitle
-}: AboutType & StatsType): JSX.Element => {
+const About = (): JSX.Element => {
+	const { position, description, resume, image, social, subTitle }: AboutType =
+		portfolioDataObject.about
+
 	return (
 		<div className={`${styles.about} ${sectionStyles.section}`}>
 			<div className={`${styles.mainContent} dWeb`}>
@@ -55,7 +51,7 @@ const About = ({
 				<SocialMediaStrip resume={resume} social={social} />
 				{/* </div> */}
 			</div>
-			<Stats stats={stats} />
+			<Stats />
 		</div>
 	)
 }

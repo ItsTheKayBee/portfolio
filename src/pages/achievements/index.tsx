@@ -1,16 +1,14 @@
-import { AchievementsType, DataWithButton } from 'data/interface'
 import Image from 'next/image'
+import { AchievementsType, DataWithButton } from 'data/interface'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
+import { portfolioDataObject } from 'data'
 
-const Achievements = ({
-	title,
-	data,
-}: AchievementsType): JSX.Element => {
+const Achievements = (): JSX.Element => {
+	const { title, data }: AchievementsType = portfolioDataObject.achievements
+
 	return (
-		<div
-			className={sectionStyles.section}
-		>
+		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.achievementsContainer}>
 				{data.map((achievement, key) => {

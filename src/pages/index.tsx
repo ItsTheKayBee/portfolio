@@ -1,6 +1,6 @@
+import Background from 'components/background'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import App from './_app'
 
 const Home: NextPage = () => {
 	return (
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 			</Head>
 
-			<App />
+			<Background />
 		</div>
 	)
 }

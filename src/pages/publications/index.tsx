@@ -1,10 +1,13 @@
 import Arrow from 'components/icon/Arrow'
+import { portfolioDataObject } from 'data'
 import { DataWithButton, PublicationsType } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
-const Publications = ({ title, data }: PublicationsType): JSX.Element => {
+const Publications = (): JSX.Element => {
+	const { title, data }: PublicationsType = portfolioDataObject.publications
+
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
