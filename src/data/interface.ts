@@ -87,6 +87,7 @@ export type Data = {
 	title: string
 	subTitle: string
 	description: string
+	current?: number
 	id?: number
 }
 
