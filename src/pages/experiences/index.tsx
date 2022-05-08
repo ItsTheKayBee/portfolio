@@ -1,14 +1,13 @@
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { RefObject, useEffect, useRef, useState } from 'react'
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 import { portfolioDataObject } from 'data'
-import { DataWithDates, ExperiencesType } from 'data/interface'
+import { DataWithDates, ExperiencesType, Particle } from 'data/interface'
 import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 import { Canvas, useFrame } from '@react-three/fiber'
 
-import { PerspectiveCamera } from '@react-three/drei'
 import Lazypay from 'components/models/Lazypay'
 
 const ExperienceSection = (): JSX.Element => {
@@ -44,24 +43,16 @@ const ExperienceSection = (): JSX.Element => {
 	)
 }
 
-function Box(props: JSX.IntrinsicElements['mesh']) {
+const Experience3d = ({ children }: { children: any }): JSX.Element => {
 	const mesh = useRef<THREE.Mesh>(null!)
-	const [hovered, setHover] = useState(false)
-	const [active, setActive] = useState(false)
-	return (
-		<mesh
-			{...props}
-			ref={mesh}
-			scale={active ? 1.5 : 1}
-			onClick={event => setActive(!active)}
-			onPointerOver={event => setHover(true)}
-			onPointerOut={event => setHover(false)}
-		>
-			<boxGeometry args={[2, 2, 2]} />
-			<meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-		</mesh>
-	)
+
+	useFrame(() => {
+		mesh.current.rotation.y -= 0.01
+	})
+
+	return <mesh ref={mesh}>{children}</mesh>
 }
+
 const Experience = ({
 	title,
 	subTitle,
@@ -81,9 +72,11 @@ const Experience = ({
 				{/* <Image src={image.url} alt={image.alt} height={200} width={200} /> */}
 				<Canvas>
 					<ambientLight />
-					<rectAreaLight position={[-7, -2, 3]} intensity={2} color='#FFD0EA' />
-					<rectAreaLight position={[7, -2, 3]} intensity={2} color='#FFD0EA' />
-					<Lazypay />
+					<rectAreaLight position={[-7, 0, 3]} intensity={4} color='#FFD0EA' />
+					<rectAreaLight position={[7, 0, 3]} intensity={4} color='#FFD0EA' />
+					<Experience3d>
+						<Lazypay />
+					</Experience3d>
 				</Canvas>
 			</div>
 			<div className='col'>
