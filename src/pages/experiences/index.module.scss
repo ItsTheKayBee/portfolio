@@ -1,5 +1,23 @@
+@import "styles/section.module.scss";
+
 .experiences {
-  background: url("/images/experiences.svg");
-  background-position: center;
-  background-size: cover;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    filter: opacity(0.8);
+    z-index: -1;
+  }
+
+  .sectionTitle {
+    @extend %sectionTitle;
+    color: black;
+  }
+
+  .object3d {
+    height: 300px;
+  }
 }

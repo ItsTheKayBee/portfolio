@@ -1,5 +1,11 @@
-.publication {
-  .button {
-    margin-top: 24px;
+.publications {
+  background: url("/images/publications.svg");
+  background-position: center;
+  background-size: cover;
+
+  .publication {
+    .button {
+      margin-top: 24px;
+    }
   }
 }

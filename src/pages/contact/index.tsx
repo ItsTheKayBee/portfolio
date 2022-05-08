@@ -8,7 +8,7 @@ const Contact = (): JSX.Element => {
 	const { title, data, image }: ContactType = portfolioDataObject.contact
 
 	return (
-		<div className={sectionStyles.section}>
+		<div className={`${sectionStyles.section} ${styles.contactContainer}`}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={`${sectionStyles.subSection} ${styles.contact}`}>
 				<div className='col a-center'>

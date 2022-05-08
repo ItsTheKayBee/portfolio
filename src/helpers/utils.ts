@@ -1,4 +1,5 @@
 import { KeyValue, Particle } from 'data/interface'
+import { RefObject } from 'react'
 
 /**
  *  Returns difference between 2 dates
@@ -122,3 +123,23 @@ export const resolveCollision = (
  *	Negative safe mod
  */
 export const mod = (n: number, m: number) => ((n % m) + m) % m
+
+/*
+ * Function to check if object is in viewport
+ */
+export const inView = (elem: RefObject<SVGElement>, innerWidth: number) => {
+	const properties = elem.current?.getBoundingClientRect() ?? {
+		left: 0,
+		width: 0
+	}
+	const left = properties.left
+	const elemSize = -properties.width
+
+	return left >= 0 && left - elemSize <= innerWidth
+}
+
+/*
+ * Linear interpolation
+ */
+export const lerp = (start: number, end: number, t: number) =>
+	start * (1 - t) + end * t

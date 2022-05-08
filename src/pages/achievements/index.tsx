@@ -8,7 +8,7 @@ const Achievements = (): JSX.Element => {
 	const { title, data }: AchievementsType = portfolioDataObject.achievements
 
 	return (
-		<div className={sectionStyles.section}>
+		<div className={`${sectionStyles.section} ${styles.achievements}`}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.achievementsContainer}>
 				{data.map((achievement, key) => {

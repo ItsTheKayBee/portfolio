@@ -28,103 +28,109 @@ $border-offset: 2px;
   }
 }
 
-.carousel {
-  padding: 20px;
+.skillsContainer {
+  background: url("/images/skills.svg");
+  background-position: center;
+  background-size: cover;
+  .carousel {
+    padding: 20px;
 
-  perspective: $viewer-distance;
-  overflow: hidden;
+    perspective: $viewer-distance;
+    overflow: hidden;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  > * {
-    flex: 0 0 auto;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > * {
+      flex: 0 0 auto;
+    }
 
-  .skills {
-    margin: 0;
-    width: $item-width;
-    transform-style: preserve-3d;
-    transition: transform 1s ease-out;
-    height: 400px;
-    .skill {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      cursor: pointer;
-      padding: 0 $item-separation / 2;
-      padding: 20px;
-      position: relative;
-      &:not(:first-of-type) {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
+    .skills {
+      margin: 0;
+      width: $item-width;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-out;
+      height: 400px;
 
-      .skillImage {
-        position: absolute;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%);
-        width: 30%;
-      }
-      .blob {
-        position: absolute;
-        top: 0;
-        left: 0;
+      .skill {
         width: 100%;
         height: 100%;
-        fill: white;
-      }
-      .border {
-        position: absolute;
-        top: -1 * $border-offset;
-        left: -1 * $border-offset;
-        width: calc(100% + 2 * $border-offset);
-        height: calc(100% + 2 * $border-offset);
-        fill: url(#gradient);
-        z-index: -1;
-      }
-      .glow {
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-        position: absolute;
-        top: -1 * $glow-offset;
-        left: -1 * $glow-offset;
-        width: calc(100% + 2 * $glow-offset);
-        height: calc(100% + 2 * $glow-offset);
-        filter: blur(30px);
-        fill: url(#gradient);
-      }
+        box-sizing: border-box;
+        cursor: pointer;
+        padding: 0 $item-separation / 2;
+        padding: 20px;
+        position: relative;
+        &:not(:first-of-type) {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
 
-      // .starsContainer {
-      //   .starIcon,
-      //   .halfStarIcon {
-      //     height: 40px;
-      //     width: 40px;
-      //     fill: $star-color;
-      //     transform-origin: center center;
-      //   }
-      //   $delay: 0s;
-      //   @for $i from 1 to 4 {
-      //     .starIcon:nth-child(#{$i}),
-      //     .halfStarIcon {
-      //       animation: starAnim-#{$i} 1s ease-out $delay infinite;
-      //     }
-      //     $delay: $delay + 0.1s;
-      //   }
-      // }
-      &:hover {
-        .starsContainer {
-          $current-anim-time: 0.3s;
-          $anim-time: 0.3s;
-          @for $i from 1 to 4 {
-            .starIcon:nth-child(#{$i}),
-            .halfStarIcon {
-              animation: fadeIn $current-anim-time cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        .skillImage {
+          position: absolute;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%);
+          width: 30%;
+        }
+        .blob {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          fill: white;
+        }
+        .border {
+          position: absolute;
+          top: -1 * $border-offset;
+          left: -1 * $border-offset;
+          width: calc(100% + 2 * $border-offset);
+          height: calc(100% + 2 * $border-offset);
+          fill: url(#gradient);
+          z-index: -1;
+        }
+        .glow {
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          position: absolute;
+          top: -1 * $glow-offset;
+          left: -1 * $glow-offset;
+          width: calc(100% + 2 * $glow-offset);
+          height: calc(100% + 2 * $glow-offset);
+          filter: blur(30px);
+          fill: url(#gradient);
+        }
+
+        // .starsContainer {
+        //   .starIcon,
+        //   .halfStarIcon {
+        //     height: 40px;
+        //     width: 40px;
+        //     fill: $star-color;
+        //     transform-origin: center center;
+        //   }
+        //   $delay: 0s;
+        //   @for $i from 1 to 4 {
+        //     .starIcon:nth-child(#{$i}),
+        //     .halfStarIcon {
+        //       animation: starAnim-#{$i} 1s ease-out $delay infinite;
+        //     }
+        //     $delay: $delay + 0.1s;
+        //   }
+        // }
+        &:hover {
+          .starsContainer {
+            $current-anim-time: 0.3s;
+            $anim-time: 0.3s;
+            @for $i from 1 to 4 {
+              .starIcon:nth-child(#{$i}),
+              .halfStarIcon {
+                animation: fadeIn $current-anim-time cubic-bezier(0.455, 0.03, 0.515, 0.955);
+              }
+              $current-anim-time: $current-anim-time + $anim-time;
             }
-            $current-anim-time: $current-anim-time + $anim-time;
           }
         }
       }

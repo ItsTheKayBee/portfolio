@@ -9,7 +9,7 @@ const Projects = (): JSX.Element => {
 	const { title, data }: ProjectsType = portfolioDataObject.projects
 
 	return (
-		<div className={sectionStyles.section}>
+		<div className={`${sectionStyles.section} ${styles.projects}`}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((project, key) => {
 				return <Project key={key} {...project} id={key} />

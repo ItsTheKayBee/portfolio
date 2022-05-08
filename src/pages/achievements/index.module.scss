@@ -1,32 +1,38 @@
-.achievementsContainer {
-  display: flex;
-  gap: 32px 12px;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  .achievement {
-    width: 250px;
-    border: 1px solid;
-    padding: 24px;
-    border-radius: 32px;
-    flex-direction: column;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-    .title {
-      font-size: 21px;
-      line-height: 28px;
-      font-weight: 800;
-      margin: 12px 0 2px;
-    }
-    .subTitle {
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .description {
-      font-size: 14px;
-      line-height: 21px;
+.achievements {
+  background: url("/images/achievements.svg");
+  background-position: center;
+  background-size: cover;
+
+  .achievementsContainer {
+    display: flex;
+    gap: 32px 12px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .achievement {
+      width: 250px;
+      border: 1px solid;
+      padding: 24px;
+      border-radius: 32px;
+      flex-direction: column;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .title {
+        font-size: 21px;
+        line-height: 28px;
+        font-weight: 800;
+        margin: 12px 0 2px;
+      }
+      .subTitle {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .description {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   }
 }

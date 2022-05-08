@@ -1,19 +1,26 @@
-.project {
-  .button {
-    margin-top: 24px;
-  }
-  .chipContainer {
-    display: flex;
-    gap: 8px 12px;
-    margin-top: 10px;
-    .chip {
-      background-color: green;
-      font-size: 11px;
-      padding: 4px 10px;
-      color: white;
-      &:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
+.projects {
+  background: url("/images/projects.svg");
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(1);
+
+  .project {
+    .button {
+      margin-top: 24px;
+    }
+    .chipContainer {
+      display: flex;
+      gap: 8px 12px;
+      margin-top: 10px;
+      .chip {
+        background-color: green;
+        font-size: 11px;
+        padding: 4px 10px;
+        color: white;
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
   }

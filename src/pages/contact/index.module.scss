@@ -1,17 +1,22 @@
-.contact {
-  .button {
-    margin-bottom: 16px;
-    @media (max-width: 768px) {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-    }
-    .title {
-      padding-left: 12px;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 700;
-      color: white;
+.contactContainer {
+  background: url("/images/contact.svg");
+  background-position: center;
+  background-size: cover;
+  .contact {
+    .button {
+      margin-bottom: 16px;
+      @media (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+      }
+      .title {
+        padding-left: 12px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        color: white;
+      }
     }
   }
 }

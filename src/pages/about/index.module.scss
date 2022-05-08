@@ -11,6 +11,11 @@
   padding-top: 120px;
   overflow: hidden;
   position: relative;
+  background: url("/images/about.svg");
+  background-position: center;
+  background-size: cover;
+  filter: hue-rotate(50deg);
+ 
   @media (max-width: 768px) {
     height: auto;
     padding-top: 60px;

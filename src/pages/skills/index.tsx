@@ -56,7 +56,7 @@ const Skills = (): JSX.Element => {
 	}
 
 	return (
-		<div className={sectionStyles.section}>
+		<div className={`${sectionStyles.section} ${styles.skillsContainer}`}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div>
 				<div className={styles.carousel}>

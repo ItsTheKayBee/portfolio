@@ -1,6 +1,7 @@
 import { ROUTES } from 'helpers/constants'
+import { lerp } from 'helpers/utils'
 import { useRouter } from 'next/router'
-import { RefObject, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 import {
 	ABOUT,
@@ -20,10 +21,7 @@ import {
 } from './objects'
 
 const Background = () => {
-	const container = useRef<HTMLDivElement>(null)
-	const skillsRef = useRef<SVGGElement>(null)
-	const experienceRef = useRef<SVGGElement>(null)
-	const achievementsRef = useRef<SVGGElement>(null)
+	const ease = 0.3
 
 	const [windowDims, setWindow] = useState({
 		innerHeight: 0,
@@ -35,10 +33,9 @@ const Background = () => {
 	const [totalWidth, setTotalWidth] = useState(0)
 	const [scrollPosition, setScrollPosition] = useState(0)
 
-	const ease = 0.3
+	const container = useRef<HTMLDivElement>(null)
 
-	const lerp = (start: number, end: number, t: number) =>
-		start * (1 - t) + end * t
+	const router = useRouter()
 
 	useEffect(() => {
 		setWindow(window)
@@ -60,23 +57,10 @@ const Background = () => {
 	const getSpeed = (factor: number) =>
 		`translateX(${scrollPosition * factor}px)`
 
-	const router = useRouter()
-
-	const inView = (elem: RefObject<SVGElement>) => {
-		const properties = elem.current?.getBoundingClientRect() ?? {
-			left: 0,
-			width: 0
-		}
-		const left = properties.left
-		const elemSize = -properties.width
-
-		return left >= 0 && left - elemSize <= windowDims.innerWidth
-	}
-
 	const route = (href: string) => {
-		setTimeout(() => {
-			router.push(href)
-		}, 2000)
+		// setTimeout(() => {
+		router.push(href)
+		// }, 2000)
 	}
 
 	return (
@@ -334,7 +318,6 @@ const Background = () => {
 					<g
 						id='Skills'
 						onClick={() => route(ROUTES.skills)}
-						ref={skillsRef}
 						className={`${styles.skills} ${styles.objects}`}
 					>
 						<image
