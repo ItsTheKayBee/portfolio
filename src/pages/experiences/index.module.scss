@@ -16,4 +16,22 @@
     @extend %sectionTitle;
     color: black;
   }
+
+  .close {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    cursor: pointer;
+  }
+
+  .subSection {
+    display: none;
+    .experience3d {
+      transition: all 0.3s ease-out;
+      &:hover {
+        filter: brightness(1.05) contrast(1.1) saturate(1.1) hue-rotate(5deg);
+        transform: scale(1.1);
+      }
+    }
+  }
 }

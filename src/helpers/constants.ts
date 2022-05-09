@@ -41,5 +41,6 @@ export const ROUTES = {
 	achievements: '/achievements',
 	contact: '/contact',
 	skills: '/skills',
-	projects: '/projects'
+	projects: '/projects',
+	home: '/'
 }

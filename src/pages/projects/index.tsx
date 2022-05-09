@@ -1,7 +1,7 @@
+import Image from 'next/image'
 import Arrow from 'components/icon/Arrow'
 import { portfolioDataObject } from 'data'
 import { ProjectsData, ProjectsType } from 'data/interface'
-import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
@@ -10,6 +10,7 @@ const Projects = (): JSX.Element => {
 
 	return (
 		<div className={`${sectionStyles.section} ${styles.projects}`}>
+			<img src='/images/projects.svg' className={styles.bg} />
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((project, key) => {
 				return <Project key={key} {...project} id={key} />

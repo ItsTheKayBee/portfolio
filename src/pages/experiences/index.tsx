@@ -1,25 +1,27 @@
 import Image from 'next/image'
-import { RefObject, useEffect, useRef, useState } from 'react'
-import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
+import { ArrowLeftCircle, ArrowRightCircle, XCircle } from 'react-feather'
+import { useRouter } from 'next/router'
 import { portfolioDataObject } from 'data'
-import { DataWithDates, ExperiencesType, Particle } from 'data/interface'
-import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
+import { DataWithDates, ExperiencesType } from 'data/interface'
+import { DATE_FORMAT_OPTIONS, ROUTES } from 'helpers/constants'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { useCurrent } from 'helpers/hooks/useCurrent'
 
 const ExperienceSection = (): JSX.Element => {
 	const { title, data }: ExperiencesType = portfolioDataObject.experiences
 
-	const [current, setCurrent] = useState(0)
+	const router = useRouter()
+	const { current, switchCurrent } = useCurrent(data.length)
 
-	const switchCurrent = (sign = 1) => {
-		setCurrent(curr => Math.max(0, Math.min(data.length - 1, curr + sign)))
+	const routeBack = () => {
+		router.push(ROUTES.home)
 	}
 
 	return (
 		<div className={`${sectionStyles.section} ${styles.experiences}`}>
 			<img src='/images/experiences.svg' className={styles.bg} />
+			<XCircle className={styles.close} size={32} onClick={routeBack} />
 			<h1 className={styles.sectionTitle}>{title}</h1>
 			<ArrowLeftCircle
 				className={`${sectionStyles.back} ${
@@ -41,16 +43,6 @@ const ExperienceSection = (): JSX.Element => {
 	)
 }
 
-const Experience3d = ({ children }: { children: any }): JSX.Element => {
-	const mesh = useRef<THREE.Mesh>(null!)
-
-	useFrame(() => {
-		mesh.current.rotation.y -= 0.01
-	})
-
-	return <mesh ref={mesh}>{children}</mesh>
-}
-
 const Experience = ({
 	title,
 	subTitle,
@@ -62,12 +54,18 @@ const Experience = ({
 }: DataWithDates): JSX.Element => {
 	return (
 		<div
-			className={`${sectionStyles.subSection} ${
+			className={`${sectionStyles.subSection} ${styles.subSection} ${
 				id % 2 !== 0 ? sectionStyles.reverse : ''
 			} ${id === current ? sectionStyles.active : ''}`}
 		>
 			<div className='col a-center'>
-				<Image src={image.url} alt={image.alt} height={400} width={400} />
+				<Image
+					src={image.url}
+					alt={image.alt}
+					height={400}
+					width={400}
+					className={styles.experience3d}
+				/>
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>
