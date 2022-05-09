@@ -49,7 +49,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
 				image: {
 					alt: 'LazyPay logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/lazypay.png'
 				}
 			},
 			{
@@ -63,7 +63,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
 				image: {
 					alt: 'Arcon logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/arcon.png'
 				}
 			},
 			{
@@ -77,7 +77,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',
 				image: {
 					alt: 'GREedge logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/greedge.png'
 				}
 			}
 		]

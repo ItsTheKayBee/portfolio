@@ -8,7 +8,7 @@ export default props => {
 		<group
 			ref={group}
 			dispose={null}
-			rotation={[0, Math.PI, 0]}
+			rotation={[0.4, Math.PI - 0.4, 0]}
 			scale={1}
 			{...props}
 		>
@@ -20,7 +20,9 @@ export default props => {
 				position={[2.28, -2.16, 0]}
 				rotation={[Math.PI / 2, 0, Math.PI]}
 				scale={592.1}
-			/>
+			>
+				<meshPhongMaterial color='#0ae000' />
+			</mesh>
 			<mesh
 				castShadow
 				receiveShadow

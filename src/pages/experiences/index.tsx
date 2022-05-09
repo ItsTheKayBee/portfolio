@@ -8,8 +8,6 @@ import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 import { Canvas, useFrame } from '@react-three/fiber'
 
-import Lazypay from 'components/models/Lazypay'
-
 const ExperienceSection = (): JSX.Element => {
 	const { title, data }: ExperiencesType = portfolioDataObject.experiences
 
@@ -68,16 +66,8 @@ const Experience = ({
 				id % 2 !== 0 ? sectionStyles.reverse : ''
 			} ${id === current ? sectionStyles.active : ''}`}
 		>
-			<div className={`col a-center ${styles.object3d}`}>
-				{/* <Image src={image.url} alt={image.alt} height={200} width={200} /> */}
-				<Canvas>
-					<ambientLight />
-					<rectAreaLight position={[-7, 0, 3]} intensity={4} color='#FFD0EA' />
-					<rectAreaLight position={[7, 0, 3]} intensity={4} color='#FFD0EA' />
-					<Experience3d>
-						<Lazypay />
-					</Experience3d>
-				</Canvas>
+			<div className='col a-center'>
+				<Image src={image.url} alt={image.alt} height={400} width={400} />
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>
