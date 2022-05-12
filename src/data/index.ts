@@ -195,7 +195,9 @@ export const portfolioDataObject: PortfolioData = {
 				image: {
 					alt: '',
 					url: 'https://via.placeholder.com/200'
-				}
+				},
+				top: 100,
+				left: 800
 			},
 			{
 				title: 'ASSESS',
@@ -209,7 +211,9 @@ export const portfolioDataObject: PortfolioData = {
 				image: {
 					alt: '',
 					url: 'https://via.placeholder.com/200'
-				}
+				},
+				top: 600,
+				left: 1200
 			},
 			{
 				title: 'TorBot',
@@ -225,7 +229,9 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/TorBot',
 					text: 'View Project'
-				}
+				},
+				top: 1100,
+				left: 1560
 			},
 			{
 				title: 'DePay',
@@ -242,7 +248,9 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/DePay',
 					text: 'View Project'
-				}
+				},
+				top: 450,
+				left: 2000
 			},
 			{
 				title: '3D portfolio',
@@ -256,10 +264,12 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://kunalbohra.netlify.app/',
 					text: 'View Project'
-				}
+				},
+				top: 120,
+				left: 1600
 			},
 			{
-				title: 'EssentialsKart - WhatsApp chatbot',
+				title: 'EssentialsKart',
 				subTitle: 'May 2020',
 				description: `A WhatsApp chatbot made on Dialogflow, Python and Twilio API to serve online ordering of 
           essentials items during lockdown period.`,
@@ -271,7 +281,9 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/EssentialsKart',
 					text: 'View Project'
-				}
+				},
+				top: 170,
+				left: 170
 			},
 			{
 				title: 'InstaNote',
@@ -287,10 +299,12 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/InstaNote',
 					text: 'View Project'
-				}
+				},
+				top: 500,
+				left: 500
 			},
 			{
-				title: 'FundEasy - easy fund disbursal',
+				title: 'FundEasy',
 				subTitle: 'Jan 2020',
 				description: `A blockchain-based platform for easy disbursal of funds through the government to the beneficiaries.`,
 				technologies: ['Blockchain', 'Solidity', 'React'],
@@ -301,7 +315,9 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FundEasy',
 					text: 'View Project'
-				}
+				},
+				top: 1000,
+				left: 750
 			},
 			{
 				title: 'Faculty Management System',
@@ -316,10 +332,12 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FacultyManagementSystem',
 					text: 'View Project'
-				}
+				},
+				top: 1150,
+				left: 150
 			},
 			{
-				title: 'Xervixx- A stock market dream fantasy game',
+				title: 'Xervixx',
 				subTitle: 'Jun 2019 - Jul 2019',
 				description: `A full-stack website with a gamified interface to cater the users post loan disbursal. 
         This included a stock market dream fantasy game which users can play to get on the leaderboard.`,
@@ -331,7 +349,9 @@ export const portfolioDataObject: PortfolioData = {
 				button: {
 					link: 'https://github.com/ItsTheKayBee/Xervixx',
 					text: 'View Project'
-				}
+				},
+				top: 1150,
+				left: 2100
 			}
 		]
 	},

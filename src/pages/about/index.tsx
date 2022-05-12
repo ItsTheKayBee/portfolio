@@ -14,18 +14,18 @@ const About = (): JSX.Element => {
 		<div className={`${styles.about} ${sectionStyles.section}`}>
 			<div className={`${styles.mainContent} dWeb`}>
 				<div className={styles.content}>
-					<p className={styles.subTitle}>{subTitle}</p>
+					{/* <p className={styles.subTitle}>{subTitle}</p> */}
 					<h1 className={styles.name}>
 						KUNAL
 						<br />
 						BOHRA
 					</h1>
 					<h2 className={styles.position}>{position}</h2>
-					<p className={styles.description}>{description}</p>
+					{/* <p className={styles.description}>{description}</p> */}
 				</div>
 				<div className={styles.images}>
 					<Image src={image.url} alt={image.alt} height={300} width={200} />
-					<SocialMediaStrip resume={resume} social={social} />
+					{/* <SocialMediaStrip resume={resume} social={social} /> */}
 				</div>
 			</div>
 			<div className={`${styles.mainContent} mWeb`}>
@@ -51,7 +51,7 @@ const About = (): JSX.Element => {
 				<SocialMediaStrip resume={resume} social={social} />
 				{/* </div> */}
 			</div>
-			<Stats />
+			{/* <Stats /> */}
 		</div>
 	)
 }

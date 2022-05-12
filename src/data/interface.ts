@@ -104,6 +104,8 @@ export interface DataWithButton extends Data {
 
 export interface ProjectsData extends DataWithButton {
 	technologies: string[]
+	top: number
+	left: number
 }
 
 export type Particle = {

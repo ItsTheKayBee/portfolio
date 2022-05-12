@@ -1,0 +1,85 @@
+.project {
+  position: absolute;
+  background-color: white;
+  border-radius: 16px;
+  width: 300px;
+  transform-origin: 0 0;
+
+  .mainContent {
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    .projectsTitle {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+    }
+  }
+  .expandable {
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.6s ease-out;
+    overflow: hidden;
+
+    .hiddenContent {
+      padding: 16px;
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    z-index: 1;
+    .expandable {
+      opacity: 1;
+      max-height: 1000px;
+      transition: all 1s ease-out;
+    }
+  }
+
+  // @keyframes fadeIn {
+  //   from {
+  //     opacity: 0;
+  //   }
+  //   to {
+  //     opacity: 1;
+  //   }
+  // }
+  // @keyframes heightUp {
+  //   from {
+  //     max-height: 0;
+  //   }
+  //   to {
+  //     max-height: 1000px;
+  //   }
+  // }
+  // @keyframes widthUp {
+  //   from {
+  //     max-width: 0;
+  //   }
+  //   to {
+  //     max-width: 500px;
+  //   }
+  // }
+
+  .button {
+    margin-top: 24px;
+  }
+  .chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 10px;
+    .chip {
+      background-color: #5661ff;
+      font-size: 11px;
+      padding: 4px 10px;
+      color: white;
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

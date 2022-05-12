@@ -1,11 +1,11 @@
 .projects {
-  overflow: scroll;
+  overflow: auto;
   padding: 0;
   cursor: grab;
 
   .projectContainer {
-    width: 200%;
-    height: 200%;
+    width: 2500px;
+    height: 1500px;
     position: relative;
     .bg {
       position: fixed;
@@ -18,30 +18,11 @@
       filter: grayscale(1);
     }
 
-    .project {
-      position: absolute;
-      background-color: white;
-      padding: 24px;
-      border-radius: 16px;
-
-      .button {
-        margin-top: 24px;
-      }
-      .chipContainer {
-        display: flex;
-        gap: 8px 12px;
-        margin-top: 10px;
-        .chip {
-          background-color: green;
-          font-size: 11px;
-          padding: 4px 10px;
-          color: white;
-          &:hover {
-            transform: scale(1.1);
-            transition: all 0.3s ease-in-out;
-          }
-        }
-      }
+    .title {
+      position: fixed;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
