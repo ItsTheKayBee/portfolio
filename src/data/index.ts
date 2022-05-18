@@ -7,7 +7,7 @@ import { PortfolioData, StatsType } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
 	about: {
-		position: 'Software Development Engineer',
+		position: 'Developer',
 		description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
 			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
 			I like to explore new technologies and I am passionate about trying out new experiences. I have built
@@ -32,7 +32,7 @@ export const portfolioDataObject: PortfolioData = {
 			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
 		},
 		image: {
-			url: 'https://via.placeholder.com/200',
+			url: '/images/profile.png',
 			alt: 'My picture'
 		}
 	},

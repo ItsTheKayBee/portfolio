@@ -93,29 +93,6 @@ a {
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
-  .bg {
-    .aurora {
-      position: absolute;
-      border-radius: 50%;
-    }
-    @for $j from 1 through 7 {
-      @for $i from 1 through 5 {
-        .aurora-#{$j}:nth-child(#{$i}) {
-          @if $i % 2 == 0 {
-            top: #{rand(-50, 200)}px;
-            left: #{rand(-50, 200)}px;
-          } @else {
-            bottom: #{rand(-50, 250)}px;
-            right: #{rand(-50, 250)}px;
-          }
-          width: #{rand(100, 300)}px;
-          height: #{rand(100, 300)}px;
-          background-color: nth($aurora-array, rand(1, length($aurora-array)));
-          filter: blur(#{rand(140, 180)}px);
-        }
-      }
-    }
-  }
   .col {
     flex: 1;
     flex-direction: column;

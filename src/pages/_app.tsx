@@ -10,13 +10,6 @@ const App = ({
 	return (
 		<main className='main'>
 			<Component {...pageProps} />
-			{/* <div className='bg'>
-				{Array(4)
-					.fill(0)
-					.map((_, key) => (
-						<div className='aurora aurora-1' key={key} />
-						))}
-					</div> */}
 		</main>
 	)
 }

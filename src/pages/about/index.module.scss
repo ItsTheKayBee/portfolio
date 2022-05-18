@@ -1,5 +1,5 @@
 @use "sass:list";
-
+@import "styles/utils.scss";
 @import "styles/variables";
 
 .about {
@@ -7,15 +7,14 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 120px;
   overflow: hidden;
-  position: relative;
-  background: url("/images/about.svg");
+  // background: url("/images/about.svg");
   background-position: center;
   background-size: cover;
-  filter: hue-rotate(50deg);
- 
+  background-color: #f3e5f7;
+
   @media (max-width: 768px) {
     height: auto;
     padding-top: 60px;
@@ -25,12 +24,48 @@
     gap: 20px 100px;
     flex-wrap: wrap;
     z-index: 1;
+    .bg {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      .aurora {
+        position: absolute;
+      }
+
+      @mixin render-aurora($color, $top: null, $right: null, $bottom: null, $left: null) {
+        bottom: #{$bottom}px;
+        right: #{$right}px;
+        top: #{$top}px;
+        left: #{$left}px;
+        width: 900px;
+        height: 500px;
+        background-color: $color;
+        filter: blur(50px);
+      }
+
+      .aurora-2 {
+        @include render-aurora(nth($aurora-array, 2), $bottom: 50);
+      }
+      .aurora-3 {
+        @include render-aurora(nth($aurora-array, 3), $top: 50, $right: 0);
+      }
+      .aurora-1 {
+        @include render-aurora(nth($aurora-array, 4), $right: 0, $bottom: 50);
+      }
+      .aurora-4 {
+        @include render-aurora(nth($aurora-array, 1), $top: 50);
+      }
+    }
     .content {
       display: flex;
       flex-direction: column;
       flex: 1;
       color: $text-color;
-      .name {
+      .fname,
+      .lname {
         font-size: 100px;
         font-family: Peace;
         line-height: 100px;
@@ -40,12 +75,19 @@
           line-height: 64px;
         }
       }
+      .lname {
+        text-align: right;
+      }
       .position {
-        font-size: 32px;
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%) rotateZ(90deg);
+        text-transform: uppercase;
+        font-size: 40px;
         line-height: 38px;
-        font-weight: 700;
-        margin-bottom: 20px;
-        letter-spacing: -1px;
+        font-weight: 800;
+        letter-spacing: 10px;
         color: $text-color-100;
         @media (max-width: 768px) {
           font-size: 24px;
@@ -56,11 +98,41 @@
         font-size: 15px;
         line-height: 20px;
         color: $text-color-200;
+        padding-top: 20px;
       }
       .subTitle {
         font-size: 14px;
         font-weight: 500;
         color: $text-color-100;
+      }
+      .contact {
+        display: flex;
+        align-self: center;
+        margin-top: 20px;
+        background-color: $blue-color;
+        color: white;
+        display: flex;
+        align-items: center;
+        width: 250px;
+        .text {
+          padding-right: 12px;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 28px;
+        }
+        .icon {
+          width: 22px;
+          height: 22px;
+          .line {
+            stroke: white;
+            stroke-width: 6px;
+          }
+        }
+        &:hover {
+          .arrow {
+            animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          }
+        }
       }
       .mImage {
         @media (min-width: 769px) {
@@ -81,6 +153,32 @@
       display: flex;
       flex: 1;
       flex-direction: column;
+      position: relative;
+      height: 400px;
+      width: 400px;
+      .blob {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .clipPath {
+          transform: translate(50%, 50%) scale(1.5);
+        }
+      }
+      .blobBg {
+        background-color: burlywood;
+        height: 300px;
+        width: 300px;
+        clip-path: url(#path);
+      }
+      .image {
+        position: absolute;
+        clip-path: url(#path);
+      }
+      .image1 {
+        position: absolute;
+      }
     }
     .socialStrip {
       display: flex;
@@ -99,37 +197,7 @@
           padding: 4px;
         }
       }
-      .downloadResume {
-        display: flex;
-        align-self: center;
-        margin-top: 20px;
-        .downloadButton {
-          background-color: $blue-color;
-          color: white;
-          display: flex;
-          align-items: center;
-          width: 250px;
-          .buttonText {
-            padding-right: 12px;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 28px;
-          }
-          .icon {
-            width: 22px;
-            height: 22px;
-            .line {
-              stroke: white;
-              stroke-width: 6px;
-            }
-          }
-          &:hover {
-            .arrow {
-              animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-          }
-        }
-      }
+
       @media (max-width: 768px) {
         width: 100%;
       }

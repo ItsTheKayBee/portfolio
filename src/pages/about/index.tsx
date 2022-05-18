@@ -1,31 +1,84 @@
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Stats from 'components/stats'
+import { useSpring, easings, animated } from 'react-spring'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { AboutType, Button, IconButton } from 'data/interface'
-import Download from 'components/icon/Download'
+import { AboutType } from 'data/interface'
 import { portfolioDataObject } from 'data'
+import { SVG_CLIP_PATHS } from 'helpers/constants'
+import Arrow from 'components/icon/Arrow'
+import Download from 'components/icon/Download'
 
 const About = (): JSX.Element => {
-	const { position, description, resume, image, social, subTitle }: AboutType =
+	const { position, description, image, subTitle }: AboutType =
 		portfolioDataObject.about
+
+	const duration = 2000
+
+	const [pathIndex, setPathIndex] = useState(0)
+	const [gradientCoords, setGradientCoords] = useState({
+		x: 0,
+		y: 0
+	})
+
+	const blobAnimProps = useSpring({
+		path: SVG_CLIP_PATHS[pathIndex],
+		config: {
+			duration: duration,
+			easing: easings.easeInOutQuad
+		}
+	})
+
+	useEffect(() => {
+		const changePath = setInterval(() => {
+			setPathIndex(p => (p + 1) % SVG_CLIP_PATHS.length)
+		}, duration)
+
+		return () => clearInterval(changePath)
+	}, [])
+
+	const gradRotationProps = useSpring({
+		x1: Math.abs(1 - gradientCoords.x),
+		y1: Math.abs(1 - gradientCoords.y),
+		x2: gradientCoords.y,
+		y2: gradientCoords.y,
+		config: {
+			duration: 1.4 * duration,
+			easing: easings.easeInOutSine
+		}
+	})
 
 	return (
 		<div className={`${styles.about} ${sectionStyles.section}`}>
 			<div className={`${styles.mainContent} dWeb`}>
+				<div className={styles.bg}>
+					{Array(4)
+						.fill(0)
+						.map((_, key) => (
+							<div
+								className={`${styles.aurora} ${styles[`aurora-${key + 1}`]}`}
+								key={key}
+							/>
+						))}
+				</div>
 				<div className={styles.content}>
-					{/* <p className={styles.subTitle}>{subTitle}</p> */}
-					<h1 className={styles.name}>
-						KUNAL
-						<br />
-						BOHRA
-					</h1>
+					<h1 className={styles.fname}>KUNAL</h1>
+					<h1 className={styles.lname}>BOHRA</h1>
 					<h2 className={styles.position}>{position}</h2>
-					{/* <p className={styles.description}>{description}</p> */}
+					<h2 className={styles.description}>{description}</h2>
+					<button className={`button ${styles.contact}`}>
+						<p className={styles.text}>Contact</p>
+						<Download />
+					</button>
 				</div>
 				<div className={styles.images}>
-					<Image src={image.url} alt={image.alt} height={300} width={200} />
-					{/* <SocialMediaStrip resume={resume} social={social} /> */}
+					<img
+						src={image.url}
+						alt={image.alt}
+						height={300}
+						width={300}
+						className={styles.image}
+					/>
 				</div>
 			</div>
 			<div className={`${styles.mainContent} mWeb`}>
@@ -48,15 +101,13 @@ const About = (): JSX.Element => {
 				</div>
 				{/* <div className={styles.images}> */}
 				<p className={styles.description}>{description}</p>
-				<SocialMediaStrip resume={resume} social={social} />
 				{/* </div> */}
 			</div>
-			{/* <Stats /> */}
 		</div>
 	)
 }
 
-const SocialMediaStrip = ({
+/* const SocialMediaStrip = ({
 	resume,
 	social
 }: {
@@ -87,6 +138,6 @@ const SocialMediaStrip = ({
 			</div>
 		</div>
 	)
-}
+} */
 
 export default About
