@@ -2,6 +2,13 @@
 @import "styles/utils.scss";
 @import "styles/variables";
 
+%bgObj {
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  filter: blur(1px);
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -10,9 +17,6 @@
   justify-content: center;
   padding-top: 120px;
   overflow: hidden;
-  // background: url("/images/about.svg");
-  background-position: center;
-  background-size: cover;
   background-color: #f3e5f7;
 
   @media (max-width: 768px) {
@@ -59,6 +63,45 @@
         @include render-aurora(nth($aurora-array, 1), $top: 50);
       }
     }
+    .bgObjects {
+      z-index: -1;
+      .line1 {
+        bottom: 50px;
+        width: 140px;
+        left: 0;
+        @extend %bgObj;
+      }
+      .line2 {
+        bottom: 90px;
+        width: 100px;
+        left: 0;
+        @extend %bgObj;
+      }
+      .hexagons {
+        position: absolute;
+        top: 50px;
+        left: 10px;
+      }
+      .triangles {
+        position: absolute;
+        top: 35%;
+        right: 50px;
+        transform: rotate(180deg);
+      }
+      .star {
+        position: absolute;
+        bottom: 20%;
+        left: 45%;
+        filter: blur(1px);
+      }
+      .square {
+        position: absolute;
+        top: -40px;
+        left: 30%;
+        transform: scale(0.5);
+      }
+    }
+
     .content {
       display: flex;
       flex-direction: column;

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { useSpring, easings, animated } from 'react-spring'
+import { useSpring, easings } from 'react-spring'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { AboutType } from 'data/interface'
 import { portfolioDataObject } from 'data'
 import { SVG_CLIP_PATHS } from 'helpers/constants'
-import Arrow from 'components/icon/Arrow'
 import Download from 'components/icon/Download'
+import Triangles from 'components/objects/Triangles'
+import Hexagons from 'components/objects/hexagons'
+import Star from 'components/objects/Star'
+import Square from 'components/objects/Square'
 
 const About = (): JSX.Element => {
 	const { position, description, image, subTitle }: AboutType =
@@ -60,6 +63,14 @@ const About = (): JSX.Element => {
 								key={key}
 							/>
 						))}
+				</div>
+				<div className={styles.bgObjects}>
+					<div className={styles.line1} />
+					<div className={styles.line2} />
+					<Hexagons className={styles.hexagons} />
+					<Triangles className={styles.triangles} />
+					<Star className={styles.star} />
+					<Square className={styles.square} />
 				</div>
 				<div className={styles.content}>
 					<h1 className={styles.fname}>KUNAL</h1>
