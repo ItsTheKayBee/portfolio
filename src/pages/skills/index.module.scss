@@ -28,6 +28,12 @@ $border-offset: 2px;
   }
 }
 
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .skillsContainer {
   background: url("/images/skills.svg");
   background-position: center;
