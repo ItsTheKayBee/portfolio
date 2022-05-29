@@ -1,35 +1,51 @@
 @import "styles/variables";
 
-.skill {
-  .starsContainer {
-    .starIcon,
-    .halfStarIcon {
-      height: 40px;
-      width: 40px;
-      fill: $star-color;
-      transform-origin: center center;
+.skills {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  .skill {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    .title {
+      font-size: 21px;
+      line-height: 28px;
+      font-weight: 700;
+      font-family: GreyCliff;
     }
-    $delay: 0s;
-    @for $i from 1 to 4 {
-      .starIcon:nth-child(#{$i}),
-      .halfStarIcon {
-        animation: starAnim-#{$i} 1s ease-out $delay infinite;
-      }
-      $delay: $delay + 0.1s;
-    }
-  }
-  &:hover {
-    .starsContainer {
-      $current-anim-time: 0.3s;
-      $anim-time: 0.3s;
-      @for $i from 1 to 4 {
-        .starIcon:nth-child(#{$i}),
-        .halfStarIcon {
-          animation: fadeIn $current-anim-time cubic-bezier(0.455, 0.03, 0.515, 0.955);
-        }
-        $current-anim-time: $current-anim-time + $anim-time;
-      }
-    }
+
+    // .starsContainer {
+    //   .starIcon,
+    //   .halfStarIcon {
+    //     height: 40px;
+    //     width: 40px;
+    //     fill: $star-color;
+    //     transform-origin: center center;
+    //   }
+    //   $delay: 0s;
+    //   @for $i from 1 to 4 {
+    //     .starIcon:nth-child(#{$i}),
+    //     .halfStarIcon {
+    //       animation: starAnim-#{$i} 1s ease-out $delay infinite;
+    //     }
+    //     $delay: $delay + 0.1s;
+    //   }
+    // }
+    // &:hover {
+    //   .starsContainer {
+    //     $current-anim-time: 0.3s;
+    //     $anim-time: 0.3s;
+    //     @for $i from 1 to 4 {
+    //       .starIcon:nth-child(#{$i}),
+    //       .halfStarIcon {
+    //         animation: fadeIn $current-anim-time cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    //       }
+    //       $current-anim-time: $current-anim-time + $anim-time;
+    //     }
+    //   }
+    // }
   }
 }
 

@@ -1,5 +1,3 @@
-import HalfStar from 'components/icon/HalfStar'
-import Star from 'components/icon/Star'
 import { Image as ImageType, SkillsType } from 'data/interface'
 import Image from 'next/image'
 import styles from './index.module.scss'
@@ -9,25 +7,25 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
-			<div>
+			<div className={styles.skills}>
 				{data.map((skill, key) => {
-					return <Skill key={key} image={skill.image} ratings={skill.ratings} />
+					return <Skill key={key} image={skill.image}/>
 				})}
 			</div>
 		</div>
 	)
 }
 
-const Skill = ({ image, ratings }: { image: ImageType; ratings: number }) => {
+const Skill = ({ image }: { image: ImageType }) => {
 	return (
 		<div className={styles.skill}>
 			<Image src={image.url} alt={image.alt} height={50} width={50} />
-			<Stars count={ratings} />
+			<h3 className={styles.title}>{image.alt}</h3>
 		</div>
 	)
 }
 
-const Stars = ({ count }: { count: number }): JSX.Element => {
+/* const Stars = ({ count }: { count: number }): JSX.Element => {
 	return (
 		<div className={styles.starsContainer}>
 			{Array(Math.floor(count))
@@ -38,6 +36,6 @@ const Stars = ({ count }: { count: number }): JSX.Element => {
 			{count % 1 !== 0 && <HalfStar />}
 		</div>
 	)
-}
+} */
 
 export default Skills
