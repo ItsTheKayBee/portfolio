@@ -1,8 +1,9 @@
 @import "styles/variables.scss";
 
 .section {
-  padding: 40px 0;
+  padding: 40px 10%;
   margin-bottom: 30px;
+  position: relative;
   .sectionTitle {
     text-align: center;
     font-size: 40px;

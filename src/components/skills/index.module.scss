@@ -7,13 +7,19 @@
   justify-content: center;
   .skill {
     width: 200px;
-    height: 200px;
-    background-color: red;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: lightblue;
+
+    .image {
+      position: absolute;
+    }
     .title {
       font-size: 21px;
       line-height: 28px;
       font-weight: 700;
       font-family: GreyCliff;
+      text-align: center;
     }
 
     // .starsContainer {

@@ -1,19 +1,20 @@
-import styles from './index.module.scss';
-import sectionStyles from 'styles/section.module.scss';
-import { Button, IconButton } from 'data/interface';
-import Download from 'components/icon/Download';
+import styles from './index.module.scss'
+import sectionStyles from 'styles/section.module.scss'
+import { Button, IconButton } from 'data/interface'
+import Download from 'components/icon/Download'
 
 export const SocialMediaStrip = ({
-	resume, social
+	resume,
+	social
 }: {
-	resume: Button;
-	social: IconButton[];
+	resume: Button
+	social: IconButton[]
 }): JSX.Element => {
 	return (
 		<div className={styles.socialStrip}>
 			<div className={styles.socialButtons}>
 				{social.map((option, key) => {
-					const { component: Component } = option;
+					const { component: Component } = option
 					return (
 						<a
 							href={option.link}
@@ -22,7 +23,7 @@ export const SocialMediaStrip = ({
 						>
 							<Component />
 						</a>
-					);
+					)
 				})}
 			</div>
 			<div className={styles.downloadResume}>
@@ -32,5 +33,5 @@ export const SocialMediaStrip = ({
 				</a>
 			</div>
 		</div>
-	);
-};
+	)
+}

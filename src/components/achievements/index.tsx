@@ -1,12 +1,13 @@
 import { AchievementsType, DataWithButton } from 'data/interface'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
+import styles from './index.module.scss'
 
 const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
 	return (
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
-			<div>
+			<div className={styles.achievements}>
 				{data.map((achievement, key) => {
 					return <Achievement key={key} {...achievement} />
 				})}
@@ -22,7 +23,7 @@ const Achievement = ({
 	description
 }: DataWithButton): JSX.Element => {
 	return (
-		<div>
+		<div className={styles.achievement}>
 			<Image src={image.url} alt={image.alt} height={100} width={100} />
 			<h2>{title}</h2>
 			<h3>{subTitle}</h3>

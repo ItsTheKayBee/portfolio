@@ -14,23 +14,6 @@ export const portfolioDataObject: PortfolioData = {
 			several websites and apps in the process and I am always looking to hone my skills further in order to
 			become a better Software Development Engineer.`,
 		subTitle: 'Hey there! I am',
-		social: [
-			{
-				link: 'https://github.com/ItsTheKayBee',
-				component: Github
-			},
-			{
-				link: 'https://www.linkedin.com/in/itsthekaybee/',
-				component: LinkedIn
-			},
-			{
-				link: 'mailto:kbohra89@gmail.com',
-				component: Email
-			}
-		],
-		resume: {
-			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
-		},
 		image: {
 			url: 'https://via.placeholder.com/200',
 			alt: 'My picture'
@@ -445,8 +428,16 @@ export const portfolioDataObject: PortfolioData = {
 		image: {
 			url: 'https://via.placeholder.com/200',
 			alt: ''
+		},
+		resume: {
+			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
+		},
+		selfImage: {
+			url: 'https://via.placeholder.com/200',
+			alt: 'My picture'
 		}
 	},
+
 	footer: {
 		title: `Website and all images have been developed by Yours Truly. ©${new Date().getFullYear()}. All rights reserved.`
 	}

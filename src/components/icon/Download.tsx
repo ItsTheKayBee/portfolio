@@ -1,4 +1,4 @@
-import styles from 'components/about/index.module.scss'
+import styles from 'components/contact/index.module.scss'
 
 const Download = (): JSX.Element => {
 	return (

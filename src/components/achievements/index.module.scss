@@ -1,0 +1,12 @@
+.achievements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  .achievement {
+    width: 300px;
+    background-color: lightblue;
+    border-radius: 16px;
+    padding: 16px;
+  }
+}

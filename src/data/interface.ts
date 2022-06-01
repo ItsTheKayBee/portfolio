@@ -32,6 +32,8 @@ export type ContactType = {
 	title: string
 	data: IconTextButton[]
 	image: Image
+	selfImage: Image
+	resume: Button
 }
 
 export type SkillsType = {
@@ -46,8 +48,6 @@ export type AboutType = {
 	position: string
 	description: string
 	image: Image
-	social: IconButton[]
-	resume: Button
 	subTitle: string
 }
 

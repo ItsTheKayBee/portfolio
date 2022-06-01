@@ -19,7 +19,7 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 const Skill = ({ image }: { image: ImageType }) => {
 	return (
 		<div className={styles.skill}>
-			<Image src={image.url} alt={image.alt} height={50} width={50} />
+			<Image src={image.url} alt={image.alt} height={50} width={50} className={styles.image} />
 			<h3 className={styles.title}>{image.alt}</h3>
 		</div>
 	)

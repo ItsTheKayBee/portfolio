@@ -39,55 +39,6 @@
       display: flex;
       flex: 1;
       flex-direction: column;
-      .socialStrip {
-        display: flex;
-        margin-top: 32px;
-        flex-direction: column;
-        align-items: center;
-        .socialButtons {
-          display: flex;
-          width: 220px;
-          justify-content: space-between;
-          .socialButton {
-            border-radius: 50%;
-            background-color: black;
-            height: 60px;
-            width: 60px;
-            padding: 4px;
-          }
-        }
-        .downloadResume {
-          display: flex;
-          align-self: center;
-          margin-top: 20px;
-          .downloadButton {
-            background-color: $blue-color;
-            color: white;
-            display: flex;
-            align-items: center;
-            width: 220px;
-            .buttonText {
-              padding-right: 12px;
-              font-weight: 600;
-              font-size: 18px;
-              line-height: 28px;
-            }
-            .icon {
-              width: 22px;
-              height: 22px;
-              .line {
-                stroke: white;
-                stroke-width: 6px;
-              }
-            }
-            &:hover {
-              .arrow {
-                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
