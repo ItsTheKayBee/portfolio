@@ -15,7 +15,7 @@ export const portfolioDataObject: PortfolioData = {
 			become a better Software Development Engineer.`,
 		subTitle: 'Hey there! I am',
 		image: {
-			url: 'https://via.placeholder.com/200',
+			url: 'https://www.fillmurray.com/640/360',
 			alt: 'My picture'
 		}
 	},
@@ -32,7 +32,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
 				image: {
 					alt: 'LazyPay logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/lazypay.png'
 				}
 			},
 			{
@@ -46,7 +46,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
 				image: {
 					alt: 'Arcon logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/arcon.png'
 				}
 			},
 			{
@@ -60,7 +60,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',
 				image: {
 					alt: 'GREedge logo',
-					url: 'https://via.placeholder.com/200'
+					url: '/images/greedge.png'
 				}
 			}
 		]
@@ -71,70 +71,77 @@ export const portfolioDataObject: PortfolioData = {
 			{
 				image: {
 					alt: 'Python',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'React',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Next.js',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Sass',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Java',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Flutter',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Firebase',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 1.5
 			},
 			{
 				image: {
 					alt: 'TypeScript',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 1
 			},
 			{
 				image: {
 					alt: 'React Native',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 2
 			},
 			{
 				image: {
+					alt: 'Android',
+					url: 'https://www.fillmurray.com/640/360'
+				},
+				ratings: 1.5
+			},
+			{
+				image: {
 					alt: 'Blockchain',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				ratings: 1.5
 			}
@@ -156,7 +163,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Flutter'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -170,7 +177,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['React', 'Sass', 'Firebase', 'Python', 'Flask'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -182,7 +189,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['HTML', 'CSS', 'JS', 'Python'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/TorBot',
@@ -199,7 +206,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android', 'Solidity'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/DePay',
@@ -213,7 +220,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Javascript', 'Three.js'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://kunalbohra.netlify.app/',
@@ -228,7 +235,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Dialogflow', 'Twilio', 'Flask', 'Python', 'HTML'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/EssentialsKart',
@@ -244,7 +251,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/InstaNote',
@@ -258,7 +265,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Blockchain', 'Solidity', 'React'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FundEasy',
@@ -273,7 +280,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/FacultyManagementSystem',
@@ -288,7 +295,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/Xervixx',
@@ -311,7 +318,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -325,7 +332,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -339,7 +346,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -353,7 +360,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			},
 			{
@@ -367,7 +374,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: 'https://via.placeholder.com/200'
+					url: 'https://www.fillmurray.com/640/360'
 				}
 			}
 		]
@@ -384,7 +391,7 @@ export const portfolioDataObject: PortfolioData = {
 					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
 				},
 				image: {
-					url: 'https://via.placeholder.com/200',
+					url: 'https://www.fillmurray.com/640/360',
 					alt: 'Assess image'
 				},
 				description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -426,14 +433,14 @@ export const portfolioDataObject: PortfolioData = {
 			}
 		],
 		image: {
-			url: 'https://via.placeholder.com/200',
+			url: 'https://www.fillmurray.com/640/360',
 			alt: ''
 		},
 		resume: {
 			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
 		},
 		selfImage: {
-			url: 'https://via.placeholder.com/200',
+			url: 'https://www.fillmurray.com/640/360',
 			alt: 'My picture'
 		}
 	},
