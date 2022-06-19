@@ -2,83 +2,12 @@
 
 .skills {
   display: flex;
-  gap: 20px;
+  gap: 60px 20px;
   flex-wrap: wrap;
   justify-content: center;
+
   .skill {
     width: 200px;
-    padding: 16px;
-    border-radius: 16px;
-    background-color: lightblue;
-
-    .image {
-      position: absolute;
-    }
-    .title {
-      font-size: 21px;
-      line-height: 28px;
-      font-weight: 700;
-      font-family: GreyCliff;
-      text-align: center;
-    }
-
-    // .starsContainer {
-    //   .starIcon,
-    //   .halfStarIcon {
-    //     height: 40px;
-    //     width: 40px;
-    //     fill: $star-color;
-    //     transform-origin: center center;
-    //   }
-    //   $delay: 0s;
-    //   @for $i from 1 to 4 {
-    //     .starIcon:nth-child(#{$i}),
-    //     .halfStarIcon {
-    //       animation: starAnim-#{$i} 1s ease-out $delay infinite;
-    //     }
-    //     $delay: $delay + 0.1s;
-    //   }
-    // }
-    // &:hover {
-    //   .starsContainer {
-    //     $current-anim-time: 0.3s;
-    //     $anim-time: 0.3s;
-    //     @for $i from 1 to 4 {
-    //       .starIcon:nth-child(#{$i}),
-    //       .halfStarIcon {
-    //         animation: fadeIn $current-anim-time cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    //       }
-    //       $current-anim-time: $current-anim-time + $anim-time;
-    //     }
-    //   }
-    // }
-  }
-}
-
-@for $i from 1 to 4 {
-  @keyframes starAnim-#{$i} {
-    0% {
-      transform: translate(0) rotate(0);
-    }
-    25% {
-      transform: translate(#{random(3)}px, -#{random(2)}px) rotateZ(#{random(10)}deg);
-    }
-    50% {
-      transform: translate(-#{random(3)}px, #{random(2)}px) rotateZ(-#{random(10)}deg);
-    }
-    75% {
-      transform: translate(#{random(3)}px, -#{random(2)}px) rotateZ(#{random(10)}deg);
-    }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+    height: 200px;
   }
 }

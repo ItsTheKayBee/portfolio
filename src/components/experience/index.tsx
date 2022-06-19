@@ -1,5 +1,6 @@
 import { DataWithDates, ExperiencesType } from 'data/interface'
 import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
+import { classHelper } from 'helpers/utils'
 import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
@@ -25,12 +26,14 @@ const Experience = ({
 }: DataWithDates): JSX.Element => {
 	return (
 		<div
-			className={`${sectionStyles.subSection} ${
-				id % 2 !== 0 ? sectionStyles.reverse : ''
-			}`}
+			className={classHelper(
+				sectionStyles.subSection,
+				id % 2 !== 0 ? sectionStyles.reverse : '',
+				styles.experience
+			)}
 		>
-			<div className='col'>
-				<Image src={image.url} alt={image.alt} height={200} width={200} />
+			<div className='col a-center'>
+				<img src={image.url} alt={image.alt} className={styles.image} />
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>

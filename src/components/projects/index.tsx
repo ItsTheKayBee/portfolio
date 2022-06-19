@@ -1,8 +1,7 @@
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Arrow from 'components/icon/Arrow'
 import { ProjectsData, ProjectsType } from 'data/interface'
 import Image from 'next/image'
+import { useRef } from 'react'
 import sectionStyles from 'styles/section.module.scss'
 
 const Projects = ({ title, data }: ProjectsType): JSX.Element => {
@@ -25,14 +24,24 @@ const Project = ({
 	button,
 	id = 0
 }: ProjectsData): JSX.Element => {
+	const videoRef = useRef<HTMLVideoElement>(null)
+
+	const handlePlay = () => {
+		videoRef.current?.play()
+	}
+
 	return (
 		<div
 			className={`${sectionStyles.subSection} ${
 				id % 2 !== 0 ? sectionStyles.reverse : ''
 			}`}
+			onMouseEnter={handlePlay}
 		>
 			<div className='col a-center'>
-				<Image src={image.url} alt={image.alt} height={200} width={200} />
+				<video height={250} width={250} ref={videoRef}>
+					<source src={image.url} type='video/mp4' />
+				</video>
+
 				{button && (
 					<a className={`button ${sectionStyles.link}`} href={button.link}>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>

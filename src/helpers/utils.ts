@@ -21,3 +21,11 @@ export const getDateDifference = (date1: Date, date2: Date): KeyValue => {
 		value: monthsDifference
 	}
 }
+
+/**
+ *
+ * @param {string[]} classes list of all classes
+ * @returns
+ */
+export const classHelper = (...classes: string[]) =>
+	classes.reduce((prev, next) => prev + ' ' + next)

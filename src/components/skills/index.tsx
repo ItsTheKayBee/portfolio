@@ -1,5 +1,4 @@
-import { Image as ImageType, SkillsType } from 'data/interface'
-import Image from 'next/image'
+import { SkillsType } from 'data/interface'
 import styles from './index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 
@@ -8,34 +7,19 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 		<div className={sectionStyles.section}>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.skills}>
-				{data.map((skill, key) => {
-					return <Skill key={key} image={skill.image}/>
+				{data.map(({ image }, key) => {
+					return (
+						<img
+							src={image.url}
+							alt={image.alt}
+							className={styles.skill}
+							key={key}
+						/>
+					)
 				})}
 			</div>
 		</div>
 	)
 }
-
-const Skill = ({ image }: { image: ImageType }) => {
-	return (
-		<div className={styles.skill}>
-			<Image src={image.url} alt={image.alt} height={50} width={50} className={styles.image} />
-			<h3 className={styles.title}>{image.alt}</h3>
-		</div>
-	)
-}
-
-/* const Stars = ({ count }: { count: number }): JSX.Element => {
-	return (
-		<div className={styles.starsContainer}>
-			{Array(Math.floor(count))
-				.fill(0)
-				.map((_, key) => (
-					<Star key={key} />
-				))}
-			{count % 1 !== 0 && <HalfStar />}
-		</div>
-	)
-} */
 
 export default Skills

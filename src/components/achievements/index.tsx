@@ -1,5 +1,4 @@
 import { AchievementsType, DataWithButton } from 'data/interface'
-import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
@@ -24,7 +23,7 @@ const Achievement = ({
 }: DataWithButton): JSX.Element => {
 	return (
 		<div className={styles.achievement}>
-			<Image src={image.url} alt={image.alt} height={100} width={100} />
+			<img src={image.url} alt={image.alt} height={100} width={100} />
 			<h2>{title}</h2>
 			<h3>{subTitle}</h3>
 			<p>{description}</p>

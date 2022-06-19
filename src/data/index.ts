@@ -32,7 +32,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
 				image: {
 					alt: 'LazyPay logo',
-					url: '/images/lazypay.png'
+					url: '/images/experiences/lazypay.png'
 				}
 			},
 			{
@@ -46,7 +46,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
 				image: {
 					alt: 'Arcon logo',
-					url: '/images/arcon.png'
+					url: '/images/experiences/arcon.png'
 				}
 			},
 			{
@@ -60,7 +60,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',
 				image: {
 					alt: 'GREedge logo',
-					url: '/images/greedge.png'
+					url: '/images/experiences/greedge.png'
 				}
 			}
 		]
@@ -71,77 +71,70 @@ export const portfolioDataObject: PortfolioData = {
 			{
 				image: {
 					alt: 'Python',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/python.png'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'React',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/react.png'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Next.js',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/next.png'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Sass',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/sass.png'
 				},
 				ratings: 2.5
 			},
 			{
 				image: {
 					alt: 'Java',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/java.png'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Flutter',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/flutter.png'
 				},
 				ratings: 2
 			},
 			{
 				image: {
 					alt: 'Firebase',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/firebase.png'
 				},
 				ratings: 1.5
 			},
 			{
 				image: {
 					alt: 'TypeScript',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/typescript.png'
 				},
 				ratings: 1
 			},
 			{
 				image: {
-					alt: 'React Native',
-					url: 'https://www.fillmurray.com/640/360'
-				},
-				ratings: 2
-			},
-			{
-				image: {
 					alt: 'Android',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/android.png'
 				},
 				ratings: 1.5
 			},
 			{
 				image: {
 					alt: 'Blockchain',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/skills/blockchain.png'
 				},
 				ratings: 1.5
 			}
@@ -163,7 +156,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Flutter'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/projects/big_picture.mkv'
 				}
 			},
 			{
@@ -177,40 +170,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['React', 'Sass', 'Firebase', 'Python', 'Flask'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
-				}
-			},
-			{
-				title: 'TorBot',
-				subTitle: 'Nov 2020',
-				description: `A YIFY movie torrent downloader extension that automates the boring process of downloading movies 
-        from torrent. Just select/highlight a movie along with its year or type in the movie in the extension and it will
-         begin downloading the movie on your torrent client!.`,
-				technologies: ['HTML', 'CSS', 'JS', 'Python'],
-				image: {
-					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
-				},
-				button: {
-					link: 'https://github.com/ItsTheKayBee/TorBot',
-					text: 'View Project'
-				}
-			},
-			{
-				title: 'DePay',
-				subTitle: 'Oct 2020',
-				description: `A blockchain-based real-time micropayments app that was built during the ETHGlobal hackathon. 
-        It enables
-          - Instant crypto payments.
-          - On the fly conversion of crypto into fiat currency and vice versa.`,
-				technologies: ['Java', 'Android', 'Solidity'],
-				image: {
-					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
-				},
-				button: {
-					link: 'https://github.com/ItsTheKayBee/DePay',
-					text: 'View Project'
+					url: '/images/projects/assess.mkv'
 				}
 			},
 			{
@@ -220,7 +180,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Javascript', 'Three.js'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/projects/3d_portfolio.mkv'
 				},
 				button: {
 					link: 'https://kunalbohra.netlify.app/',
@@ -235,7 +195,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Dialogflow', 'Twilio', 'Flask', 'Python', 'HTML'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/projects/essentials_kart.mkv'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/EssentialsKart',
@@ -251,39 +211,10 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/projects/instanote.mkv'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/InstaNote',
-					text: 'View Project'
-				}
-			},
-			{
-				title: 'FundEasy - easy fund disbursal',
-				subTitle: 'Jan 2020',
-				description: `A blockchain-based platform for easy disbursal of funds through the government to the beneficiaries.`,
-				technologies: ['Blockchain', 'Solidity', 'React'],
-				image: {
-					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
-				},
-				button: {
-					link: 'https://github.com/ItsTheKayBee/FundEasy',
-					text: 'View Project'
-				}
-			},
-			{
-				title: 'Faculty Management System',
-				subTitle: 'Jul 2019 - Dec 2019',
-				description: `Interning under Dr Ujwala Bhangale to develop a full-stack website to manage faculty data in the college.
-         It included a user-friendly interface that highlights features like report generation, CV generation, etc.`,
-				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
-				image: {
-					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
-				},
-				button: {
-					link: 'https://github.com/ItsTheKayBee/FacultyManagementSystem',
 					text: 'View Project'
 				}
 			},
@@ -295,7 +226,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/projects/xervixx.mkv'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/Xervixx',
@@ -318,7 +249,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/achievements/hack.png'
 				}
 			},
 			{
@@ -332,7 +263,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/achievements/blockchain.png'
 				}
 			},
 			{
@@ -346,7 +277,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/achievements/zeb.png'
 				}
 			},
 			{
@@ -360,7 +291,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/achievements/youtube.png'
 				}
 			},
 			{
@@ -374,7 +305,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: 'https://www.fillmurray.com/640/360'
+					url: '/images/achievements/chefpreneur.png'
 				}
 			}
 		]
@@ -391,7 +322,35 @@ export const portfolioDataObject: PortfolioData = {
 					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
 				},
 				image: {
-					url: 'https://www.fillmurray.com/640/360',
+					url: '/images/publications/assess.png',
+					alt: 'Assess image'
+				},
+				description: `Drift in the digitization of education is a prime concern at present to enable quality education
+          to every individual. Now, there are no geographical barriers to the availability of education and evaluation. 
+          Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose ‘ASSESS’, 
+          a system where the evaluation of subjective answers for an examination becomes easier and convenient. 
+          We have even catered to the requirements of specially-abled students online. 
+          The diversity in educational courses encouraged us to research how we can efficiently auto-evaluate subjective answers and 
+          provide feedback for the purpose of self-analysis. During the pandemic of COVID-19, most of the colleges and organizations
+          shifted to the online mode of examinations. These examinations only had MCQs or objective questions which can be easily 
+          assessed by the online system. Since such systems can only be used for the evaluation of objective questions, 
+          the subjective questions pose a great challenge. In this paper, we directed our research to propose a system
+          that gives features like full-length subjective tests, automated subjective answer evaluation using natural 
+          language processing and semantic learning, auto-generated feedback for self-improvement of the students,
+          visual statistics for both teacher and student after each test, text-to-speech & speech-to-text accessibility 
+          options and a fully functional hands-free mode for the specially-abled students with disabilities like 
+          sluggish typing, poor eyesight, and amputated hands. Since everything will be automated from the evaluation
+          of the answers to providing feedback, there will be minimal stress on the assessors.`
+			},
+			{
+				title: 'Blockchain',
+				subTitle: 'Elsevier-SSRN Conference Proceedings',
+				button: {
+					text: 'View Research',
+					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
+				},
+				image: {
+					url: '/images/publications/blockchain.png',
 					alt: 'Assess image'
 				},
 				description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -433,7 +392,7 @@ export const portfolioDataObject: PortfolioData = {
 			}
 		],
 		image: {
-			url: 'https://www.fillmurray.com/640/360',
+			url: '/images/contact.png',
 			alt: ''
 		},
 		resume: {
