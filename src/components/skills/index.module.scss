@@ -7,7 +7,17 @@
   justify-content: center;
 
   .skill {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .image {
+      width: 200px;
+      height: 200px;
+    }
+    .title {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 700;
+    }
   }
 }

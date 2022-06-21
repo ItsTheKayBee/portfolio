@@ -1,4 +1,4 @@
-import styles from 'styles/section.module.scss'
+import styles from 'components/contact/index.module.scss'
 import { FC } from 'react'
 
 const Github: FC = (): JSX.Element => {

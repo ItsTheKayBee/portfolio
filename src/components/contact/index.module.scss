@@ -1,51 +1,123 @@
 @import "styles/variables";
 
-.contact {
-  .socialStrip {
-    display: flex;
-    margin-top: 32px;
-    flex-direction: column;
-    align-items: center;
-    .socialButtons {
-      display: flex;
-      width: 220px;
-      justify-content: space-between;
-      .socialButton {
-        border-radius: 50%;
-        background-color: black;
-        height: 60px;
-        width: 60px;
-        padding: 4px;
+.contactSection {
+  padding-bottom: 0 !important;
+  .contact {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0 !important;
+    .portraitSection {
+      flex: 20%;
+      .portrait {
+        height: 500px;
       }
     }
-    .downloadResume {
-      display: flex;
-      align-self: center;
-      margin-top: 20px;
-      .downloadButton {
-        background-color: $blue-color;
-        color: white;
+    .detailSection {
+      flex: 80%;
+      margin-right: 200px;
+      max-width: 600px;
+      .socialStrip {
         display: flex;
+        margin-top: 32px;
+        flex-direction: column;
         align-items: center;
-        width: 220px;
-        height: 60px;
-        .buttonText {
-          padding-right: 12px;
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 28px;
-        }
-        .icon {
-          width: 22px;
-          height: 22px;
-          .line {
-            stroke: white;
-            stroke-width: 6px;
+        .socialButtons {
+          display: flex;
+          justify-content: space-between;
+          width: 220px;
+          .socialButton {
+            border-radius: 50%;
+            background-color: white;
+            height: 60px;
+            width: 60px;
+            padding: 4px;
+            &:hover {
+              .emailIcon {
+                animation: emailTurn 0.35s ease-out;
+                .flap {
+                  animation: flapAnim 0.3s ease-out 0.35s;
+                }
+              }
+              .linkedinIcon {
+                .letterI {
+                  animation: letterIAnim 0.3s ease-in;
+                }
+                .dot {
+                  animation: dotFallAnim 0.6s ease-out;
+                }
+              }
+              .githubIcon {
+                .tail {
+                  transform-origin: 15px 35px;
+                  animation: tailAnim 0.3s ease-out;
+                }
+                .head {
+                  transform-origin: center bottom;
+                  animation: headAnim 0.5s ease 0.3s;
+                }
+              }
+            }
+            .emailIcon {
+              width: 33px;
+              height: 20px;
+              .base {
+                fill: black;
+              }
+              .outline {
+                fill: white;
+              }
+            }
+            .linkedinIcon {
+              height: 24px;
+              width: 24px;
+              .letterN,
+              .letterI,
+              .dot {
+                fill: black;
+              }
+            }
+            .githubIcon {
+              height: 24px;
+              width: 24px;
+              .head,
+              .body,
+              .tail {
+                fill: black;
+              }
+            }
           }
         }
-        &:hover {
-          .arrow {
-            animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .downloadResume {
+          display: flex;
+          align-self: center;
+          margin-top: 20px;
+          width: 220px;
+
+          .downloadButton {
+            background-color: $blue-color;
+            color: white;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            .buttonText {
+              padding-right: 12px;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 28px;
+            }
+            .icon {
+              width: 22px;
+              height: 22px;
+              .line {
+                stroke: white;
+                stroke-width: 6px;
+              }
+            }
+            &:hover {
+              .arrow {
+                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              }
+            }
           }
         }
       }
@@ -55,5 +127,87 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@keyframes arrowAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes emailTurn {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(20deg) scale(1.05);
+  }
+}
+
+@keyframes flapAnim {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+  }
+  50% {
+    transform: rotateX(60deg);
+  }
+}
+
+@keyframes dotFallAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px) scaleY(1.2);
+  }
+}
+
+@keyframes letterIAnim {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+@keyframes tailAnim {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(10deg);
+  }
+  50% {
+    transform: rotateZ(-6deg);
+  }
+  75% {
+    transform: rotateZ(6deg);
+  }
+}
+@keyframes headAnim {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-6deg);
+  }
+  50% {
+    transform: rotateZ(3deg);
+  }
+  75% {
+    transform: rotateZ(-3deg);
   }
 }

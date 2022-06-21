@@ -1,9 +1,9 @@
 import styles from './index.module.scss'
-import sectionStyles from 'styles/section.module.scss'
 import { Button, IconButton } from 'data/interface'
 import Download from 'components/icon/Download'
+import { classHelper } from 'helpers/utils'
 
-export const SocialMediaStrip = ({
+export default ({
 	resume,
 	social
 }: {
@@ -19,7 +19,7 @@ export const SocialMediaStrip = ({
 						<a
 							href={option.link}
 							key={key}
-							className={`button ${styles.socialButton} ${sectionStyles.link} ${sectionStyles.social}`}
+							className={classHelper('button', styles.socialButton)}
 						>
 							<Component />
 						</a>
@@ -27,7 +27,11 @@ export const SocialMediaStrip = ({
 				})}
 			</div>
 			<div className={styles.downloadResume}>
-				<a className={`button ${styles.downloadButton}`} href={resume.link}>
+				<a
+					className={classHelper('button', styles.downloadButton)}
+					href={resume.link}
+					target='_blank'
+				>
 					<h3 className={styles.buttonText}>Resume</h3>
 					<Download />
 				</a>

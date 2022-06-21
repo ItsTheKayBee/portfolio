@@ -1,6 +1,5 @@
 import Arrow from 'components/icon/Arrow'
 import { ProjectsData, ProjectsType } from 'data/interface'
-import Image from 'next/image'
 import { useRef } from 'react'
 import sectionStyles from 'styles/section.module.scss'
 

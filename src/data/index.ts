@@ -374,6 +374,11 @@ export const portfolioDataObject: PortfolioData = {
 	},
 	contact: {
 		title: 'Contact me',
+		description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
+			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
+			I like to explore new technologies and I am passionate about trying out new experiences. I have built
+			several websites and apps in the process and I am always looking to hone my skills further in order to
+			become a better Software Development Engineer.`,
 		data: [
 			{
 				link: 'https://github.com/ItsTheKayBee',
@@ -399,7 +404,7 @@ export const portfolioDataObject: PortfolioData = {
 			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
 		},
 		selfImage: {
-			url: 'https://www.fillmurray.com/640/360',
+			url: '/images/portrait.png',
 			alt: 'My picture'
 		}
 	},

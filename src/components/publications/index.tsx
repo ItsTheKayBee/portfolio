@@ -1,7 +1,7 @@
 import Arrow from 'components/icon/Arrow'
 import { DataWithButton, PublicationsType } from 'data/interface'
-import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
+import styles from './index.module.scss'
 
 const Publications = ({ title, data }: PublicationsType): JSX.Element => {
 	return (
@@ -28,8 +28,8 @@ const Publication = ({
 				id !== 0 ? sectionStyles.reverse : ''
 			}`}
 		>
-			<div className='col'>
-				<Image src={image.url} alt={image.alt} height={200} width={200} />
+			<div className='col a-center'>
+				<img src={image.url} alt={image.alt} className={styles.image} />
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>

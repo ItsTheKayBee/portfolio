@@ -1,7 +1,6 @@
 import { DataWithDates, ExperiencesType } from 'data/interface'
 import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
 import { classHelper } from 'helpers/utils'
-import Image from 'next/image'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
@@ -28,8 +27,7 @@ const Experience = ({
 		<div
 			className={classHelper(
 				sectionStyles.subSection,
-				id % 2 !== 0 ? sectionStyles.reverse : '',
-				styles.experience
+				id % 2 !== 0 ? sectionStyles.reverse : ''
 			)}
 		>
 			<div className='col a-center'>

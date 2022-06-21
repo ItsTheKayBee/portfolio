@@ -34,6 +34,7 @@ export type ContactType = {
 	image: Image
 	selfImage: Image
 	resume: Button
+	description: string
 }
 
 export type SkillsType = {

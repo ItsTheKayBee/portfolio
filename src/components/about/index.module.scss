@@ -35,24 +35,10 @@
         font-size: 14px;
       }
     }
-    .images {
+    .model {
       display: flex;
       flex: 1;
       flex-direction: column;
     }
-  }
-}
-
-@keyframes arrowAnim {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  51% {
-    transform: translateY(-50%);
-    opacity: 1;
   }
 }

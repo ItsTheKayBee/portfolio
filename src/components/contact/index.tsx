@@ -1,39 +1,40 @@
 import { ContactType } from 'data/interface'
-import Image from 'next/image'
+import { classHelper } from 'helpers/utils'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
-import { SocialMediaStrip } from './SocialMediaStrip'
+import SocialMediaStrip from './SocialMediaStrip'
 
 const Contact = ({
 	title,
 	data,
 	image,
 	selfImage,
-	resume
+	resume,
+	description
 }: ContactType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
-			<div className={`${sectionStyles.subSection} ${styles.contact}`}>
-				<div className='col'>
-					<Image
+		<div
+			className={classHelper(
+				sectionStyles.section,
+				sectionStyles.dark,
+				styles.contactSection
+			)}
+		>
+			<div className={classHelper(sectionStyles.subSection, styles.contact)}>
+				<div className={classHelper('col', 'a-center', styles.portraitSection)}>
+					<img
 						src={selfImage.url}
 						alt={selfImage.alt}
-						height={200}
-						width={200}
+						className={styles.portrait}
 					/>
 				</div>
-				<div className='col'>
+				<div className={classHelper('col', styles.detailSection)}>
 					<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+					<p>{description}</p>
 					<SocialMediaStrip social={data} resume={resume} />
 				</div>
-				<img
-					src={image.url}
-					alt={image.alt}
-					height={200}
-					width={200}
-					className={styles.bgImage}
-				/>
 			</div>
+			<img src={image.url} alt={image.alt} className={styles.bgImage} />
 		</div>
 	)
 }
