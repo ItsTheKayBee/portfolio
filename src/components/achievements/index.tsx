@@ -5,7 +5,10 @@ import styles from './index.module.scss'
 
 const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
 	return (
-		<div className={classHelper(sectionStyles.section, sectionStyles.dark)}>
+		<div
+			className={classHelper(sectionStyles.section, sectionStyles.dark)}
+			id='achievements'
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.achievements}>
 				{data.map((achievement, key) => {

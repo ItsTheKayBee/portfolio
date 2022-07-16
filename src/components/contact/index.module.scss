@@ -25,67 +25,6 @@
           display: flex;
           justify-content: space-between;
           width: 220px;
-          .socialButton {
-            border-radius: 50%;
-            background-color: white;
-            height: 60px;
-            width: 60px;
-            padding: 4px;
-            &:hover {
-              .emailIcon {
-                animation: emailTurn 0.35s ease-out;
-                .flap {
-                  animation: flapAnim 0.3s ease-out 0.35s;
-                }
-              }
-              .linkedinIcon {
-                .letterI {
-                  animation: letterIAnim 0.3s ease-in;
-                }
-                .dot {
-                  animation: dotFallAnim 0.6s ease-out;
-                }
-              }
-              .githubIcon {
-                .tail {
-                  transform-origin: 15px 35px;
-                  animation: tailAnim 0.3s ease-out;
-                }
-                .head {
-                  transform-origin: center bottom;
-                  animation: headAnim 0.5s ease 0.3s;
-                }
-              }
-            }
-            .emailIcon {
-              width: 33px;
-              height: 20px;
-              .base {
-                fill: black;
-              }
-              .outline {
-                fill: white;
-              }
-            }
-            .linkedinIcon {
-              height: 24px;
-              width: 24px;
-              .letterN,
-              .letterI,
-              .dot {
-                fill: black;
-              }
-            }
-            .githubIcon {
-              height: 24px;
-              width: 24px;
-              .head,
-              .body,
-              .tail {
-                fill: black;
-              }
-            }
-          }
         }
         .downloadResume {
           display: flex;
@@ -129,6 +68,68 @@
     bottom: 0;
     height: 350px;
     width: 350px;
+  }
+}
+
+.socialButton {
+  border-radius: 50%;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  padding: 4px;
+  &:hover {
+    .emailIcon {
+      animation: emailTurn 0.35s ease-out;
+      .flap {
+        animation: flapAnim 0.3s ease-out 0.35s;
+      }
+    }
+    .linkedinIcon {
+      .letterI {
+        animation: letterIAnim 0.3s ease-in;
+      }
+      .dot {
+        animation: dotFallAnim 0.6s ease-out;
+      }
+    }
+    .githubIcon {
+      .tail {
+        transform-origin: 15px 35px;
+        animation: tailAnim 0.3s ease-out;
+      }
+      .head {
+        transform-origin: center bottom;
+        animation: headAnim 0.5s ease 0.3s;
+      }
+    }
+  }
+  .emailIcon {
+    width: 33px;
+    height: 20px;
+    .base {
+      fill: black;
+    }
+    .outline {
+      fill: white;
+    }
+  }
+  .linkedinIcon {
+    height: 24px;
+    width: 24px;
+    .letterN,
+    .letterI,
+    .dot {
+      fill: black;
+    }
+  }
+  .githubIcon {
+    height: 24px;
+    width: 24px;
+    .head,
+    .body,
+    .tail {
+      fill: black;
+    }
   }
 }
 

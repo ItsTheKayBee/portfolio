@@ -19,6 +19,7 @@ const Contact = ({
 				sectionStyles.dark,
 				styles.contactSection
 			)}
+			id='contact'
 		>
 			<div className={classHelper(sectionStyles.subSection, styles.contact)}>
 				<div className={classHelper('col', 'a-center', styles.portraitSection)}>

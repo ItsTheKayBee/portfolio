@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 export interface PortfolioData {
+	header: HeaderType[]
 	about: AboutType
 	experiences: ExperiencesType
 	skills: SkillsType
@@ -50,6 +51,7 @@ export type AboutType = {
 	description: string
 	image: Image
 	subTitle: string
+	data: IconTextButton[]
 }
 
 export type StatsType = {
@@ -107,4 +109,9 @@ export interface DataWithButton extends Data {
 
 export interface ProjectsData extends DataWithButton {
 	technologies: string[]
+}
+
+export interface HeaderType {
+	title: string
+	link: string
 }

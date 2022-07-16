@@ -6,7 +6,7 @@ import styles from './index.module.scss'
 
 const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div className={sectionStyles.section} id='experiences'>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((exp, key) => (
 				<Experience key={key} {...exp} id={key} />

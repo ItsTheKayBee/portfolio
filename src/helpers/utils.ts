@@ -1,7 +1,10 @@
 import { KeyValue } from 'data/interface'
 
 /**
- *  Returns difference between 2 dates
+ * Returns difference between 2 dates
+ * @param date1 1st date
+ * @param date2 2nd date
+ * @returns difference
  */
 export const getDateDifference = (date1: Date, date2: Date): KeyValue => {
 	const timeStamp1 = date1.getTime()

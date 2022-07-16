@@ -5,7 +5,10 @@ import { classHelper } from 'helpers/utils'
 
 const Skills = ({ title, data }: SkillsType): JSX.Element => {
 	return (
-		<div className={classHelper(sectionStyles.section, sectionStyles.dark)}>
+		<div
+			className={classHelper(sectionStyles.section, sectionStyles.dark)}
+			id='skills'
+		>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			<div className={styles.skills}>
 				{data.map(({ image }, key) => {

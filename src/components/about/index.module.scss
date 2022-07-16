@@ -9,16 +9,29 @@
   .mainContent {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    position: relative;
+    .image {
+      position: absolute;
+      bottom: 0px;
+      left: 250px;
+      height: 90%;
+    }
     .content {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      align-items: flex-end;
+      margin-right: 250px;
+
       .name {
         font-size: 100px;
         font-family: Peace;
         line-height: 100px;
         letter-spacing: 2px;
-        text-align: center;
+      }
+      .surname {
+        @extend .name;
+        margin-right: 60px;
       }
       .position {
         font-size: 32px;
@@ -27,18 +40,21 @@
         margin-bottom: 20px;
         letter-spacing: -1px;
       }
-      .description {
-        font-size: 15px;
-        line-height: 20px;
-      }
       .subTitle {
         font-size: 14px;
       }
     }
-    .model {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
+    .social {
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      gap: 20px;
+      .middleButton {
+        grid-column: 1;
+      }
     }
   }
 }

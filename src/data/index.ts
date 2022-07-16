@@ -6,8 +6,34 @@ import { getDateDifference } from 'helpers/utils'
 import { PortfolioData, StatsType } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
+	header: [
+		{
+			title: 'Experiences',
+			link: '#experiences'
+		},
+		{
+			title: 'Skills',
+			link: '#skills'
+		},
+		{
+			title: 'Projects',
+			link: '#projects'
+		},
+		{
+			title: 'Achievements',
+			link: '#achievements'
+		},
+		{
+			title: 'Publications',
+			link: '#publications'
+		},
+		{
+			title: 'Contact',
+			link: '#contact'
+		}
+	],
 	about: {
-		position: 'Software Development Engineer',
+		position: 'Web Developer',
 		description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
 			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
 			I like to explore new technologies and I am passionate about trying out new experiences. I have built
@@ -15,9 +41,26 @@ export const portfolioDataObject: PortfolioData = {
 			become a better Software Development Engineer.`,
 		subTitle: 'Hey there! I am',
 		image: {
-			url: 'https://www.fillmurray.com/640/360',
+			url: '/images/portrait.png',
 			alt: 'My picture'
-		}
+		},
+		data: [
+			{
+				link: 'https://github.com/ItsTheKayBee',
+				component: Github,
+				text: 'ItsTheKayBee'
+			},
+			{
+				link: 'https://www.linkedin.com/in/itsthekaybee/',
+				component: LinkedIn,
+				text: 'itsthekaybee'
+			},
+			{
+				link: 'mailto:kbohra89@gmail.com',
+				component: Email,
+				text: 'kbohra89@gmail.com'
+			}
+		]
 	},
 	experiences: {
 		title: 'Experiences',

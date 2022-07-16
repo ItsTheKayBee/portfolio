@@ -5,7 +5,7 @@ import sectionStyles from 'styles/section.module.scss'
 
 const Projects = ({ title, data }: ProjectsType): JSX.Element => {
 	return (
-		<div className={sectionStyles.section}>
+		<div className={sectionStyles.section} id='projects'>
 			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			{data.map((project, key) => {
 				return <Project key={key} {...project} id={key} />
