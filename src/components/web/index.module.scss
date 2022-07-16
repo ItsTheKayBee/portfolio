@@ -1,0 +1,11 @@
+.web {
+  position: absolute;
+  width: 120px;
+  z-index: 1000;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  &.active {
+    transition: opacity 0.25s ease-out;
+    opacity: 1;
+  }
+}

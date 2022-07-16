@@ -115,3 +115,10 @@ export interface HeaderType {
 	title: string
 	link: string
 }
+
+export interface Web {
+	size: number
+	posX: number
+	poxY: number
+	rot: number
+}

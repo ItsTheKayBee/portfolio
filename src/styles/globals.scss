@@ -104,6 +104,7 @@ body {
   font-family: OpenSans, GreyCliff, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
+  cursor: url("/images/hand.svg"), auto;
 }
 
 a {
@@ -117,19 +118,8 @@ a {
 
 .main {
   position: relative;
-  .web {
-    position: absolute;
-    height: 30px;
-    width: 30px;
-    background-color: red;
-    z-index: 1000;
-    transition: opacity 1s ease-out;
-    opacity: 0;
-    &.active {
-      transition: opacity 0.25s ease-out;
-      opacity: 1;
-    }
-  }
+  overflow-x: hidden;
+
   .col {
     flex: 1;
     flex-direction: column;

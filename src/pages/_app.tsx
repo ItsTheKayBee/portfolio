@@ -3,8 +3,10 @@ import '../styles/globals.scss'
 import { portfolioDataObject, statsData } from 'data'
 import Header from 'components/header'
 import About from '../components/about'
-import { MouseEventHandler, useEffect, useMemo, useState } from 'react'
-import { classHelper } from 'helpers/utils'
+import { useRef, useState } from 'react'
+import { getRandom } from 'helpers/utils'
+import Web from 'components/web'
+import { Web as WebType } from 'data/interface'
 
 const Achievements = dynamic(() => import('../components/achievements'))
 const Contact = dynamic(() => import('../components/contact'))
@@ -14,27 +16,29 @@ const Publications = dynamic(() => import('../components/publications'))
 const Skills = dynamic(() => import('../components/skills'))
 
 const App = () => {
-	const [webPosition, setWebPosition] = useState([0, 0])
-	const [isWebVisible, setWebVisible] = useState(false)
-	const [timer, setTimer] = useState<NodeJS.Timeout>()
+	const [webs, setWebs] = useState<WebType[]>([])
+
+	const createWeb = (e: any): WebType => {
+		const size = getRandom(50, 200)
+		const rot = getRandom(0, 360)
+
+		return {
+			size,
+			posX: e.pageX - size / 2,
+			poxY: e.pageY - size / 2,
+			rot
+		}
+	}
 
 	const handleClick = (e: any) => {
-		if (timer) clearTimeout(timer)
-
-		setWebPosition([e.pageX, e.pageY])
-		setWebVisible(true)
-		const timeout = setTimeout(() => {
-			setWebVisible(false)
-		}, 3000)
-		setTimer(timeout)
+		setWebs(prev => [...prev, createWeb(e)])
 	}
 
 	return (
 		<main className='main' onClick={handleClick}>
-			<div
-				className={classHelper('web', isWebVisible ? 'active' : '')}
-				style={{ top: `${webPosition[1]}px`, left: `${webPosition[0]}px` }}
-			/>
+			{webs.map((data, key) => (
+				<Web web={data} key={key} />
+			))}
 			<Header headerData={portfolioDataObject.header} />
 			<About {...portfolioDataObject.about} stats={statsData.stats} />
 			<Experience {...portfolioDataObject.experiences} />
