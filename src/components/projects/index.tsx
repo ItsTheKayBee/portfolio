@@ -1,12 +1,28 @@
+import { useEffect, useRef } from 'react'
 import Arrow from 'components/icon/Arrow'
 import { ProjectsData, ProjectsType } from 'data/interface'
-import { useRef } from 'react'
 import sectionStyles from 'styles/section.module.scss'
+import styles from './index.module.scss'
+import { classHelper } from 'helpers/utils'
+import { useInView } from 'react-intersection-observer'
 
 const Projects = ({ title, data }: ProjectsType): JSX.Element => {
+	const [sectionRef, sectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div className={sectionStyles.section} id='projects'>
-			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			<div
+				className={classHelper(
+					sectionStyles.titleSection,
+					sectionInView ? sectionStyles.inView : ''
+				)}
+				ref={sectionRef}
+			>
+				<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			</div>
 			{data.map((project, key) => {
 				return <Project key={key} {...project} id={key} />
 			})}
@@ -24,25 +40,38 @@ const Project = ({
 	id = 0
 }: ProjectsData): JSX.Element => {
 	const videoRef = useRef<HTMLVideoElement>(null)
+	const [projectRef, projectInView] = useInView({
+		rootMargin: '-100px 0px'
+	})
 
-	const handlePlay = () => {
-		videoRef.current?.play()
-	}
+	useEffect(() => {
+		if (projectInView) videoRef.current?.play()
+	}, [projectInView])
 
 	return (
 		<div
-			className={`${sectionStyles.subSection} ${
-				id % 2 !== 0 ? sectionStyles.reverse : ''
-			}`}
-			onMouseEnter={handlePlay}
+			className={classHelper(
+				sectionStyles.subSection,
+				id % 2 !== 0 ? sectionStyles.reverse : '',
+				projectInView ? sectionStyles.inView : ''
+			)}
+			ref={projectRef}
 		>
 			<div className='col a-center'>
-				<video height={250} width={250} ref={videoRef}>
+				<video height={300} width={300} ref={videoRef} className={styles.video}>
 					<source src={image.url} type='video/mp4' />
 				</video>
 
 				{button && (
-					<a className={`button ${sectionStyles.link}`} href={button.link}>
+					<a
+						className={classHelper(
+							'button',
+							sectionStyles.link,
+							styles.button,
+							projectInView ? styles.inView : ''
+						)}
+						href={button.link}
+					>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>
 						<Arrow />
 					</a>
@@ -52,7 +81,12 @@ const Project = ({
 				<h2 className={sectionStyles.title}>{title}</h2>
 				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<p className={sectionStyles.description}>{description}</p>
-				<div>
+				<div
+					className={classHelper(
+						styles.chipContainer,
+						projectInView ? styles.inView : ''
+					)}
+				>
 					{technologies.map((tech, key) => (
 						<Chip key={key} title={tech} />
 					))}
@@ -62,8 +96,8 @@ const Project = ({
 	)
 }
 
-const Chip = ({ title }: { title: string }): JSX.Element => {
-	return <div>{title}</div>
-}
+const Chip = ({ title }: { title: string }): JSX.Element => (
+	<div className={classHelper(styles.chip)}>{title}</div>
+)
 
 export default Projects

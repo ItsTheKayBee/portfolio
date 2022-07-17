@@ -4,28 +4,56 @@
   padding: 100px 10%;
   position: relative;
 
-  .sectionTitle {
-    font-size: 40px;
-    line-height: 44px;
-    font-weight: 950;
-    margin-bottom: 40px;
-    font-family: Fuse;
-    letter-spacing: 1.5px;
-    position: relative;
-    display: inline-block;
-    z-index: 2;
+  .titleSection {
+    display: flex;
+    justify-content: center;
+    .sectionTitle {
+      font-size: 40px;
+      line-height: 44px;
+      font-weight: 950;
+      margin-bottom: 80px;
+      font-family: Fuse;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: inline-block;
+      opacity: 0;
+      transition: all 0.5s ease-out;
 
-    &::after {
-      content: "";
-      height: 14px;
-      width: 110%;
-      background-color: rgba(#5774ff, 0.7);
-      z-index: -1;
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      border-radius: 4px;
+      &::after {
+        content: "";
+        height: 14px;
+        width: 110%;
+        background-color: rgba(#5774ff, 0.7);
+        z-index: -1;
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        border-radius: 4px;
+        transform: scaleX(0);
+        transform-origin: center left;
+        transition: all 0.5s ease-in-out 0.5s;
+      }
     }
+    &.inView {
+      .sectionTitle {
+        opacity: 1;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  %trans {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease-out;
+  }
+  %anti-trans {
+    opacity: 1;
+    transform: none;
   }
 
   .subSection {
@@ -33,28 +61,52 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
+
     .title {
       font-size: 28px;
       line-height: 30px;
-      font-weight: 700;
+      font-weight: 800;
+      margin-bottom: 8px;
+      @extend %trans;
     }
     .subTitle {
       font-size: 18px;
       line-height: 28px;
       font-weight: 600;
+      margin-bottom: 8px;
+      @extend %trans;
     }
     .subSubTitle {
       font-size: 15px;
       line-height: 22px;
       font-weight: 500;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      @extend %trans;
     }
     .description {
       font-size: 14px;
       margin-top: 12px;
+      @extend %trans;
     }
     &.reverse {
       flex-direction: row-reverse;
+    }
+    &.inView {
+      .title {
+        @extend %anti-trans;
+      }
+      .subTitle {
+        transition-delay: 0.2s;
+        @extend %anti-trans;
+      }
+      .subSubTitle {
+        transition-delay: 0.4s;
+        @extend %anti-trans;
+      }
+      .description {
+        transition-delay: 0.6s;
+        @extend %anti-trans;
+      }
     }
   }
   .link {

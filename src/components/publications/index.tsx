@@ -1,12 +1,27 @@
 import Arrow from 'components/icon/Arrow'
 import { DataWithButton, PublicationsType } from 'data/interface'
+import { classHelper } from 'helpers/utils'
+import { useInView } from 'react-intersection-observer'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 
 const Publications = ({ title, data }: PublicationsType): JSX.Element => {
+	const [sectionRef, sectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div className={sectionStyles.section} id='publications'>
-			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			<div
+				className={classHelper(
+					sectionStyles.titleSection,
+					sectionInView ? sectionStyles.inView : ''
+				)}
+				ref={sectionRef}
+			>
+				<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			</div>
 			{data.map((pub, key) => (
 				<Publication key={key} {...pub} id={key} />
 			))}

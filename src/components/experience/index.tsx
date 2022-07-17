@@ -6,9 +6,22 @@ import styles from './index.module.scss'
 import { useInView } from 'react-intersection-observer'
 
 const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
+	const [sectionRef, sectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div className={sectionStyles.section} id='experiences'>
-			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			<div
+				className={classHelper(
+					sectionStyles.titleSection,
+					sectionInView ? sectionStyles.inView : ''
+				)}
+				ref={sectionRef}
+			>
+				<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+			</div>
 			{data.map((exp, key) => (
 				<Experience key={key} {...exp} id={key} />
 			))}
@@ -24,7 +37,7 @@ const Experience = ({
 	image,
 	id = 0
 }: DataWithDates): JSX.Element => {
-	const [imageRef, imageInView] = useInView({
+	const [subsectionRef, subsectionInView] = useInView({
 		rootMargin: '-100px 0px',
 		triggerOnce: true
 	})
@@ -33,8 +46,10 @@ const Experience = ({
 		<div
 			className={classHelper(
 				sectionStyles.subSection,
-				id % 2 !== 0 ? sectionStyles.reverse : ''
+				id % 2 !== 0 ? sectionStyles.reverse : '',
+				subsectionInView ? sectionStyles.inView : ''
 			)}
+			ref={subsectionRef}
 		>
 			<div className='col a-center'>
 				<img
@@ -42,10 +57,9 @@ const Experience = ({
 					alt={image.alt}
 					className={classHelper(
 						styles.image,
-						imageInView ? styles.inView : '',
+						subsectionInView ? styles.inView : '',
 						id % 2 !== 0 ? styles.reverse : ''
 					)}
-					ref={imageRef}
 				/>
 			</div>
 			<div className='col'>

@@ -1,5 +1,6 @@
 import { ContactType } from 'data/interface'
 import { classHelper } from 'helpers/utils'
+import { useInView } from 'react-intersection-observer'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
 import SocialMediaStrip from './SocialMediaStrip'
@@ -12,6 +13,11 @@ const Contact = ({
 	resume,
 	description
 }: ContactType): JSX.Element => {
+	const [sectionRef, sectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div
 			className={classHelper(
@@ -30,7 +36,15 @@ const Contact = ({
 					/>
 				</div>
 				<div className={classHelper('col', styles.detailSection)}>
-					<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+					<div
+						className={classHelper(
+							sectionStyles.titleSection,
+							sectionInView ? sectionStyles.inView : ''
+						)}
+						ref={sectionRef}
+					>
+						<h1 className={sectionStyles.sectionTitle}>{title}</h1>
+					</div>
 					<p>{description}</p>
 					<SocialMediaStrip social={data} resume={resume} />
 				</div>

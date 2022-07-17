@@ -1,0 +1,49 @@
+@use "sass:list";
+
+$arr: rgba(#d5bbea, 0.8) rgba(#befdc1, 0.8) rgba(#ffcee0, 0.8) rgba(#faff9a, 0.8) rgba(#ffa7a7, 0.8);
+
+.video {
+  margin-bottom: 24px;
+}
+
+.button {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s ease-in-out 0.5s;
+  &.inView {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.chipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+
+  .chip {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        background-color: nth($arr, $i);
+      }
+    }
+  }
+  &.inView {
+    @for $i from 1 through 5 {
+      .chip:nth-child(#{$i}) {
+        transition-delay: $i * 0.2s + 0.5s;
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}

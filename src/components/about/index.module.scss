@@ -64,9 +64,6 @@
               }
             }
             @keyframes dropdown2-#{$i} {
-              // from {
-              //   bottom: (3 - $i) * 80px + 24px;
-              // }
               to {
                 bottom: (2 - $i) * 80px + 24px;
               }
@@ -86,7 +83,7 @@
           @for $i from 1 through 2 {
             &:nth-child(#{$i}) {
               animation: dropdown-#{$i} 1s ease-in-out (3 - $i) * 0.1s both,
-                dropdown2-#{$i} 1s ease-in-out (4 - $i) * 0.5s both;
+                dropdown2-#{$i} 0.75s ease-in-out (4 - $i) * 0.5s both;
             }
           }
           &:nth-child(3) {

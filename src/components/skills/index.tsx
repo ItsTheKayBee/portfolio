@@ -15,8 +15,16 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 			className={classHelper(sectionStyles.section, sectionStyles.dark)}
 			id='skills'
 		>
-			<h1 className={sectionStyles.sectionTitle}>{title}</h1>
-			<div className={styles.skills} ref={sectionRef}>
+			<div
+				className={classHelper(
+					sectionStyles.titleSection,
+					sectionInView ? sectionStyles.inView : ''
+				)}
+				ref={sectionRef}
+			>
+				<h1 className={classHelper(sectionStyles.sectionTitle)}>{title}</h1>
+			</div>
+			<div className={styles.skills}>
 				{data.map(({ image }, key) => {
 					return (
 						<div
