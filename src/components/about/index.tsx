@@ -4,6 +4,7 @@ import socialStyles from '../contact/index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { AboutType, StatsType } from 'data/interface'
 import { classHelper } from 'helpers/utils'
+import { useInView } from 'react-intersection-observer'
 
 const About = ({
 	image,
@@ -12,6 +13,11 @@ const About = ({
 	subTitle,
 	stats
 }: AboutType & StatsType): JSX.Element => {
+	const [buttonsRef, buttonsInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div className={`${styles.about} ${sectionStyles.dark}`}>
 			<div className={styles.mainContent}>
@@ -22,7 +28,7 @@ const About = ({
 					<h1 className={styles.surname}>BOHRA</h1>
 					<h3 className={styles.position}>{position}</h3>
 				</div>
-				<div className={styles.social}>
+				<div className={styles.social} ref={buttonsRef}>
 					{data.map((option, key) => {
 						const { component: Component } = option
 						return (
@@ -32,7 +38,8 @@ const About = ({
 								className={classHelper(
 									'button',
 									socialStyles.socialButton,
-									key === 1 ? styles.middleButton : ''
+									styles.button,
+									buttonsInView ? styles.inView : ''
 								)}
 							>
 								<Component />

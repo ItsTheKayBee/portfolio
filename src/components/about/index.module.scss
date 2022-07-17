@@ -46,14 +46,53 @@
     }
     .social {
       z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      gap: 20px;
-      .middleButton {
-        grid-column: 1;
+
+      .button {
+        position: absolute;
+        left: 24px;
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            bottom: (3 - $i) * 80px + 300px;
+
+            @keyframes dropdown-#{$i} {
+              from {
+                bottom: (3 - $i) * 80px + 300px;
+              }
+              to {
+                bottom: (3 - $i) * 80px + 24px;
+              }
+            }
+            @keyframes dropdown2-#{$i} {
+              // from {
+              //   bottom: (3 - $i) * 80px + 24px;
+              // }
+              to {
+                bottom: (2 - $i) * 80px + 24px;
+              }
+            }
+          }
+        }
+        @keyframes slideRight {
+          from {
+            left: 24px;
+          }
+          to {
+            left: 104px;
+          }
+        }
+
+        &.inView {
+          @for $i from 1 through 2 {
+            &:nth-child(#{$i}) {
+              animation: dropdown-#{$i} 1s ease-in-out (3 - $i) * 0.1s both,
+                dropdown2-#{$i} 1s ease-in-out (4 - $i) * 0.5s both;
+            }
+          }
+          &:nth-child(3) {
+            animation: dropdown-3 1s ease-in-out both, slideRight 0.5s ease-in-out 1s both;
+          }
+        }
       }
     }
   }

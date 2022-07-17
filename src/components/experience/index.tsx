@@ -3,6 +3,7 @@ import { DATE_FORMAT_OPTIONS } from 'helpers/constants'
 import { classHelper } from 'helpers/utils'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
+import { useInView } from 'react-intersection-observer'
 
 const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
 	return (
@@ -23,6 +24,11 @@ const Experience = ({
 	image,
 	id = 0
 }: DataWithDates): JSX.Element => {
+	const [imageRef, imageInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div
 			className={classHelper(
@@ -31,7 +37,16 @@ const Experience = ({
 			)}
 		>
 			<div className='col a-center'>
-				<img src={image.url} alt={image.alt} className={styles.image} />
+				<img
+					src={image.url}
+					alt={image.alt}
+					className={classHelper(
+						styles.image,
+						imageInView ? styles.inView : '',
+						id % 2 !== 0 ? styles.reverse : ''
+					)}
+					ref={imageRef}
+				/>
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>
