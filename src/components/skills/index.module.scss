@@ -21,7 +21,7 @@
           transition: all 1s ease-out;
           transition-delay: $i * 0.25s;
         }
-      } 
+      }
     }
 
     &.inView {
@@ -41,6 +41,7 @@
       line-height: 28px;
       font-weight: 700;
       opacity: 0;
+      color: #acafda;
     }
   }
 }

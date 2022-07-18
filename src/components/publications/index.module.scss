@@ -1,4 +1,19 @@
 .image {
   height: 250px;
   width: 250px;
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 0.6s ease-out;
+  &.reverse {
+    transform: translateX(150px);
+  }
+}
+.button {
+  width: 200px;
+}
+.inView {
+  .image {
+    transform: none;
+    opacity: 1;
+  }
 }

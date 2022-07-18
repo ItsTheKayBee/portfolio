@@ -372,18 +372,7 @@ export const portfolioDataObject: PortfolioData = {
           to every individual. Now, there are no geographical barriers to the availability of education and evaluation. 
           Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose ‘ASSESS’, 
           a system where the evaluation of subjective answers for an examination becomes easier and convenient. 
-          We have even catered to the requirements of specially-abled students online. 
-          The diversity in educational courses encouraged us to research how we can efficiently auto-evaluate subjective answers and 
-          provide feedback for the purpose of self-analysis. During the pandemic of COVID-19, most of the colleges and organizations
-          shifted to the online mode of examinations. These examinations only had MCQs or objective questions which can be easily 
-          assessed by the online system. Since such systems can only be used for the evaluation of objective questions, 
-          the subjective questions pose a great challenge. In this paper, we directed our research to propose a system
-          that gives features like full-length subjective tests, automated subjective answer evaluation using natural 
-          language processing and semantic learning, auto-generated feedback for self-improvement of the students,
-          visual statistics for both teacher and student after each test, text-to-speech & speech-to-text accessibility 
-          options and a fully functional hands-free mode for the specially-abled students with disabilities like 
-          sluggish typing, poor eyesight, and amputated hands. Since everything will be automated from the evaluation
-          of the answers to providing feedback, there will be minimal stress on the assessors.`
+          We have even catered to the requirements of specially-abled students online.`
 			},
 			{
 				title: 'Blockchain',
@@ -400,18 +389,7 @@ export const portfolioDataObject: PortfolioData = {
           to every individual. Now, there are no geographical barriers to the availability of education and evaluation. 
           Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose ‘ASSESS’, 
           a system where the evaluation of subjective answers for an examination becomes easier and convenient. 
-          We have even catered to the requirements of specially-abled students online. 
-          The diversity in educational courses encouraged us to research how we can efficiently auto-evaluate subjective answers and 
-          provide feedback for the purpose of self-analysis. During the pandemic of COVID-19, most of the colleges and organizations
-          shifted to the online mode of examinations. These examinations only had MCQs or objective questions which can be easily 
-          assessed by the online system. Since such systems can only be used for the evaluation of objective questions, 
-          the subjective questions pose a great challenge. In this paper, we directed our research to propose a system
-          that gives features like full-length subjective tests, automated subjective answer evaluation using natural 
-          language processing and semantic learning, auto-generated feedback for self-improvement of the students,
-          visual statistics for both teacher and student after each test, text-to-speech & speech-to-text accessibility 
-          options and a fully functional hands-free mode for the specially-abled students with disabilities like 
-          sluggish typing, poor eyesight, and amputated hands. Since everything will be automated from the evaluation
-          of the answers to providing feedback, there will be minimal stress on the assessors.`
+          We have even catered to the requirements of specially-abled students online.`
 			}
 		]
 	},

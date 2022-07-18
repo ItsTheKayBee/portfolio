@@ -25,9 +25,9 @@ const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
 				<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 			</div>
 			<div className={styles.achievements}>
-				{data.map((achievement, key) => {
-					return <Achievement key={key} {...achievement} />
-				})}
+				{data.map((achievement, key) => (
+					<Achievement key={key} {...achievement} />
+				))}
 			</div>
 		</div>
 	)
@@ -48,14 +48,16 @@ const Achievement = ({
 		<div
 			className={classHelper(
 				styles.achievement,
-				subsectionInView ? sectionStyles.inView : ''
+				subsectionInView ? styles.inView : ''
 			)}
 			ref={subsectionRef}
 		>
-			<img src={image.url} alt={image.alt} className={styles.image} />
-			<h2>{title}</h2>
-			<h3>{subTitle}</h3>
-			<p>{description}</p>
+			<div className={styles.imgWrapper}>
+				<img src={image.url} alt={image.alt} className={styles.image} />
+			</div>
+			<h2 className={styles.title}>{title}</h2>
+			<h3 className={styles.subTitle}>{subTitle}</h3>
+			<p className={styles.description}>{description}</p>
 		</div>
 	)
 }

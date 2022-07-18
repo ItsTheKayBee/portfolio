@@ -37,21 +37,37 @@ const Publication = ({
 	image,
 	id = 0
 }: DataWithButton): JSX.Element => {
+	const [subsectionRef, subsectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
 		<div
-			className={`${sectionStyles.subSection} ${
-				id !== 0 ? sectionStyles.reverse : ''
-			}`}
+			className={classHelper(
+				sectionStyles.subSection,
+				id !== 0 ? sectionStyles.reverse : '',
+				subsectionInView ? sectionStyles.inView : '',
+				subsectionInView ? styles.inView : ''
+			)}
+			ref={subsectionRef}
 		>
 			<div className='col a-center'>
-				<img src={image.url} alt={image.alt} className={styles.image} />
+				<img
+					src={image.url}
+					alt={image.alt}
+					className={classHelper(styles.image, id !== 0 ? styles.reverse : '')}
+				/>
 			</div>
 			<div className='col'>
 				<h2 className={sectionStyles.title}>{title}</h2>
 				<h3 className={sectionStyles.subTitle}>{subTitle}</h3>
 				<h4 className={sectionStyles.description}>{description}</h4>
 				{button && (
-					<a className={`button ${sectionStyles.link}`} href={button.link}>
+					<a
+						className={classHelper('button', sectionStyles.link, styles.button)}
+						href={button.link}
+					>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>
 						<Arrow />
 					</a>
