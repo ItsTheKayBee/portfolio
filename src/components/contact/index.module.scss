@@ -1,36 +1,51 @@
 @import "styles/variables";
 
 .contactSection {
-  padding-bottom: 0 !important;
+  &.inView {
+    .contact .detailSection .description {
+      opacity: 1;
+      transform: none;
+    }
+    .bgImage {
+      opacity: 1;
+      transform: none;
+    }
+  }
   .contact {
     position: relative;
     z-index: 1;
     margin-bottom: 0 !important;
-    .portraitSection {
-      flex: 20%;
-      .portrait {
-        height: 500px;
-      }
-    }
     .detailSection {
       flex: 80%;
       margin-right: 200px;
       max-width: 600px;
+      .title {
+        justify-content: flex-start;
+        h1 {
+          margin-bottom: 32px;
+        }
+      }
+      .description {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0.3s ease-out 0.5s;
+      }
       .socialStrip {
         display: flex;
         margin-top: 32px;
         flex-direction: column;
-        align-items: center;
         .socialButtons {
           display: flex;
           justify-content: space-between;
           width: 220px;
         }
         .downloadResume {
-          display: flex;
-          align-self: center;
           margin-top: 20px;
           width: 220px;
+          opacity: 0;
+          transform: scaleX(0);
+          transform-origin: center center;
+          transition: all 0.2s ease-in 1.5s;
 
           .downloadButton {
             background-color: $blue-color;
@@ -43,10 +58,15 @@
               font-weight: 600;
               font-size: 18px;
               line-height: 28px;
+              opacity: 0;
+              transition: all 0.3s ease-out 1.8s;
             }
             .icon {
               width: 22px;
               height: 22px;
+              opacity: 0;
+              transition: all 0.3s ease-out 1.8s;
+
               .line {
                 stroke: white;
                 stroke-width: 6px;
@@ -59,15 +79,47 @@
             }
           }
         }
+        .button {
+          opacity: 0;
+          transform: translateX(-100px);
+          transition: all 0.3s ease-in-out;
+          @for $var from 1 through 3 {
+            &:nth-child(#{$var}) {
+              transition-delay: ($var - 1) * 0.2s + 0.6s;
+            }
+          }
+        }
+        &.inView {
+          .button {
+            opacity: 1;
+            transform: none;
+          }
+          .downloadResume {
+            opacity: 1;
+            transform: none;
+            .buttonText {
+              opacity: 1;
+            }
+            .icon {
+              opacity: 1;
+              .arrow {
+                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s;
+              }
+            }
+          }
+        }
       }
     }
   }
   .bgImage {
     position: absolute;
-    right: 0;
+    right: 10%;
     bottom: 0;
-    height: 350px;
-    width: 350px;
+    height: 450px;
+    width: 450px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.3s ease-out 0.5s;
   }
 }
 

@@ -2,6 +2,7 @@ import styles from './index.module.scss'
 import { Button, IconButton } from 'data/interface'
 import Download from 'components/icon/Download'
 import { classHelper } from 'helpers/utils'
+import { useInView } from 'react-intersection-observer'
 
 export default ({
 	resume,
@@ -10,8 +11,19 @@ export default ({
 	resume: Button
 	social: IconButton[]
 }): JSX.Element => {
+	const [sectionRef, sectionInView] = useInView({
+		rootMargin: '-100px 0px',
+		triggerOnce: true
+	})
+
 	return (
-		<div className={styles.socialStrip}>
+		<div
+			className={classHelper(
+				styles.socialStrip,
+				sectionInView ? styles.inView : ''
+			)}
+			ref={sectionRef}
+		>
 			<div className={styles.socialButtons}>
 				{social.map((option, key) => {
 					const { component: Component } = option
@@ -19,7 +31,7 @@ export default ({
 						<a
 							href={option.link}
 							key={key}
-							className={classHelper('button', styles.socialButton)}
+							className={classHelper('button', styles.socialButton, styles.button)}
 						>
 							<Component />
 						</a>

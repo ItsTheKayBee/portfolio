@@ -9,7 +9,6 @@ const Contact = ({
 	title,
 	data,
 	image,
-	selfImage,
 	resume,
 	description
 }: ContactType): JSX.Element => {
@@ -23,33 +22,28 @@ const Contact = ({
 			className={classHelper(
 				sectionStyles.section,
 				sectionStyles.dark,
-				styles.contactSection
+				styles.contactSection,
+				sectionInView ? styles.inView : ''
 			)}
 			id='contact'
 		>
+			<img src={image.url} alt={image.alt} className={styles.bgImage} />
 			<div className={classHelper(sectionStyles.subSection, styles.contact)}>
-				<div className={classHelper('col', 'a-center', styles.portraitSection)}>
-					<img
-						src={selfImage.url}
-						alt={selfImage.alt}
-						className={styles.portrait}
-					/>
-				</div>
 				<div className={classHelper('col', styles.detailSection)}>
 					<div
 						className={classHelper(
 							sectionStyles.titleSection,
-							sectionInView ? sectionStyles.inView : ''
+							sectionInView ? sectionStyles.inView : '',
+							styles.title
 						)}
 						ref={sectionRef}
 					>
 						<h1 className={sectionStyles.sectionTitle}>{title}</h1>
 					</div>
-					<p>{description}</p>
+					<p className={styles.description}>{description}</p>
 					<SocialMediaStrip social={data} resume={resume} />
 				</div>
 			</div>
-			<img src={image.url} alt={image.alt} className={styles.bgImage} />
 		</div>
 	)
 }
