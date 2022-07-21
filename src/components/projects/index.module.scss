@@ -1,6 +1,7 @@
 @use "sass:list";
 
-$arr: rgba(#d5bbea, 0.8) rgba(#befdc1, 0.8) rgba(#ffcee0, 0.8) rgba(#faff9a, 0.8) rgba(#ffa7a7, 0.8);
+$bg-colors: rgba(#b7acff, 0.8) rgba(#aff8db, 0.8) rgba(#ffb5e8, 0.8) rgba(#afcbff, 0.8) #fff5ba;
+$font-colors: #605895 #689382 #a27494 #6b7c9e #a29c76;
 
 .video {
   margin-bottom: 24px;
@@ -20,20 +21,20 @@ $arr: rgba(#d5bbea, 0.8) rgba(#befdc1, 0.8) rgba(#ffcee0, 0.8) rgba(#faff9a, 0.8
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 16px;
 
   .chip {
     display: inline-block;
-    font-size: 12px;
+    font-size: 13px;
     padding: 5px 10px;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 600;
     transform: scale(0);
     opacity: 0;
     transition: all 0.5s ease-in-out;
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        background-color: nth($arr, $i);
+        background-color: nth($bg-colors, $i);
+        color: nth($font-colors, $i);
       }
     }
   }

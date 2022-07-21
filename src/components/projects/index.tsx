@@ -40,13 +40,17 @@ const Project = ({
 	id = 0
 }: ProjectsData): JSX.Element => {
 	const videoRef = useRef<HTMLVideoElement>(null)
+	const [videoWrapperRef, videoInView] = useInView({
+		rootMargin: '-300px 0px'
+	})
 	const [projectRef, projectInView] = useInView({
-		rootMargin: '-100px 0px'
+		rootMargin: '-100px 0px',
+		triggerOnce: true
 	})
 
 	useEffect(() => {
-		if (projectInView) videoRef.current?.play()
-	}, [projectInView])
+		if (videoInView) videoRef.current?.play()
+	}, [videoInView])
 
 	return (
 		<div
@@ -58,9 +62,17 @@ const Project = ({
 			ref={projectRef}
 		>
 			<div className='col a-center'>
-				<video height={300} width={300} ref={videoRef} className={styles.video}>
-					<source src={image.url} type='video/mp4' />
-				</video>
+				<div ref={videoWrapperRef}>
+					<video
+						height={300}
+						width={300}
+						ref={videoRef}
+						className={styles.video}
+						muted
+					>
+						<source src={image.url} type='video/mp4' />
+					</video>
+				</div>
 
 				{button && (
 					<a

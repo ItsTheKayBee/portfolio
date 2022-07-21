@@ -1,9 +1,13 @@
+import Logo from 'components/icon/Logo'
 import { HeaderType } from 'data/interface'
 import styles from './index.module.scss'
 
 const Header = ({ headerData }: { headerData: HeaderType[] }) => {
 	return (
 		<nav className={styles.header}>
+			<div className={styles.logo}>
+				<Logo />
+			</div>
 			<ul className={styles.links}>
 				{headerData.map(({ title, link }) => {
 					return (
