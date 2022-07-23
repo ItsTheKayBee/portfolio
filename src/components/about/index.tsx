@@ -1,34 +1,34 @@
-import Stats from 'components/stats'
 import styles from './index.module.scss'
 import socialStyles from '../contact/index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
-import { AboutType, StatsType } from 'data/interface'
+import { AboutType } from 'data/interface'
 import { classHelper } from 'helpers/utils'
-import { useInView } from 'react-intersection-observer'
+import Hexagon from 'components/bg/hexagon'
+import Triangles from 'components/bg/Triangles'
+import Star from 'components/bg/Star'
 
-const About = ({
-	image,
-	position,
-	data,
-	subTitle,
-	stats
-}: AboutType & StatsType): JSX.Element => {
-	const [buttonsRef, buttonsInView] = useInView({
-		rootMargin: '-100px 0px',
-		triggerOnce: true
-	})
-
+const About = ({ image, data }: AboutType): JSX.Element => {
 	return (
 		<div className={`${styles.about} ${sectionStyles.dark}`}>
 			<div className={styles.mainContent}>
 				<img src={image.url} alt={image.alt} className={styles.image} />
-				<div className={styles.content}>
-					<p className={styles.subTitle}>{subTitle}</p>
-					<h1 className={styles.name}>KUNAL</h1>
-					<h1 className={styles.surname}>BOHRA</h1>
-					<h3 className={styles.position}>{position}</h3>
+				<div className={styles.hexagon}>
+					<Hexagon />
 				</div>
-				<div className={styles.social} ref={buttonsRef}>
+				<div className={styles.triangles}>
+					<Triangles />
+				</div>
+				<div className={styles.star}>
+					<Star />
+				</div>
+				<div className={styles.content}>
+					<h1 className={styles.name}>KUNAL BOHRA</h1>
+					<div className={styles.position}>
+						<h3>WEB</h3>
+						<h3>DEVELOPER</h3>
+					</div>
+				</div>
+				<div className={styles.social}>
 					{data.map((option, key) => {
 						const { component: Component } = option
 						return (
@@ -38,8 +38,7 @@ const About = ({
 								className={classHelper(
 									'button',
 									socialStyles.socialButton,
-									styles.button,
-									buttonsInView ? styles.inView : ''
+									styles.button
 								)}
 							>
 								<Component />
@@ -47,14 +46,31 @@ const About = ({
 						)
 					})}
 				</div>
-				{/* <div className={styles.model}>
-					<Canvas onPointerMove={handleMove}>
-						<ambientLight intensity={15} color='#5774ff' />
-						<Gems />
-					</Canvas>
-				</div> */}
+				<div className={styles.auroraWrapper}>
+					<div className={styles.aurora} />
+					<div className={styles.aurora1} />
+					<div className={styles.aurora2} />
+				</div>
+				<div className={styles.auroraWrapper1}>
+					<div className={styles.aurora3} />
+					<div className={styles.aurora4} />
+					<div className={styles.aurora5} />
+				</div>
+				<img
+					src='/images/cube.webp'
+					alt=''
+					height='100'
+					width='100'
+					className={styles.cube}
+				/>
+				<img
+					src='/images/triangle.webp'
+					alt=''
+					height='84'
+					width='84'
+					className={styles.pyramid}
+				/>
 			</div>
-			<Stats stats={stats} />
 		</div>
 	)
 }

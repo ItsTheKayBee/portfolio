@@ -28,9 +28,9 @@ const Web = ({ web }: { web: WebType }) => {
 			alt='web'
 			className={classHelper(styles.web, visible ? styles.active : '')}
 			style={{
-				top: `${web.poxY}px`,
-				left: `${web.posX}px`,
-				width: `${web.size}px`,
+				top: web.poxY,
+				left: web.posX,
+				width: web.size,
 				transform: `rotate(${web.rot}deg)`
 			}}
 		/>

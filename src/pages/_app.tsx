@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
 import '../styles/globals.scss'
-import { portfolioDataObject, statsData } from 'data'
+import { portfolioDataObject } from 'data'
 import Header from 'components/header'
 import About from '../components/about'
-import { useRef, useState } from 'react'
-import { getRandom } from 'helpers/utils'
+import { useEffect, useState } from 'react'
+import { classHelper, getRandom } from 'helpers/utils'
 import Web from 'components/web'
 import { Web as WebType } from 'data/interface'
 
@@ -17,6 +17,11 @@ const Skills = dynamic(() => import('../components/skills'))
 
 const App = () => {
 	const [webs, setWebs] = useState<WebType[]>([])
+	const [circlePosition, setCirclePosition] = useState({
+		x: -300,
+		y: -300
+	})
+	const [circleCursorVisibility, setCircleCursorVisibility] = useState('hide')
 
 	const createWeb = (e: any): WebType => {
 		const size = getRandom(50, 200)
@@ -30,17 +35,25 @@ const App = () => {
 		}
 	}
 
-	const handleClick = (e: any) => {
-		setWebs(prev => [...prev, createWeb(e)])
+	const handleClick = (e: any) => setWebs(prev => [...prev, createWeb(e)])
+
+	const moveCircle = (e: any) => {
+		setCircleCursorVisibility(webs.length > 0 ? 'hide' : '')
+		setCirclePosition({ x: e.pageX - 65, y: e.pageY - 65 })
 	}
 
 	return (
-		<main className='main' onClick={handleClick}>
+		<main className='main' onClick={handleClick} onMouseMove={moveCircle}>
 			{webs.map((data, key) => (
 				<Web web={data} key={key} />
 			))}
+			<img
+				src='/images/cursor-circle.svg'
+				className={classHelper('cursorCircle', circleCursorVisibility)}
+				style={{ left: circlePosition.x, top: circlePosition.y }}
+			/>
 			<Header headerData={portfolioDataObject.header} />
-			<About {...portfolioDataObject.about} stats={statsData.stats} />
+			<About {...portfolioDataObject.about} />
 			<Experience {...portfolioDataObject.experiences} />
 			<Skills {...portfolioDataObject.skills} />
 			<Projects {...portfolioDataObject.projects} />

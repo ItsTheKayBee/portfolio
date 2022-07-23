@@ -120,6 +120,16 @@ a {
   position: relative;
   overflow-x: hidden;
 
+  .cursorCircle {
+    position: absolute;
+    opacity: 1;
+    animation: rotate 8s linear infinite;
+    transition: all 0.5s ease-out;
+    &.hide {
+      opacity: 0;
+      animation: none;
+    }
+  }
   .col {
     flex: 1;
     flex-direction: column;
@@ -148,5 +158,14 @@ a {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
   }
 }

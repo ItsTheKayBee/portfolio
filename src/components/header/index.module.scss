@@ -6,7 +6,7 @@
   .logo {
     position: absolute;
     left: 8%;
-    animation: dropdown 0.75s ease-in-out, oscillation 4s linear 0.9s infinite;
+    animation: dropdown 0.75s ease-in-out, oscillation 8s linear 0.9s infinite;
     transform-origin: center top;
   }
   .links {
@@ -34,19 +34,25 @@
   }
   @keyframes oscillation {
     0% {
-      transform: rotate(0deg);
+      transform: translateY(0) rotate(0deg);
+    }
+    13% {
+      transform: translateY(-7px) rotate(18deg);
     }
     25% {
-      transform: rotate(35deg);
+      transform: translateY(-3px) rotate(35deg);
     }
     50% {
-      transform: rotate(0deg);
+      transform: translateY(0) rotate(0deg);
     }
     75% {
-      transform: rotate(-35deg);
+      transform: translateY(-3px) rotate(-35deg);
+    }
+    88% {
+      transform: translateY(-5px) rotate(-17deg);
     }
     100% {
-      transform: rotate(0deg);
+      transform: translateY(0) rotate(0deg);
     }
   }
 }
