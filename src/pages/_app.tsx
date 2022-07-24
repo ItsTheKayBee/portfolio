@@ -21,7 +21,6 @@ const App = () => {
 		x: -300,
 		y: -300
 	})
-	const [circleCursorVisibility, setCircleCursorVisibility] = useState('hide')
 
 	const createWeb = (e: any): WebType => {
 		const size = getRandom(50, 200)
@@ -38,7 +37,6 @@ const App = () => {
 	const handleClick = (e: any) => setWebs(prev => [...prev, createWeb(e)])
 
 	const moveCircle = (e: any) => {
-		setCircleCursorVisibility(webs.length > 0 ? 'hide' : '')
 		setCirclePosition({ x: e.pageX - 65, y: e.pageY - 65 })
 	}
 
@@ -49,7 +47,7 @@ const App = () => {
 			))}
 			<img
 				src='/images/cursor-circle.svg'
-				className={classHelper('cursorCircle', circleCursorVisibility)}
+				className={classHelper('cursorCircle', webs.length > 0 ? 'hide' : '')}
 				style={{ left: circlePosition.x, top: circlePosition.y }}
 			/>
 			<Header headerData={portfolioDataObject.header} />

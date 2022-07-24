@@ -70,6 +70,8 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        transform-origin: center center;
+        animation: scale-text 0.4s ease-out 0.4s both;
       }
 
       .position {
@@ -84,10 +86,15 @@
           font-family: Peace;
           font-weight: 800;
           margin-bottom: 20px;
-          color: rgba(#fff, 0.2);
+          color: rgba(#fff, 0.25);
+          animation: slide-in-left 0.4s ease-out 0.5s both;
           &:first-child {
             font-size: 80px;
             line-height: 34px;
+            animation-delay: 0s;
+          }
+          &:last-child {
+            color: rgba(#fff, 0.15);
           }
         }
       }
@@ -127,14 +134,6 @@
             }
           }
         }
-        @keyframes slideRight {
-          from {
-            left: 24px;
-          }
-          to {
-            left: 104px;
-          }
-        }
       }
     }
     .cube {
@@ -142,8 +141,19 @@
       left: 40%;
       bottom: 60px;
       z-index: 0;
-      animation: rotate 80s linear both infinite;
+      animation: popUp 0.5s ease-out both, rotate 80s linear both infinite;
       filter: hue-rotate(300deg);
+    }
+
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        bottom: -200px;
+      }
+      to {
+        opacity: 1;
+        bottom: 60px;
+      }
     }
     .pyramid {
       position: absolute;
@@ -152,8 +162,7 @@
       z-index: 1;
       transform-origin: center center;
       filter: hue-rotate(90deg);
-      transform: rotate(-40deg);
-      animation: hover 10s ease-out both infinite;
+      animation: slide-in-left 0.5s ease-in-out, hover 10s ease-out 0.6s both infinite;
     }
 
     .auroraWrapper {
@@ -247,6 +256,34 @@
       }
       100% {
         transform: translateY(0) rotate(-40deg);
+      }
+    }
+    @keyframes slideRight {
+      from {
+        left: 24px;
+      }
+      to {
+        left: 104px;
+      }
+    }
+    @keyframes slide-in-left {
+      from {
+        opacity: 0;
+        transform: translateX(500px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes scale-text {
+      0% {
+        opacity: 0;
+        transform: translateY(-50%) scaleY(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(-50%) scaleY(1);
       }
     }
   }
