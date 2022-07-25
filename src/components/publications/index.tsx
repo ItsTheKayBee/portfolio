@@ -57,6 +57,7 @@ const Publication = ({
 					src={image.url}
 					alt={image.alt}
 					className={classHelper(styles.image, id !== 0 ? styles.reverse : '')}
+					loading='lazy'
 				/>
 			</div>
 			<div className='col'>

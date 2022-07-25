@@ -1,5 +1,6 @@
 import { AchievementsType, DataWithButton } from 'data/interface'
 import { classHelper } from 'helpers/utils'
+import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
@@ -53,7 +54,12 @@ const Achievement = ({
 			ref={subsectionRef}
 		>
 			<div className={styles.imgWrapper}>
-				<img src={image.url} alt={image.alt} className={styles.image} />
+				<img
+					src={image.url}
+					alt={image.alt}
+					className={styles.image}
+					loading='lazy'
+				/>
 			</div>
 			<h2 className={styles.title}>{title}</h2>
 			<h3 className={styles.subTitle}>{subTitle}</h3>

@@ -1,5 +1,7 @@
+@import "styles/variables";
+
 $loader-size: 80px;
-$loader-color: radial-gradient(at 0% 0%, hsl(262, 100%, 60%), hsl(256, 100%, 72%));
+$loader-color: radial-gradient(at 0% 0%, #7e33ff, $blue-color);
 $loader-time: 1s;
 $center-loader-time: 1.8s;
 $loader-delay: 0s;
@@ -15,7 +17,6 @@ $item-rotation: 0deg;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: default;
 
   .container {
     position: absolute;

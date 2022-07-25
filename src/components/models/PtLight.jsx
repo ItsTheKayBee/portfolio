@@ -14,7 +14,7 @@ export default ({ pointer }) => {
 			position={[0, 0, 3]}
 			ref={point}
 			intensity={50}
-			color='#5774ff'
+			color='#9670ff'
 		/>
 	)
 }

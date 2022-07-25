@@ -27,7 +27,12 @@ const Contact = ({
 			)}
 			id='contact'
 		>
-			<img src={image.url} alt={image.alt} className={styles.bgImage} />
+			<img
+				src={image.url}
+				alt={image.alt}
+				className={styles.bgImage}
+				loading='lazy'
+			/>
 			<div className={classHelper(sectionStyles.subSection, styles.contact)}>
 				<div className={classHelper('col', styles.detailSection)}>
 					<div

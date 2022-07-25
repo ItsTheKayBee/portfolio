@@ -60,6 +60,7 @@ const Experience = ({
 						subsectionInView ? styles.inView : '',
 						id % 2 !== 0 ? styles.reverse : ''
 					)}
+					loading='lazy'
 				/>
 			</div>
 			<div className='col'>

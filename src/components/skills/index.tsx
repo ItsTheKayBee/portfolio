@@ -34,7 +34,12 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 								sectionInView ? styles.inView : ''
 							)}
 						>
-							<img src={image.url} alt={image.alt} className={styles.image} />
+							<img
+								src={image.url}
+								alt={image.alt}
+								className={styles.image}
+								loading='lazy'
+							/>
 							<h3 className={styles.title}>{image.alt}</h3>
 						</div>
 					)
