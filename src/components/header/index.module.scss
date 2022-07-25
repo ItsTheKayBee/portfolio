@@ -1,3 +1,5 @@
+$load-time: 2s;
+
 .header {
   position: absolute;
   top: 0;
@@ -6,7 +8,7 @@
   .logo {
     position: absolute;
     left: 8%;
-    animation: dropdown 0.75s ease-in-out, oscillation 8s linear 0.9s infinite;
+    animation: dropdown 0.75s ease-in-out $load-time, oscillation 8s linear $load-time + 0.9s infinite;
     transform-origin: center top;
   }
   .links {
@@ -20,7 +22,7 @@
       animation: appear 0.3s ease-out both;
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-          animation-delay: ($i - 1) * 0.3s;
+          animation-delay: $load-time + ($i - 1) * 0.3s;
         }
       }
       @keyframes appear {

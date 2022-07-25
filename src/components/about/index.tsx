@@ -3,7 +3,7 @@ import socialStyles from '../contact/index.module.scss'
 import sectionStyles from 'styles/section.module.scss'
 import { AboutType } from 'data/interface'
 import { classHelper } from 'helpers/utils'
-import Hexagon from 'components/bg/hexagon'
+import Hexagon from 'components/bg/Hexagon'
 import Triangles from 'components/bg/Triangles'
 import Star from 'components/bg/Star'
 

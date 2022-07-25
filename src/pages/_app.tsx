@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { classHelper, getRandom } from 'helpers/utils'
 import Web from 'components/web'
 import { Web as WebType } from 'data/interface'
+import Loader from 'components/loader'
 
 const Achievements = dynamic(() => import('../components/achievements'))
 const Contact = dynamic(() => import('../components/contact'))
@@ -21,6 +22,11 @@ const App = () => {
 		x: -300,
 		y: -300
 	})
+	const [isLoading, setLoading] = useState(true)
+
+	useEffect(() => {
+		setTimeout(() => setLoading(false), 2000)
+	}, [])
 
 	const createWeb = (e: any): WebType => {
 		const size = getRandom(50, 200)
@@ -36,12 +42,16 @@ const App = () => {
 
 	const handleClick = (e: any) => setWebs(prev => [...prev, createWeb(e)])
 
-	const moveCircle = (e: any) => {
+	const moveCircle = (e: any) =>
 		setCirclePosition({ x: e.pageX - 65, y: e.pageY - 65 })
-	}
 
 	return (
-		<main className='main' onClick={handleClick} onMouseMove={moveCircle}>
+		<main
+			className={classHelper('main', !isLoading ? 'cursor' : '')}
+			onClick={handleClick}
+			onMouseMove={moveCircle}
+		>
+			{isLoading && <Loader />}
 			{webs.map((data, key) => (
 				<Web web={data} key={key} />
 			))}

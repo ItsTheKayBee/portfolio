@@ -1,42 +1,12 @@
 @font-face {
   font-family: Fuse;
-  src: url("../fonts/Fuse-Black.ttf");
-  font-weight: 900;
-}
-@font-face {
-  font-family: Fuse;
-  src: url("../fonts/Fuse-Bold.ttf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: Fuse;
-  src: url("../fonts/Fuse-Regular.ttf");
-  font-weight: 400;
-}
-@font-face {
-  font-family: Fuse;
   src: url("../fonts/Fuse-UltraBlack.ttf");
   font-weight: 950;
-}
-@font-face {
-  font-family: Fuse;
-  src: url("../fonts/Fuse-ExtraBold.ttf");
-  font-weight: 800;
 }
 @font-face {
   font-family: Peace;
   src: url("../fonts/Peace-Sans.otf");
   font-weight: 800;
-}
-@font-face {
-  font-family: Noto;
-  src: url("../fonts/NotoSans-Bold.ttf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: Noto;
-  src: url("../fonts/NotoSans-Regular.ttf");
-  font-weight: 400;
 }
 @font-face {
   font-family: OpenSans;
@@ -88,11 +58,6 @@
   src: url("../fonts/Greycliff-ExtraBold.otf");
   font-weight: 800;
 }
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-Heavy.otf");
-  font-weight: 900;
-}
 
 html {
   scroll-behavior: smooth;
@@ -104,7 +69,6 @@ body {
   font-family: OpenSans, GreyCliff, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  cursor: url("/images/hand.svg"), auto;
 }
 
 a {
@@ -120,6 +84,10 @@ a {
   position: relative;
   overflow-x: hidden;
   user-select: none;
+
+  &.cursor {
+    cursor: url("/images/hand.svg"), auto;
+  }
 
   .cursorCircle {
     position: absolute;
