@@ -72,11 +72,6 @@
                 stroke-width: 6px;
               }
             }
-            &:hover {
-              .arrow {
-                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-              }
-            }
           }
         }
         .button {
@@ -100,10 +95,17 @@
             .buttonText {
               opacity: 1;
             }
+            .downloadButton:hover {
+              .icon {
+                .arrow {
+                  animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+              }
+            }
             .icon {
               opacity: 1;
               .arrow {
-                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s;
+                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s both;
               }
             }
           }
@@ -132,6 +134,9 @@
   &:hover {
     .emailIcon {
       animation: emailTurn 0.35s ease-out;
+      .base {
+        fill: $red-color;
+      }
       .flap {
         animation: flapAnim 0.3s ease-out 0.35s;
       }
@@ -143,8 +148,18 @@
       .dot {
         animation: dotFallAnim 0.6s ease-out;
       }
+      .letterN,
+      .letterI,
+      .dot {
+        fill: $blue-color;
+      }
     }
     .githubIcon {
+      .head,
+      .body,
+      .tail {
+        fill: $dark-grey-color;
+      }
       .tail {
         transform-origin: 15px 35px;
         animation: tailAnim 0.3s ease-out;
@@ -156,10 +171,11 @@
     }
   }
   .emailIcon {
-    width: 33px;
-    height: 20px;
+    width: 36px;
+    height: 28px;
     .base {
       fill: black;
+      transition: all 0.2s ease-out;
     }
     .outline {
       fill: white;
@@ -172,6 +188,7 @@
     .letterI,
     .dot {
       fill: black;
+      transition: all 0.2s ease-out;
     }
   }
   .githubIcon {
@@ -181,6 +198,7 @@
     .body,
     .tail {
       fill: black;
+      transition: all 0.2s ease-out;
     }
   }
 }

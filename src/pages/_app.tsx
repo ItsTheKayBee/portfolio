@@ -1,12 +1,14 @@
-import dynamic from 'next/dynamic'
-import '../styles/globals.scss'
-import { portfolioDataObject } from 'data'
-import Header from 'components/header'
-import About from '../components/about'
 import { useEffect, useState } from 'react'
-import { classHelper, getRandom } from 'helpers/utils'
-import Web from 'components/web'
+import dynamic from 'next/dynamic'
+
+import { portfolioDataObject } from 'data'
 import { Web as WebType } from 'data/interface'
+
+import { classHelper, getRandom } from 'helpers/utils'
+
+import Web from 'components/web'
+import Header from 'components/header'
+import About from 'components/about'
 import Loader from 'components/loader'
 
 const Achievements = dynamic(() => import('../components/achievements'))
@@ -15,6 +17,8 @@ const Experience = dynamic(() => import('../components/experience'))
 const Projects = dynamic(() => import('../components/projects'))
 const Publications = dynamic(() => import('../components/publications'))
 const Skills = dynamic(() => import('../components/skills'))
+
+import '../styles/globals.scss'
 
 const App = () => {
 	const [webs, setWebs] = useState<WebType[]>([])
@@ -43,7 +47,7 @@ const App = () => {
 	const handleClick = (e: any) => setWebs(prev => [...prev, createWeb(e)])
 
 	const moveCircle = (e: any) =>
-		setCirclePosition({ x: e.pageX - 65, y: e.pageY - 65 })
+		webs.length === 0 && setCirclePosition({ x: e.pageX - 65, y: e.pageY - 65 })
 
 	return (
 		<main

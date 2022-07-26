@@ -46,6 +46,11 @@ export const portfolioDataObject: PortfolioData = {
 		},
 		data: [
 			{
+				link: 'mailto:kbohra89@gmail.com',
+				component: Email,
+				text: 'kbohra89@gmail.com'
+			},
+			{
 				link: 'https://github.com/ItsTheKayBee',
 				component: Github,
 				text: 'ItsTheKayBee'
@@ -54,11 +59,6 @@ export const portfolioDataObject: PortfolioData = {
 				link: 'https://www.linkedin.com/in/itsthekaybee/',
 				component: LinkedIn,
 				text: 'itsthekaybee'
-			},
-			{
-				link: 'mailto:kbohra89@gmail.com',
-				component: Email,
-				text: 'kbohra89@gmail.com'
 			}
 		]
 	},

@@ -168,7 +168,7 @@ $load-time: 2s;
     }
 
     .auroraWrapper {
-      animation: rotate 15s linear $load-time both infinite;
+      animation: rotate 10s linear $load-time both infinite;
       transform-origin: center center;
       position: absolute;
       bottom: 0;
@@ -205,7 +205,7 @@ $load-time: 2s;
       }
     }
     .auroraWrapper1 {
-      animation: rotate 20s linear $load-time both infinite;
+      animation: rotate 15s linear $load-time both infinite;
       transform-origin: center center;
       position: absolute;
       top: 40px;

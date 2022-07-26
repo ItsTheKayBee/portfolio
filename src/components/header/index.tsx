@@ -4,9 +4,9 @@ import styles from './index.module.scss'
 
 const Header = ({ headerData }: { headerData: HeaderType[] }) => (
 	<nav className={styles.header}>
-		<div className={styles.logo}>
+		<a href='/' className={styles.logo}>
 			<Logo />
-		</div>
+		</a>
 		<ul className={styles.links}>
 			{headerData.map(({ title, link }) => {
 				return (
