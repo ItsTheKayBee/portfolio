@@ -72,6 +72,12 @@
                 stroke-width: 6px;
               }
             }
+            &:hover {
+              .arrow {
+                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                animation-play-state: running;
+              }
+            }
           }
         }
         .button {
@@ -95,18 +101,8 @@
             .buttonText {
               opacity: 1;
             }
-            .downloadButton:hover {
-              .icon {
-                .arrow {
-                  animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                }
-              }
-            }
             .icon {
               opacity: 1;
-              .arrow {
-                animation: arrowAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s both;
-              }
             }
           }
         }

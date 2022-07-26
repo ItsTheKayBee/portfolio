@@ -69,6 +69,7 @@ body {
   font-family: OpenSans, GreyCliff, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
+  height: 100vh;
 }
 
 a {
@@ -82,7 +83,7 @@ a {
 
 .main {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   user-select: none;
 
   &.cursor {
