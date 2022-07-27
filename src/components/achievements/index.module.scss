@@ -33,7 +33,13 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      animation: scaleUp 0.3s ease-out both;
+    }
+
+    @keyframes scaleUp {
+      to {
+        transform: scale(1.05);
+      }
     }
 
     %trans {

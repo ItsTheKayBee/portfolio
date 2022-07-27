@@ -22,8 +22,8 @@ $load-time: 2s;
     padding: 0;
     gap: 32px;
     justify-content: center;
+    margin-top: 20px;
     .navItem {
-      padding: 20px 0;
       animation: appear 0.3s ease-out both;
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
@@ -45,6 +45,8 @@ $load-time: 2s;
         font-weight: 600;
         opacity: 0.7;
         transition: all 0.25s ease-out;
+        padding: 16px 0;
+
         &:hover {
           opacity: 1;
         }
