@@ -12,7 +12,11 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 
 	return (
 		<div
-			className={classHelper(sectionStyles.section, sectionStyles.dark)}
+			className={classHelper(
+				sectionStyles.section,
+				sectionStyles.dark,
+				styles.skillsWrapper
+			)}
 			id='skills'
 		>
 			<div

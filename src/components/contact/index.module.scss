@@ -1,14 +1,24 @@
 @import "styles/variables";
+@import "styles/breakpoints";
 
 .contactSection {
   &.inView {
+    padding: 48px 24px 100px;
+
+    @include md {
+      padding: 100px 10%;
+    }
     .contact .detailSection .description {
       opacity: 1;
       transform: none;
     }
     .bgImage {
-      opacity: 1;
+      opacity: 0.65;
       transform: none;
+
+      @include md {
+        opacity: 1;
+      }
     }
   }
   .contact {
@@ -17,8 +27,10 @@
     margin-bottom: 0 !important;
     .detailSection {
       flex: 80%;
-      margin-right: 200px;
       max-width: 600px;
+      @include md {
+        margin-right: 200px;
+      }
       .title {
         justify-content: flex-start;
         h1 {
@@ -26,6 +38,9 @@
         }
       }
       .description {
+        font-size: 15px;
+        line-height: 22px;
+        color: #9598be;
         opacity: 0;
         transform: translateY(100px);
         transition: all 0.3s ease-out 0.5s;
@@ -36,16 +51,23 @@
         flex-direction: column;
         .socialButtons {
           display: flex;
-          justify-content: space-between;
-          width: 220px;
+          justify-content: space-evenly;
+
+          @include md {
+            width: 240px;
+            justify-content: space-between;
+          }
         }
         .downloadResume {
           margin-top: 20px;
-          width: 220px;
           opacity: 0;
           transform: scaleX(0);
           transform-origin: center center;
           transition: all 0.2s ease-in 1.5s;
+
+          @include md {
+            width: 240px;
+          }
 
           .downloadButton {
             background-color: $blue-color;
@@ -83,6 +105,7 @@
           }
         }
         .button {
+          width: 60px;
           opacity: 0;
           transform: translateX(-100px);
           transition: all 0.3s ease-in-out;
@@ -112,14 +135,19 @@
     }
   }
   .bgImage {
+    height: 250px;
+    width: 250px;
     position: absolute;
     right: 10%;
     bottom: 0;
-    height: 450px;
-    width: 450px;
     opacity: 0;
     transform: translateX(100px);
     transition: all 0.3s ease-out 0.5s;
+
+    @include md {
+      height: 450px;
+      width: 450px;
+    }
   }
 }
 

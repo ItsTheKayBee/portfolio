@@ -1,6 +1,5 @@
 import { AchievementsType, DataWithButton } from 'data/interface'
 import { classHelper } from 'helpers/utils'
-import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
 import sectionStyles from 'styles/section.module.scss'
 import styles from './index.module.scss'
@@ -13,7 +12,11 @@ const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
 
 	return (
 		<div
-			className={classHelper(sectionStyles.section, sectionStyles.dark)}
+			className={classHelper(
+				sectionStyles.section,
+				sectionStyles.dark,
+				styles.achievementsWrapper
+			)}
 			id='achievements'
 		>
 			<div

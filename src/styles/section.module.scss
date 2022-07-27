@@ -1,15 +1,19 @@
-@import "styles/variables.scss";
+@import "styles/variables";
+@import "styles/breakpoints";
 
 .section {
-  padding: 100px 10%;
+  padding: 48px 24px 0;
   position: relative;
+  @include md {
+    padding: 100px 10%;
+  }
 
   .titleSection {
     display: flex;
     justify-content: center;
     .sectionTitle {
-      font-size: 40px;
-      line-height: 44px;
+      font-size: 28px;
+      line-height: 38px;
       font-weight: 950;
       margin-bottom: 80px;
       font-family: Fuse;
@@ -21,10 +25,15 @@
       opacity: 0;
       transition: all 0.5s ease-out;
 
+      @include md {
+        font-size: 40px;
+        line-height: 44px;
+      }
+
       &::after {
         content: "";
         height: 14px;
-        width: 110%;
+        width: 105%;
         background-color: rgba($blue-color, 0.7);
         z-index: -1;
         position: absolute;
@@ -34,6 +43,10 @@
         transform: scaleX(0);
         transform-origin: center left;
         transition: all 0.5s ease-in-out 0.5s;
+
+        @include md {
+          width: 110%;
+        }
       }
     }
     &.inView {
@@ -61,39 +74,65 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
+    flex-direction: column;
+    row-gap: 32px;
+
+    @include md {
+      flex-direction: row;
+      &.reverse {
+        flex-direction: row-reverse;
+      }
+    }
 
     .title {
-      font-size: 25px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 26px;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       @extend %trans;
+      @include md {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 8px;
+      }
     }
     .subTitle {
-      font-size: 17px;
-      line-height: 24px;
+      font-size: 15px;
+      line-height: 22px;
+      margin-bottom: 4px;
       font-weight: 400;
-      margin-bottom: 8px;
       @extend %trans;
+      @include md {
+        font-size: 17px;
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
     }
     .subSubTitle {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 4px;
       font-weight: 400;
-      margin-bottom: 8px;
       @extend %trans;
+      @include md {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+      }
     }
     .description {
-      font-size: 13px;
+      font-size: 12px;
       line-height: 16px;
       margin-top: 8px;
       font-weight: 400;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       @extend %trans;
+      @include md {
+        font-size: 13px;
+        margin-bottom: 24px;
+      }
     }
-    &.reverse {
-      flex-direction: row-reverse;
-    }
+
     &.inView {
       .title {
         @extend %anti-trans;
