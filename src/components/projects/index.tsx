@@ -82,6 +82,7 @@ const Project = ({
 							styles.button,
 							projectInView ? styles.inView : ''
 						)}
+						target='_blank'
 						href={button.link}
 					>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>

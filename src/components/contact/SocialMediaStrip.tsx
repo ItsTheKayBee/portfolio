@@ -31,7 +31,12 @@ export default ({
 						<a
 							href={option.link}
 							key={key}
-							className={classHelper('button', styles.socialButton, styles.button)}
+							target='_blank'
+							className={classHelper(
+								'button',
+								styles.socialButton,
+								styles.button
+							)}
 						>
 							<Component />
 						</a>

@@ -23,8 +23,11 @@ const About = ({ image, data }: AboutType): JSX.Element => (
 			<div className={styles.content}>
 				<h1 className={styles.name}>KUNAL BOHRA</h1>
 				<div className={styles.position}>
-					<h3>WEB</h3>
-					<h3>DEVELOPER</h3>
+					<h3>
+						<span>WEB</span>
+						<br className={styles.break} />
+						<span>DEVELOPER</span>
+					</h3>
 				</div>
 			</div>
 			<div className={styles.social}>
@@ -34,6 +37,7 @@ const About = ({ image, data }: AboutType): JSX.Element => (
 						<a
 							href={option.link}
 							key={key}
+							target='_blank'
 							className={classHelper(
 								'button',
 								socialStyles.socialButton,

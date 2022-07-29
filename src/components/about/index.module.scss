@@ -16,9 +16,13 @@ $load-time: 2s;
     .image {
       position: absolute;
       bottom: 0px;
-      left: 250px;
-      height: 75%;
+      right: 16px;
       z-index: 2;
+      height: 45%;
+      @include md {
+        height: 75%;
+        left: 250px;
+      }
     }
     .hexagon {
       position: absolute;
@@ -56,7 +60,6 @@ $load-time: 2s;
         line-height: 50px;
         letter-spacing: 2px;
         font-family: Peace;
-        text-align: right;
         word-spacing: 9999999px;
         width: min-content;
         background-color: hsla(195, 100%, 85%, 1);
@@ -71,38 +74,66 @@ $load-time: 2s;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         transform-origin: center center;
         animation: scale-text 0.4s ease-out $load-time + 0.4s both;
+        top: 200px;
+        left: 20px;
 
         @include md {
+          top: 50%;
+          left: auto;
           font-size: 128px;
           line-height: 100px;
+          text-align: right;
         }
       }
 
       .position {
         position: absolute;
-        bottom: 0;
-        right: 24px;
-        text-align: right;
+        top: 270px;
+        left: 20px;
         z-index: 1;
+        @include md {
+          top: auto;
+          left: auto;
+          bottom: 0;
+          right: 24px;
+          text-align: right;
+        }
         h3 {
-          font-size: 64px;
-          line-height: 44px;
           font-family: Peace;
           font-weight: 800;
           margin-bottom: 20px;
           color: rgba(#fff, 0.25);
           animation: slide-in-left 0.4s ease-out $load-time + 0.5s both;
-          &:first-child {
-            font-size: 80px;
-            line-height: 34px;
-            animation-delay: $load-time;
+          span {
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 700;
+            &:first-child {
+              animation-delay: $load-time;
+              @include md {
+                font-size: 80px;
+                line-height: 34px;
+              }
+            }
+            &:last-child {
+              margin-left: 8px;
+              @include md {
+                margin-left: 0;
+                font-size: 64px;
+                line-height: 44px;
+                color: rgba(#fff, 0.15);
+              }
+            }
           }
-          &:last-child {
-            color: rgba(#fff, 0.15);
+
+          .break {
+            display: none;
+            @include md {
+              display: block;
+            }
           }
         }
       }
@@ -147,11 +178,27 @@ $load-time: 2s;
     }
     .cube {
       position: absolute;
-      left: 40%;
-      bottom: 60px;
+      left: 40px;
+      bottom: 300px;
       z-index: 0;
-      animation: popUp 0.5s ease-out $load-time both, rotate 80s linear $load-time + 0.5s both infinite;
       filter: hue-rotate(300deg);
+      animation: popUpMweb 0.5s ease-out $load-time both, rotate 80s linear $load-time + 0.5s both infinite;
+
+      @include md {
+        left: 40%;
+        bottom: 60px;
+        animation: popUp 0.5s ease-out $load-time both, rotate 80s linear $load-time + 0.5s both infinite;
+      }
+    }
+    @keyframes popUpMweb {
+      from {
+        opacity: 0;
+        bottom: -200px;
+      }
+      to {
+        opacity: 1;
+        bottom: 300px;
+      }
     }
 
     @keyframes popUp {
@@ -167,58 +214,92 @@ $load-time: 2s;
     .pyramid {
       position: absolute;
       right: 50px;
-      top: 330px;
+      top: 30px;
       z-index: 1;
       transform-origin: center center;
       filter: hue-rotate(90deg);
       animation: slide-in-left 0.5s ease-in-out $load-time, hover 10s ease-out $load-time + 0.6s both infinite;
+
+      @include md {
+        top: 330px;
+      }
     }
 
     .auroraWrapper {
-      animation: rotate 10s linear $load-time both infinite;
+      animation: rotate 20s linear $load-time both infinite;
       transform-origin: center center;
       position: absolute;
       bottom: 0;
       right: 0;
       height: 400px;
       width: 400px;
+      transform: scale(1.2);
+
+      @include md {
+        transform: scale(1);
+        animation-duration: 10s;
+      }
 
       .aurora {
         height: 270px;
         width: 250px;
         position: absolute;
         bottom: 0;
-        right: -40px;
+        left: -20px;
         background-color: #9b5afc;
         filter: blur(130px);
+        transform: scale(0.5);
+
+        @include md {
+          transform: scale(1);
+          right: -40px;
+          left: auto;
+        }
       }
       .aurora1 {
         height: 250px;
         width: 200px;
         position: absolute;
         bottom: 150px;
-        right: 150px;
+        left: 40px;
         background-color: #ff4b9c;
         filter: blur(140px);
+        transform: scale(0.5);
+        @include md {
+          transform: scale(1);
+          right: 150px;
+          left: auto;
+        }
       }
       .aurora2 {
         height: 250px;
         width: 200px;
         position: absolute;
         bottom: -40px;
-        right: 250px;
+        left: 130px;
         background-color: #f44dfa;
         filter: blur(130px);
+        transform: scale(0.5);
+        @include md {
+          transform: scale(1);
+          right: 250px;
+          left: auto;
+        }
       }
     }
     .auroraWrapper1 {
-      animation: rotate 15s linear $load-time both infinite;
+      animation: rotate 20s linear $load-time both infinite;
       transform-origin: center center;
       position: absolute;
       top: 40px;
       left: 270px;
       height: 260px;
       width: 280px;
+      transform: scale(1.2);
+      @include md {
+        animation-duration: 15s;
+        transform: scale(1);
+      }
       .aurora3 {
         height: 150px;
         width: 150px;

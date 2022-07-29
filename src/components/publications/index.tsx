@@ -68,6 +68,7 @@ const Publication = ({
 					<a
 						className={classHelper('button', sectionStyles.link, styles.button)}
 						href={button.link}
+						target='_blank'
 					>
 						<h3 className={sectionStyles.linkText}>{button.text}</h3>
 						<Arrow />
