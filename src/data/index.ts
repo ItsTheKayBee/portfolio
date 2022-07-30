@@ -1,9 +1,7 @@
 import Email from 'components/icon/Email'
 import Github from 'components/icon/Github'
 import LinkedIn from 'components/icon/LinkedIn'
-import { EXPERIENCE_START_DATE } from 'helpers/constants'
-import { getDateDifference } from 'helpers/utils'
-import { PortfolioData, StatsType } from './interface'
+import { PortfolioData } from './interface'
 
 export const portfolioDataObject: PortfolioData = {
 	header: [
@@ -33,15 +31,8 @@ export const portfolioDataObject: PortfolioData = {
 		}
 	],
 	about: {
-		position: 'Web Developer',
-		description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
-			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
-			I like to explore new technologies and I am passionate about trying out new experiences. I have built
-			several websites and apps in the process and I am always looking to hone my skills further in order to
-			become a better Software Development Engineer.`,
-		subTitle: 'Hey there! I am',
 		image: {
-			url: '/images/portrait.png',
+			url: '/images/portrait.webp',
 			alt: 'My picture'
 		},
 		data: [
@@ -75,7 +66,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.',
 				image: {
 					alt: 'LazyPay logo',
-					url: '/images/experiences/lazypay.png'
+					url: '/images/experiences/lazypay.webp'
 				}
 			},
 			{
@@ -89,7 +80,7 @@ export const portfolioDataObject: PortfolioData = {
 					'Software development and research internship at Arcon which involved various roles like .NET development and security.',
 				image: {
 					alt: 'Arcon logo',
-					url: '/images/experiences/arcon.png'
+					url: '/images/experiences/arcon.webp'
 				}
 			},
 			{
@@ -103,83 +94,53 @@ export const portfolioDataObject: PortfolioData = {
 					'Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.',
 				image: {
 					alt: 'GREedge logo',
-					url: '/images/experiences/greedge.png'
+					url: '/images/experiences/greedge.webp'
 				}
 			}
 		]
 	},
 	skills: {
 		title: 'Skills',
-		data: [
+		images: [
 			{
-				image: {
-					alt: 'Python',
-					url: '/images/skills/python.png'
-				},
-				ratings: 2
+				alt: 'Python',
+				url: '/images/skills/python.webp'
 			},
 			{
-				image: {
-					alt: 'React',
-					url: '/images/skills/react.png'
-				},
-				ratings: 2.5
+				alt: 'React',
+				url: '/images/skills/react.webp'
 			},
 			{
-				image: {
-					alt: 'Next.js',
-					url: '/images/skills/next.png'
-				},
-				ratings: 2.5
+				alt: 'Next.js',
+				url: '/images/skills/next.webp'
 			},
 			{
-				image: {
-					alt: 'Sass',
-					url: '/images/skills/sass.png'
-				},
-				ratings: 2.5
+				alt: 'Sass',
+				url: '/images/skills/sass.webp'
 			},
 			{
-				image: {
-					alt: 'Java',
-					url: '/images/skills/java.png'
-				},
-				ratings: 2
+				alt: 'Java',
+				url: '/images/skills/java.webp'
 			},
 			{
-				image: {
-					alt: 'Flutter',
-					url: '/images/skills/flutter.png'
-				},
-				ratings: 2
+				alt: 'Flutter',
+				url: '/images/skills/flutter.webp'
 			},
 			{
-				image: {
-					alt: 'Firebase',
-					url: '/images/skills/firebase.png'
-				},
-				ratings: 1.5
+				alt: 'Firebase',
+				url: '/images/skills/firebase.webp'
 			},
 			{
-				image: {
-					alt: 'TypeScript',
-					url: '/images/skills/typescript.png'
-				},
-				ratings: 1
+				alt: 'TypeScript',
+				url: '/images/skills/typescript.webp'
 			},
 			{
-				image: {
-					alt: 'Android',
-					url: '/images/skills/android.png'
-				},
-				ratings: 1.5
+				alt: 'Android',
+				url: '/images/skills/android.webp'
 			},
 			{
-				image: {
-					alt: 'Blockchain',
-					url: '/images/skills/blockchain.png'
-				},
-				ratings: 1.5
+				alt: 'Blockchain',
+				url: '/images/skills/blockchain.webp'
 			}
 		]
 	},
@@ -199,7 +160,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Flutter'],
 				image: {
 					alt: '',
-					url: '/images/projects/big_picture.mkv'
+					url: '/images/projects/big_picture.webm'
 				}
 			},
 			{
@@ -213,7 +174,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['React', 'Sass', 'Firebase', 'Python', 'Flask'],
 				image: {
 					alt: '',
-					url: '/images/projects/assess.mkv'
+					url: '/images/projects/assess.webm'
 				}
 			},
 			{
@@ -223,7 +184,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Javascript', 'Three.js'],
 				image: {
 					alt: '',
-					url: '/images/projects/3d_portfolio.mkv'
+					url: '/images/projects/3d_portfolio.webm'
 				},
 				button: {
 					link: 'https://kunalbohra.netlify.app/',
@@ -238,7 +199,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Dialogflow', 'Twilio', 'Flask', 'Python', 'HTML'],
 				image: {
 					alt: '',
-					url: '/images/projects/essentials_kart.mkv'
+					url: '/images/projects/essentials_kart.webm'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/EssentialsKart',
@@ -254,7 +215,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['Java', 'Android'],
 				image: {
 					alt: '',
-					url: '/images/projects/instanote.mkv'
+					url: '/images/projects/instanote.webm'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/InstaNote',
@@ -269,7 +230,7 @@ export const portfolioDataObject: PortfolioData = {
 				technologies: ['PHP', 'MySQL', 'CSS', 'Javascript'],
 				image: {
 					alt: '',
-					url: '/images/projects/xervixx.mkv'
+					url: '/images/projects/xervixx.webm'
 				},
 				button: {
 					link: 'https://github.com/ItsTheKayBee/Xervixx',
@@ -292,7 +253,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: '/images/achievements/hack.png'
+					url: '/images/achievements/hack.webp'
 				}
 			},
 			{
@@ -306,7 +267,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: '/images/achievements/blockchain.png'
+					url: '/images/achievements/blockchain.webp'
 				}
 			},
 			{
@@ -320,7 +281,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: '/images/achievements/zeb.png'
+					url: '/images/achievements/zeb.webp'
 				}
 			},
 			{
@@ -334,7 +295,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: 'Winner',
-					url: '/images/achievements/youtube.png'
+					url: '/images/achievements/youtube.webp'
 				}
 			},
 			{
@@ -348,7 +309,7 @@ export const portfolioDataObject: PortfolioData = {
 				},
 				image: {
 					alt: "Runner's up",
-					url: '/images/achievements/chefpreneur.png'
+					url: '/images/achievements/chefpreneur.webp'
 				}
 			}
 		]
@@ -365,7 +326,7 @@ export const portfolioDataObject: PortfolioData = {
 					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
 				},
 				image: {
-					url: '/images/publications/assess.png',
+					url: '/images/publications/assess.webp',
 					alt: 'Assess image'
 				},
 				description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -382,7 +343,7 @@ export const portfolioDataObject: PortfolioData = {
 					link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851'
 				},
 				image: {
-					url: '/images/publications/blockchain.png',
+					url: '/images/publications/blockchain.webp',
 					alt: 'Assess image'
 				},
 				description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -418,45 +379,11 @@ export const portfolioDataObject: PortfolioData = {
 			}
 		],
 		image: {
-			url: '/images/contact.png',
+			url: '/images/contact.webp',
 			alt: ''
 		},
 		resume: {
 			link: 'https://drive.google.com/file/d/13SPCHZxcmYYO5KQNNAkCLLIa0Ebjf6kc/view?usp=sharing'
-		},
-		selfImage: {
-			url: '/images/portrait.png',
-			alt: 'My picture'
 		}
-	},
-
-	footer: {
-		title: `Website and all images have been developed by Yours Truly. ©${new Date().getFullYear()}. All rights reserved.`
 	}
-}
-
-const totalExp = getDateDifference(new Date(), EXPERIENCE_START_DATE)
-
-export const statsData: StatsType = {
-	stats: [
-		{
-			title: 'Projects',
-			value: portfolioDataObject.projects.data.length
-		},
-		{
-			title: `${totalExp.title} Experience`,
-			value: totalExp.value
-		},
-		{
-			title: 'Awards',
-			value: portfolioDataObject.achievements.data.length
-		},
-		{
-			title:
-				portfolioDataObject.publications.data.length === 1
-					? 'Publication'
-					: 'Publications',
-			value: portfolioDataObject.publications.data.length
-		}
-	]
 }

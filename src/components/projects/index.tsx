@@ -70,7 +70,8 @@ const Project = ({
 						className={styles.video}
 						muted
 					>
-						<source src={image.url} type='video/mp4' />
+						<source src={image.url} type='video/webm' />
+						<source src={image.url.replace('webm', 'mkv')} type='video/mp4' />
 					</video>
 				</div>
 

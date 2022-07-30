@@ -9,9 +9,6 @@ export interface PortfolioData {
 	achievements: AchievementsType
 	publications: PublicationsType
 	contact: ContactType
-	footer: {
-		title: string
-	}
 }
 
 export type ProjectsType = {
@@ -24,43 +21,24 @@ export type AchievementsType = {
 	data: DataWithButton[]
 }
 
-export type PublicationsType = {
-	title: string
-	data: DataWithButton[]
-}
+export type PublicationsType = AchievementsType
 
 export type ContactType = {
 	title: string
 	data: IconTextButton[]
 	image: Image
-	selfImage: Image
 	resume: Button
 	description: string
 }
 
 export type SkillsType = {
 	title: string
-	data: {
-		image: Image
-		ratings: number
-	}[]
+	images: Image[]
 }
 
 export type AboutType = {
-	position: string
-	description: string
 	image: Image
-	subTitle: string
 	data: IconTextButton[]
-}
-
-export type StatsType = {
-	stats: KeyValue[]
-}
-
-export type KeyValue = {
-	title: string
-	value: number
 }
 
 export type ExperiencesType = {

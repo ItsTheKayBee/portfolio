@@ -35,31 +35,6 @@
   src: url("../fonts/OpenSans-ExtraBold.ttf");
   font-weight: 800;
 }
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-Regular.otf");
-  font-weight: 400;
-}
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-Medium.otf");
-  font-weight: 500;
-}
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-DemiBold.otf");
-  font-weight: 600;
-}
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-Bold.otf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: GreyCliff;
-  src: url("../fonts/Greycliff-ExtraBold.otf");
-  font-weight: 800;
-}
 
 html {
   scroll-behavior: smooth;
@@ -68,7 +43,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: OpenSans, GreyCliff, Arial, sans-serif;
+  font-family: OpenSans, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   height: 100vh;

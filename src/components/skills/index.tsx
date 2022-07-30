@@ -4,7 +4,7 @@ import sectionStyles from 'styles/section.module.scss'
 import { classHelper } from 'helpers/utils'
 import { useInView } from 'react-intersection-observer'
 
-const Skills = ({ title, data }: SkillsType): JSX.Element => {
+const Skills = ({ title, images }: SkillsType): JSX.Element => {
 	const [sectionRef, sectionInView] = useInView({
 		rootMargin: '-100px 0px',
 		triggerOnce: true
@@ -29,7 +29,7 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 				<h1 className={classHelper(sectionStyles.sectionTitle)}>{title}</h1>
 			</div>
 			<div className={styles.skills}>
-				{data.map(({ image }, key) => {
+				{images.map(({ url, alt }, key) => {
 					return (
 						<div
 							key={key}
@@ -39,12 +39,12 @@ const Skills = ({ title, data }: SkillsType): JSX.Element => {
 							)}
 						>
 							<img
-								src={image.url}
-								alt={image.alt}
+								src={url}
+								alt={alt}
 								className={styles.image}
 								loading='lazy'
 							/>
-							<h3 className={styles.title}>{image.alt}</h3>
+							<h3 className={styles.title}>{alt}</h3>
 						</div>
 					)
 				})}
