@@ -1,102 +1,102 @@
-import { FC } from 'react'
+import { FC } from "react"
 
 export interface PortfolioData {
-	header: HeaderType[]
-	about: AboutType
-	experiences: ExperiencesType
-	skills: SkillsType
-	projects: ProjectsType
-	achievements: AchievementsType
-	publications: PublicationsType
-	contact: ContactType
+  header: HeaderType[]
+  about: AboutType
+  experiences: ExperiencesType
+  skills: SkillsType
+  projects: ProjectsType
+  achievements: AchievementsType
+  publications: PublicationsType
+  contact: ContactType
 }
 
 export type ProjectsType = {
-	title: string
-	data: ProjectsData[]
+  title: string
+  data: ProjectsData[]
 }
 
 export type AchievementsType = {
-	title: string
-	data: DataWithButton[]
+  title: string
+  data: DataWithButton[]
 }
 
 export type PublicationsType = AchievementsType
 
 export type ContactType = {
-	title: string
-	data: IconTextButton[]
-	image: Image
-	resume: Button
-	description: string
+  title: string
+  data: IconTextButton[]
+  image: Image
+  resume: Button
+  description: string
 }
 
 export type SkillsType = {
-	title: string
-	images: Image[]
+  title: string
+  images: Image[]
 }
 
 export type AboutType = {
-	image: Image
-	data: IconTextButton[]
+  image: Image
+  data: IconTextButton[]
 }
 
 export type ExperiencesType = {
-	title: string
-	data: DataWithDates[]
+  title: string
+  data: DataWithDates[]
 }
 
 export type Image = {
-	url: string
-	alt: string
+  url: string
+  alt: string
 }
 
 export type Button = {
-	link: string
+  link: string
 }
 
 type Comp = {
-	component: FC
+  component: FC
 }
 
 export type IconButton = Button & Comp
 
 export interface TextButton extends Button {
-	text: string
+  text: string
 }
 export type IconTextButton = IconButton & TextButton
 
 export type Data = {
-	image: Image
-	title: string
-	subTitle: string
-	description: string
-	id?: number
+  image: Image
+  title: string
+  subTitle: string
+  description: string
+  id?: number
 }
 
 export interface DataWithDates extends Data {
-	dates: {
-		startDate: Date
-		endDate?: Date
-	}
+  dates: {
+    startDate: Date
+    endDate?: Date
+  }
 }
 
 export interface DataWithButton extends Data {
-	button?: TextButton
+  button?: TextButton
 }
 
 export interface ProjectsData extends DataWithButton {
-	technologies: string[]
+  technologies: string[]
 }
 
 export interface HeaderType {
-	title: string
-	link: string
+  title: string
+  link: string
 }
 
 export interface Web {
-	size: number
-	posX: number
-	poxY: number
-	rot: number
+  size: number
+  posX: number
+  poxY: number
+  rot: number
 }

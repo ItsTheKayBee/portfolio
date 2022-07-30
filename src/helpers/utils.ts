@@ -1,10 +1,10 @@
 /**
  *
  * @param {string[]} classes list of all classes
- * @returns
+ * @returns {string}
  */
-export const classHelper = (...classes: string[]) =>
-	classes.reduce((prev, next) => prev + ' ' + next)
+export const classHelper = (...classes: string[]): string =>
+  classes.reduce((prev, next) => prev + " " + next)
 
 /**
  *
@@ -12,5 +12,5 @@ export const classHelper = (...classes: string[]) =>
  * @param max
  * @returns random number
  */
-export const getRandom = (min: number, max: number) =>
-	Math.floor(Math.random() * (max - min)) + min
+export const getRandom = (min: number, max: number): number =>
+  Math.floor(Math.random() * (max - min)) + min
