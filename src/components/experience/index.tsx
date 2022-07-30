@@ -61,6 +61,7 @@ const Experience = ({
             id % 2 !== 0 ? styles.reverse : ""
           )}
           loading="lazy"
+          draggable="false"
         />
       </div>
       <div className="col">
@@ -70,7 +71,10 @@ const Experience = ({
           {dates.startDate.toLocaleString("en-IN", DATE_FORMAT_OPTIONS)} -{" "}
           {dates.endDate?.toLocaleString("en-IN", DATE_FORMAT_OPTIONS) ?? "Present"}
         </h4>
-        <p className={sectionStyles.description}>{description}</p>
+        <div
+          className={sectionStyles.description}
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   )

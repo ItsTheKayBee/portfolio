@@ -33,7 +33,7 @@ export const portfolioDataObject: PortfolioData = {
   about: {
     image: {
       url: "/images/portrait.webp",
-      alt: "My picture"
+      alt: "Kunal's picture"
     },
     data: [
       {
@@ -57,13 +57,16 @@ export const portfolioDataObject: PortfolioData = {
     title: "Experiences",
     data: [
       {
-        title: "LazyPay (PayU)",
-        subTitle: "Software Development Engineer | Full Time",
+        title: "LazyPay (PayU Finance)",
+        subTitle: "Software Engineer (Frontend) | Full Time",
         dates: {
           startDate: new Date("August 2021")
         },
-        description:
-          "Using mobile-first approach, building standout websites that are user-friendly, accessible and easily scalable.",
+        description: `<ol>
+          <li>Used Next.js and performance best practices to improve website load time by ~25%.</li>
+          <li>Improved accessibility score across more than 6 projects by ~45%.</li>
+          <li>Worked across several projects to deliver multiple high quality products in the stipulated time.</li>
+        </ol>`,
         image: {
           alt: "LazyPay logo",
           url: "/images/experiences/lazypay.webp"
@@ -76,8 +79,10 @@ export const portfolioDataObject: PortfolioData = {
           startDate: new Date("December 2019"),
           endDate: new Date("January 2020")
         },
-        description:
-          "Software development and research internship at Arcon which involved various roles like .NET development and security.",
+        description: `<ol>
+          <li>Worked on security-based applications to test company website.</li> 
+          <li>Researched various open-source security softwares that could potentially cut down business expenditure.</li>
+        </ol>`,
         image: {
           alt: "Arcon logo",
           url: "/images/experiences/arcon.webp"
@@ -90,8 +95,7 @@ export const portfolioDataObject: PortfolioData = {
           startDate: new Date("October 2018"),
           endDate: new Date("December 2018")
         },
-        description:
-          "Wrote high quality Letter of Recommendations for MS and Ph.D. aspirants for GreEdge.",
+        description: "Wrote high quality Letter of Recommendations for MS aspirants for GreEdge.",
         image: {
           alt: "GREedge logo",
           url: "/images/experiences/greedge.webp"
@@ -103,24 +107,16 @@ export const portfolioDataObject: PortfolioData = {
     title: "Skills",
     images: [
       {
-        alt: "Python",
-        url: "/images/skills/python.webp"
+        alt: "Next.js",
+        url: "/images/skills/next.webp"
       },
       {
         alt: "React",
         url: "/images/skills/react.webp"
       },
       {
-        alt: "Next.js",
-        url: "/images/skills/next.webp"
-      },
-      {
         alt: "Sass",
         url: "/images/skills/sass.webp"
-      },
-      {
-        alt: "Java",
-        url: "/images/skills/java.webp"
       },
       {
         alt: "Flutter",
@@ -133,6 +129,14 @@ export const portfolioDataObject: PortfolioData = {
       {
         alt: "TypeScript",
         url: "/images/skills/typescript.webp"
+      },
+      {
+        alt: "Python",
+        url: "/images/skills/python.webp"
+      },
+      {
+        alt: "Java",
+        url: "/images/skills/java.webp"
       },
       {
         alt: "Android",
@@ -149,12 +153,11 @@ export const portfolioDataObject: PortfolioData = {
     data: [
       {
         title: "Big Picture",
-        subTitle: "Apr 2021 - Present",
-        description: `A Flutter app that uses the TMDB API to display movies. 
-          It enables the tracking of movies and actors with a beautiful modern UI. 
-          One can save movies and TV series and can get detailed information about the same`,
+        subTitle: "Apr 2021",
+        description: `An app made in Flutter that uses the TMDB API to display useful information about movies and actors. 
+          It enables tracking of movies and TV series with a user-friendly, UX-focussed and modern UI.`,
         button: {
-          link: "https://github.com/ItsTheKayBee/BigPicture/",
+          link: "https://github.com/ItsTheKayBee/BigPicture",
           text: "View Project"
         },
         technologies: ["Flutter"],
@@ -166,12 +169,15 @@ export const portfolioDataObject: PortfolioData = {
       {
         title: "ASSESS",
         subTitle: "Oct 2020 - Mar 2021",
-        description: `For our final year project, we made a web app that provides full-length subjective tests 
-          for self-assessment and examination. It reduces the need for manual evaluation by introducing 
-          fully automated test grading and feedback which highlights the missing points in the answer 
-          and suggests points that can be skipped next time. It also displays user statistics in the form of
-          beautiful charts which can be handy for tracking one's progress.`,
+        description: `A web-app that provides full-length subjective tests for self-assessment and examinations. 
+          It reduces the need for manual evaluation by introducing fully automated test grading and feedback 
+          that highlights the missing points in the answer and suggests points that can be skipped next time. 
+          It also displays user statistics in the form of intuitive charts which can be handy for tracking student's progress.`,
         technologies: ["React", "Sass", "Firebase", "Python", "Flask"],
+        button: {
+          link: "https://www.linkedin.com/posts/itsthekaybee_google-reactjs-automation-activity-6819224641794564096-y94J",
+          text: "View Project"
+        },
         image: {
           alt: "",
           url: "/images/projects/assess.webm"
@@ -194,8 +200,8 @@ export const portfolioDataObject: PortfolioData = {
       {
         title: "EssentialsKart - WhatsApp chatbot",
         subTitle: "May 2020",
-        description: `A WhatsApp chatbot made on Dialogflow, Python and Twilio API to serve online ordering of 
-          essentials items during lockdown period.`,
+        description: `A WhatsApp chatbot prototype made in Dialogflow, Python and Twilio API to enable easy and quick
+          online ordering of essentials items during quarantine.`,
         technologies: ["Dialogflow", "Twilio", "Flask", "Python", "HTML"],
         image: {
           alt: "",
@@ -209,10 +215,10 @@ export const portfolioDataObject: PortfolioData = {
       {
         title: "InstaNote",
         subTitle: "Apr 2020 - May 2020",
-        description: `Searching for study topics never got easier. This android app quickly brings top 3 web results
-         to the user in the form of notes which the user can save for later reference. He can edit and modify the notes
+        description: `An Android app that swiftly pulls top 3 web results for any search topic and 
+          saves them in the form of notes for later reference. A user can edit and modify the notes
           as per his choice and use them for studying during exams.`,
-        technologies: ["Java", "Android"],
+        technologies: ["Java", "Android", "Web Scraping"],
         image: {
           alt: "",
           url: "/images/projects/instanote.webm"
@@ -223,10 +229,11 @@ export const portfolioDataObject: PortfolioData = {
         }
       },
       {
-        title: "Xervixx- A stock market dream fantasy game",
+        title: "Xervixx",
         subTitle: "Jun 2019 - Jul 2019",
-        description: `A full-stack website with a gamified interface to cater the users post loan disbursal. 
-        This included a stock market dream fantasy game which users can play to get on the leaderboard.`,
+        description: `A full-stack website prototype with a gamified interface to cater the users post loan disbursal 
+          and make collections rewarding. This included a stock market dream fantasy game which users can play to get
+          on the leaderboard and win prizes.`,
         technologies: ["PHP", "MySQL", "CSS", "Javascript"],
         image: {
           alt: "",
@@ -244,13 +251,9 @@ export const portfolioDataObject: PortfolioData = {
     data: [
       {
         title: "Runner's Up",
-        subTitle: "KJSCE Hack 5.0 . Apr 2021",
-        description:
-          "Bagged second place in KJSCE hack 5.0 which was a national level hackathon with more than 50 teams.",
-        button: {
-          link: "",
-          text: "View certificate"
-        },
+        subTitle: "KJSCE Hack 5.0 - Apr 2021",
+        description: `Bagged the second place for our project 'ASSESS' at KJSCE Hack 5.0, 
+          a national-level hackathon with more than 50 participating teams.`,
         image: {
           alt: "Runner's up",
           url: "/images/achievements/hack.webp"
@@ -258,13 +261,9 @@ export const portfolioDataObject: PortfolioData = {
       },
       {
         title: "Best Blockchain Team",
-        subTitle: "DotSlash Hackathon . Jan 2020",
-        description: `Won the best blockchain team for our project 'FundEasy' at the DotSlash hackathon. 
+        subTitle: "DotSlash Hackathon - Jan 2020",
+        description: `Won the best blockchain team for our project 'FundEasy' at the DotSlash Hackathon, NIT Surat. 
           We also qualified for the national finals of the International Blockchain Olympiad.`,
-        button: {
-          link: "",
-          text: "View certificate"
-        },
         image: {
           alt: "Winner",
           url: "/images/achievements/blockchain.webp"
@@ -272,13 +271,9 @@ export const portfolioDataObject: PortfolioData = {
       },
       {
         title: "Winner",
-        subTitle: "Zero Energy Building competition . Oct 2018",
+        subTitle: "Zero Energy Building competition - Oct 2018",
         description: `Won the Zero Energy building competition by building a 
-          strong presentation detailing all the prospects of a zero energy building on the campus`,
-        button: {
-          link: "",
-          text: "View certificate"
-        },
+          strong presentation detailing all the prospects of a zero energy building on the KJSCE campus`,
         image: {
           alt: "Winner",
           url: "/images/achievements/zeb.webp"
@@ -286,13 +281,9 @@ export const portfolioDataObject: PortfolioData = {
       },
       {
         title: "Winner",
-        subTitle: `Why Don't YouTube? . Feb 2018`,
+        subTitle: `Why Don't YouTube? - Feb 2018`,
         description: `Aced the social media marketing competition that involved making a video and marketing 
-          it across digital platforms and getting the maximum number of likes, shares and comments.`,
-        button: {
-          link: "",
-          text: "View certificate"
-        },
+          it across various digital platforms and scoring the maximum number of views, likes and shares.`,
         image: {
           alt: "Winner",
           url: "/images/achievements/youtube.webp"
@@ -300,13 +291,9 @@ export const portfolioDataObject: PortfolioData = {
       },
       {
         title: "Runner's Up",
-        subTitle: "Chefpreneur . Jan 2018",
+        subTitle: "Chefpreneur - Jan 2018",
         description:
-          "Bagged second place in Chefpreneur which was a food making and marketing competition.",
-        button: {
-          link: "",
-          text: "View certificate"
-        },
+          "Bagged the second place in Chefpreneur competition which was a cooking and marketing competition at KJSCE.",
         image: {
           alt: "Runner's up",
           url: "/images/achievements/chefpreneur.webp"
@@ -318,7 +305,7 @@ export const portfolioDataObject: PortfolioData = {
     title: "Publications",
     data: [
       {
-        title: "ASSESS - Automated Subjective Answer Evaluation Using Semantic Learning",
+        title: "Automated Subjective Answer Evaluation Using Semantic Learning",
         subTitle: "Elsevier-SSRN Conference Proceedings",
         button: {
           text: "View Research",
@@ -329,37 +316,35 @@ export const portfolioDataObject: PortfolioData = {
           alt: "Assess image"
         },
         description: `Drift in the digitization of education is a prime concern at present to enable quality education
-          to every individual. Now, there are no geographical barriers to the availability of education and evaluation. 
-          Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose ‘ASSESS’, 
-          a system where the evaluation of subjective answers for an examination becomes easier and convenient. 
-          We have even catered to the requirements of specially-abled students online.`
+          to every individual. Now, there are no geographical barriers to the availability of education. 
+          Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose 
+          a system where the evaluation of subjective answers for an examination becomes much easier and convenient,
+          also keeping in mind the requirements of specially-abled students online.`
       },
       {
-        title: "Blockchain",
-        subTitle: "Elsevier-SSRN Conference Proceedings",
+        title: "Application of Blockchain Technology to Make Smart Cities Smarter",
+        subTitle:
+          "Applications of Blockchain and Big IoT Systems: Digital Solutions for Diverse Industries",
         button: {
           text: "View Research",
-          link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851"
+          link: "https://www.appleacademicpress.com/applications-of-blockchain-and-big-iot-systems-digital-solutions-for-diverse-industries/9781774637456"
         },
         image: {
           url: "/images/publications/blockchain.webp",
           alt: "Assess image"
         },
-        description: `Drift in the digitization of education is a prime concern at present to enable quality education
-          to every individual. Now, there are no geographical barriers to the availability of education and evaluation. 
-          Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose ‘ASSESS’, 
-          a system where the evaluation of subjective answers for an examination becomes easier and convenient. 
-          We have even catered to the requirements of specially-abled students online.`
+        description: `Today, urban areas face massive population bursts. A smart city utilizes innovations to coordinate 
+          and oversee physical, social, and business aspects so as to offer better assistance to its occupants while guaranteeing
+          productive and ideal use of accessible assets. This paper highlights the use of blockchain and breaks down
+          how it can be used for making cities more smarter and efficient.`
       }
     ]
   },
   contact: {
     title: "Contact me",
-    description: `I am a highly motivated and enthusiastic Software Developer with a keen interest in full 
-			stack development. I have worked on modern technologies like React.js, Next.js, Flutter, Python, etc.
-			I like to explore new technologies and I am passionate about trying out new experiences. I have built
-			several websites and apps in the process and I am always looking to hone my skills further in order to
-			become a better Software Development Engineer.`,
+    description: `<p>Hey there! I am Kunal. I love coding and experimenting with new technologies to develop powerful
+      and creative solutions. Be it apps or websites, I have built several of them, to learn and hone my skills 
+      and become a better developer everyday.</p><br/><p>Well, if I sound interesting to you, let's connect via any social channel!</p>`,
     data: [
       {
         link: "https://github.com/ItsTheKayBee",

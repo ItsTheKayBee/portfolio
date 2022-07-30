@@ -45,7 +45,13 @@ const Achievement = ({ image, title, subTitle, description }: DataWithButton): J
       ref={subsectionRef}
     >
       <div className={styles.imgWrapper}>
-        <img src={image.url} alt={image.alt} className={styles.image} loading="lazy" />
+        <img
+          src={image.url}
+          alt={image.alt}
+          className={styles.image}
+          loading="lazy"
+          draggable="false"
+        />
       </div>
       <h2 className={styles.title}>{title}</h2>
       <h3 className={styles.subTitle}>{subTitle}</h3>

@@ -66,7 +66,7 @@ const Home: NextPage = () => {
         />
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'report-sample' 'self'; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
+          content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
         />
         <link rel="apple-touch-icon" sizes="180x180" href="/site/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/site/favicon-32x32.png" />
@@ -88,6 +88,7 @@ const Home: NextPage = () => {
           alt="tap"
           className={classHelper("cursorCircle", webs.length > 0 ? "hide" : "")}
           style={{ left: circlePosition.x, top: circlePosition.y }}
+          draggable="false"
         />
         <Header headerData={portfolioDataObject.header} />
         <About {...portfolioDataObject.about} />

@@ -58,6 +58,7 @@ const Publication = ({
           alt={image.alt}
           className={classHelper(styles.image, id !== 0 ? styles.reverse : "")}
           loading="lazy"
+          draggable="false"
         />
       </div>
       <div className="col">

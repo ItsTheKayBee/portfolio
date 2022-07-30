@@ -31,7 +31,7 @@ const Skills = ({ title, images }: SkillsType): JSX.Element => {
               key={key}
               className={classHelper(styles.skill, sectionInView ? styles.inView : "")}
             >
-              <img src={url} alt={alt} className={styles.image} loading="lazy" />
+              <img src={url} alt={alt} className={styles.image} loading="lazy" draggable="false" />
               <h2 className={styles.title}>{alt}</h2>
             </div>
           )

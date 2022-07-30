@@ -8,9 +8,9 @@ import Triangles from "components/bg/Triangles"
 import Star from "components/bg/Star"
 
 const About = ({ image, data }: AboutType): JSX.Element => (
-  <div className={`${styles.about} ${sectionStyles.dark}`}>
+  <div className={classHelper(styles.about, sectionStyles.dark)}>
     <div className={styles.mainContent}>
-      <img src={image.url} alt={image.alt} className={styles.image} />
+      <img src={image.url} alt={image.alt} className={styles.image} draggable="false" />
       <div className={styles.hexagon}>
         <Hexagon />
       </div>
@@ -56,8 +56,22 @@ const About = ({ image, data }: AboutType): JSX.Element => (
         <div className={styles.aurora4} />
         <div className={styles.aurora5} />
       </div>
-      <img src="/images/cube.webp" alt="" height="100" width="100" className={styles.cube} />
-      <img src="/images/triangle.webp" alt="" height="84" width="92" className={styles.pyramid} />
+      <img
+        src="/images/cube.webp"
+        alt=""
+        height="100"
+        width="100"
+        className={styles.cube}
+        draggable="false"
+      />
+      <img
+        src="/images/triangle.webp"
+        alt=""
+        height="84"
+        width="92"
+        className={styles.pyramid}
+        draggable="false"
+      />
     </div>
   </div>
 )

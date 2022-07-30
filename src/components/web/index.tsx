@@ -33,6 +33,7 @@ const Web = ({ web }: { web: WebType }): JSX.Element | null => {
         width: web.size,
         transform: `rotate(${web.rot}deg)`
       }}
+      draggable="false"
     />
   ) : null
 }

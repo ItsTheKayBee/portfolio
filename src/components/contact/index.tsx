@@ -21,7 +21,13 @@ const Contact = ({ title, data, image, resume, description }: ContactType): JSX.
       )}
       id="contact"
     >
-      <img src={image.url} alt={image.alt} className={styles.bgImage} loading="lazy" />
+      <img
+        src={image.url}
+        alt={image.alt}
+        className={styles.bgImage}
+        loading="lazy"
+        draggable="false"
+      />
       <div className={classHelper(sectionStyles.subSection, styles.contact)}>
         <div className={classHelper("col", styles.detailSection)}>
           <div
@@ -34,7 +40,7 @@ const Contact = ({ title, data, image, resume, description }: ContactType): JSX.
           >
             <h1 className={sectionStyles.sectionTitle}>{title}</h1>
           </div>
-          <p className={styles.description}>{description}</p>
+          <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />
           <SocialMediaStrip social={data} resume={resume} />
         </div>
       </div>
