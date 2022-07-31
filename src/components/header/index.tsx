@@ -2,9 +2,11 @@ import Logo from "components/icon/Logo"
 import { HeaderType } from "data/interface"
 import styles from "./index.module.scss"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 const Header = ({ headerData }: { headerData: HeaderType[] }): JSX.Element => (
   <nav className={styles.header}>
-    <a href="/" className={styles.logo} aria-label="Logo">
+    <a href={basePath} className={styles.logo} aria-label="Logo">
       <Logo />
     </a>
     <ul className={styles.links}>

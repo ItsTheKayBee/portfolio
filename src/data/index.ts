@@ -3,7 +3,7 @@ import Github from "components/icon/Github"
 import LinkedIn from "components/icon/LinkedIn"
 import { PortfolioData } from "./interface"
 
-const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export const portfolioDataObject: PortfolioData = {
   header: [
@@ -34,7 +34,7 @@ export const portfolioDataObject: PortfolioData = {
   ],
   about: {
     image: {
-      url: imagePrefix + "/images/portrait.webp",
+      url: basePath + "/images/portrait.webp",
       alt: "Kunal's picture"
     },
     data: [
@@ -71,7 +71,7 @@ export const portfolioDataObject: PortfolioData = {
         </ol>`,
         image: {
           alt: "LazyPay logo",
-          url: imagePrefix + "/images/experiences/lazypay.webp"
+          url: basePath + "/images/experiences/lazypay.webp"
         }
       },
       {
@@ -87,7 +87,7 @@ export const portfolioDataObject: PortfolioData = {
         </ol>`,
         image: {
           alt: "Arcon logo",
-          url: imagePrefix + "/images/experiences/arcon.webp"
+          url: basePath + "/images/experiences/arcon.webp"
         }
       },
       {
@@ -100,7 +100,7 @@ export const portfolioDataObject: PortfolioData = {
         description: "Wrote high quality Letter of Recommendations for MS aspirants for GreEdge.",
         image: {
           alt: "GREedge logo",
-          url: imagePrefix + "/images/experiences/greedge.webp"
+          url: basePath + "/images/experiences/greedge.webp"
         }
       }
     ]
@@ -110,43 +110,43 @@ export const portfolioDataObject: PortfolioData = {
     images: [
       {
         alt: "Next.js",
-        url: imagePrefix + "/images/skills/next.webp"
+        url: basePath + "/images/skills/next.webp"
       },
       {
         alt: "React",
-        url: imagePrefix + "/images/skills/react.webp"
+        url: basePath + "/images/skills/react.webp"
       },
       {
         alt: "Sass",
-        url: imagePrefix + "/images/skills/sass.webp"
+        url: basePath + "/images/skills/sass.webp"
       },
       {
         alt: "Flutter",
-        url: imagePrefix + "/images/skills/flutter.webp"
+        url: basePath + "/images/skills/flutter.webp"
       },
       {
         alt: "Firebase",
-        url: imagePrefix + "/images/skills/firebase.webp"
+        url: basePath + "/images/skills/firebase.webp"
       },
       {
         alt: "TypeScript",
-        url: imagePrefix + "/images/skills/typescript.webp"
+        url: basePath + "/images/skills/typescript.webp"
       },
       {
         alt: "Python",
-        url: imagePrefix + "/images/skills/python.webp"
+        url: basePath + "/images/skills/python.webp"
       },
       {
         alt: "Java",
-        url: imagePrefix + "/images/skills/java.webp"
+        url: basePath + "/images/skills/java.webp"
       },
       {
         alt: "Android",
-        url: imagePrefix + "/images/skills/android.webp"
+        url: basePath + "/images/skills/android.webp"
       },
       {
         alt: "Blockchain",
-        url: imagePrefix + "/images/skills/blockchain.webp"
+        url: basePath + "/images/skills/blockchain.webp"
       }
     ]
   },
@@ -165,7 +165,7 @@ export const portfolioDataObject: PortfolioData = {
         technologies: ["Flutter"],
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/big_picture.webm"
+          url: basePath + "/images/projects/big_picture.webm"
         }
       },
       {
@@ -182,7 +182,7 @@ export const portfolioDataObject: PortfolioData = {
         },
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/assess.webm"
+          url: basePath + "/images/projects/assess.webm"
         }
       },
       {
@@ -192,7 +192,7 @@ export const portfolioDataObject: PortfolioData = {
         technologies: ["Javascript", "Three.js"],
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/3d_portfolio.webm"
+          url: basePath + "/images/projects/3d_portfolio.webm"
         },
         button: {
           link: "https://kunalbohra.netlify.app/",
@@ -207,7 +207,7 @@ export const portfolioDataObject: PortfolioData = {
         technologies: ["Dialogflow", "Twilio", "Flask", "Python", "HTML"],
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/essentials_kart.webm"
+          url: basePath + "/images/projects/essentials_kart.webm"
         },
         button: {
           link: "https://github.com/ItsTheKayBee/EssentialsKart",
@@ -223,7 +223,7 @@ export const portfolioDataObject: PortfolioData = {
         technologies: ["Java", "Android", "Web Scraping"],
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/instanote.webm"
+          url: basePath + "/images/projects/instanote.webm"
         },
         button: {
           link: "https://github.com/ItsTheKayBee/InstaNote",
@@ -239,7 +239,7 @@ export const portfolioDataObject: PortfolioData = {
         technologies: ["PHP", "MySQL", "CSS", "Javascript"],
         image: {
           alt: "",
-          url: imagePrefix + "/images/projects/xervixx.webm"
+          url: basePath + "/images/projects/xervixx.webm"
         },
         button: {
           link: "https://github.com/ItsTheKayBee/Xervixx",
@@ -258,7 +258,7 @@ export const portfolioDataObject: PortfolioData = {
           a national-level hackathon with more than 50 participating teams.`,
         image: {
           alt: "Runner's up",
-          url: imagePrefix + "/images/achievements/hack.webp"
+          url: basePath + "/images/achievements/hack.webp"
         }
       },
       {
@@ -268,7 +268,7 @@ export const portfolioDataObject: PortfolioData = {
           We also qualified for the national finals of the International Blockchain Olympiad.`,
         image: {
           alt: "Winner",
-          url: imagePrefix + "/images/achievements/blockchain.webp"
+          url: basePath + "/images/achievements/blockchain.webp"
         }
       },
       {
@@ -278,7 +278,7 @@ export const portfolioDataObject: PortfolioData = {
           strong presentation detailing all the prospects of a zero energy building on the KJSCE campus`,
         image: {
           alt: "Winner",
-          url: imagePrefix + "/images/achievements/zeb.webp"
+          url: basePath + "/images/achievements/zeb.webp"
         }
       },
       {
@@ -288,7 +288,7 @@ export const portfolioDataObject: PortfolioData = {
           it across various digital platforms and scoring the maximum number of views, likes and shares.`,
         image: {
           alt: "Winner",
-          url: imagePrefix + "/images/achievements/youtube.webp"
+          url: basePath + "/images/achievements/youtube.webp"
         }
       },
       {
@@ -298,7 +298,7 @@ export const portfolioDataObject: PortfolioData = {
           "Bagged the second place in Chefpreneur competition which was a cooking and marketing competition at KJSCE.",
         image: {
           alt: "Runner's up",
-          url: imagePrefix + "/images/achievements/chefpreneur.webp"
+          url: basePath + "/images/achievements/chefpreneur.webp"
         }
       }
     ]
@@ -314,7 +314,7 @@ export const portfolioDataObject: PortfolioData = {
           link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3861851"
         },
         image: {
-          url: imagePrefix + "/images/publications/assess.webp",
+          url: basePath + "/images/publications/assess.webp",
           alt: "Assess image"
         },
         description: `Drift in the digitization of education is a prime concern at present to enable quality education
@@ -332,7 +332,7 @@ export const portfolioDataObject: PortfolioData = {
           link: "https://www.appleacademicpress.com/applications-of-blockchain-and-big-iot-systems-digital-solutions-for-diverse-industries/9781774637456"
         },
         image: {
-          url: imagePrefix + "/images/publications/blockchain.webp",
+          url: basePath + "/images/publications/blockchain.webp",
           alt: "Assess image"
         },
         description: `Today, urban areas face massive population bursts. A smart city utilizes innovations to coordinate 
@@ -365,7 +365,7 @@ export const portfolioDataObject: PortfolioData = {
       }
     ],
     image: {
-      url: imagePrefix + "/images/contact.webp",
+      url: basePath + "/images/contact.webp",
       alt: ""
     },
     resume: {

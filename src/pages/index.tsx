@@ -22,7 +22,7 @@ const Projects = dynamic(() => import("../components/projects"))
 const Publications = dynamic(() => import("../components/publications"))
 const Skills = dynamic(() => import("../components/skills"))
 
-const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const Home: NextPage = () => {
   const [webs, setWebs] = useState<WebType[]>([])
@@ -73,35 +73,35 @@ const Home: NextPage = () => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${imagePrefix}/site/apple-touch-icon.png`}
+          href={`${basePath}/site/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={`${imagePrefix}/site/favicon-32x32.png`}
+          href={`${basePath}/site/favicon-32x32.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`${imagePrefix}/site/favicon-16x16.png`}
+          href={`${basePath}/site/favicon-16x16.png`}
         />
-        <link rel="manifest" href={`${imagePrefix}/site/site.webmanifest`} />
+        <link rel="manifest" href={`${basePath}/site/site.webmanifest`} />
       </Head>
 
       <main
         className="main"
         onClick={handleClick}
         onMouseMove={moveCircle}
-        style={{ cursor: !isLoading ? `url(${imagePrefix}/images/hand.svg), auto` : "" }}
+        style={{ cursor: !isLoading ? `url(${basePath}/images/hand.svg), auto` : "" }}
       >
         {isLoading && <Loader />}
         {webs.map((data, key) => (
           <Web web={data} key={key} />
         ))}
         <img
-          src={`${imagePrefix}/images/cursor-circle.svg`}
+          src={`${basePath}/images/cursor-circle.svg`}
           alt="tap"
           className={classHelper("cursorCircle", webs.length > 0 ? "hide" : "")}
           style={{ left: circlePosition.x, top: circlePosition.y }}

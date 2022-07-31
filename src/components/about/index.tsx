@@ -7,7 +7,7 @@ import Hexagon from "components/bg/Hexagon"
 import Triangles from "components/bg/Triangles"
 import Star from "components/bg/Star"
 
-const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const About = ({ image, data }: AboutType): JSX.Element => (
   <div className={classHelper(styles.about, sectionStyles.dark)}>
@@ -59,7 +59,7 @@ const About = ({ image, data }: AboutType): JSX.Element => (
         <div className={styles.aurora5} />
       </div>
       <img
-        src={`${imagePrefix}/images/cube.webp`}
+        src={`${basePath}/images/cube.webp`}
         alt=""
         height="100"
         width="100"
@@ -67,7 +67,7 @@ const About = ({ image, data }: AboutType): JSX.Element => (
         draggable="false"
       />
       <img
-        src={`${imagePrefix}/images/triangle.webp`}
+        src={`${basePath}/images/triangle.webp`}
         alt=""
         height="84"
         width="92"
