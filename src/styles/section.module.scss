@@ -74,13 +74,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     flex-direction: column;
     row-gap: 24px;
 
     @include md {
       flex-direction: row;
-      margin-bottom: 100px;
       &.reverse {
         flex-direction: row-reverse;
       }
