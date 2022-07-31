@@ -70,10 +70,6 @@ a {
   overflow: hidden;
   user-select: none;
 
-  &.cursor {
-    cursor: url("/images/hand.svg"), auto;
-  }
-
   .cursorCircle {
     position: absolute;
     opacity: 1;

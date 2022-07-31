@@ -91,9 +91,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main
-        className={classHelper("main", !isLoading ? "cursor" : "")}
+        className="main"
         onClick={handleClick}
         onMouseMove={moveCircle}
+        style={{ cursor: !isLoading ? `url(${imagePrefix}/images/hand.svg), auto` : "" }}
       >
         {isLoading && <Loader />}
         {webs.map((data, key) => (
