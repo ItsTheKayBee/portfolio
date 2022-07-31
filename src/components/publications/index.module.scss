@@ -1,13 +1,19 @@
 @import "styles/variables";
+@import "styles/breakpoints";
 
 .image {
-  height: 250px;
-  width: 250px;
+  height: 220px;
+  width: 220px;
   opacity: 0;
   transform: translateX(-150px);
   transition: all 0.6s ease-out;
   &.reverse {
     transform: translateX(150px);
+  }
+
+  @include md {
+    height: 250px;
+    width: 250px;
   }
 }
 .button {

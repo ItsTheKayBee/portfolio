@@ -1,9 +1,17 @@
 @use "sass:list";
 
 @import "styles/variables";
+@import "styles/breakpoints";
 
 .video {
   margin-bottom: 24px;
+  height: 220px;
+  width: 220px;
+
+  @include md {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .button {

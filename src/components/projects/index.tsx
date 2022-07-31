@@ -23,9 +23,9 @@ const Projects = ({ title, data }: ProjectsType): JSX.Element => {
       >
         <h1 className={sectionStyles.sectionTitle}>{title}</h1>
       </div>
-      {data.map((project, key) => {
-        return <Project key={key} {...project} id={key} />
-      })}
+      {data.map((project, key) => (
+        <Project key={key} {...project} id={key} />
+      ))}
     </div>
   )
 }

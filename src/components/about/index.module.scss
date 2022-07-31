@@ -31,15 +31,24 @@ $load-time: 2s;
       z-index: 0;
       opacity: 0.3;
       filter: blur(0.4px);
+      transform: scale(0.5);
+
+      @include md {
+        transform: scale(1);
+      }
     }
     .triangles {
       position: absolute;
       top: 35%;
-      transform: translateY(-35%);
+      transform: translateY(-35%) scale(0.75);
       left: 47%;
       z-index: 0;
       opacity: 0.3;
       filter: blur(0.3px);
+
+      @include md {
+        transform: scale(1);
+      }
     }
     .star {
       position: absolute;
@@ -47,6 +56,11 @@ $load-time: 2s;
       right: 250px;
       z-index: 0;
       opacity: 0.25;
+      transform: scale(0.8);
+
+      @include md {
+        transform: scale(1);
+      }
     }
     .content {
       display: flex;
@@ -179,7 +193,7 @@ $load-time: 2s;
     .cube {
       position: absolute;
       left: 40px;
-      bottom: 300px;
+      bottom: 250px;
       z-index: 0;
       filter: hue-rotate(300deg);
       animation: popUpMweb 0.5s ease-out $load-time both, rotate 80s linear $load-time + 0.5s both infinite;
@@ -197,7 +211,7 @@ $load-time: 2s;
       }
       to {
         opacity: 1;
-        bottom: 300px;
+        bottom: 250px;
       }
     }
 
