@@ -4,12 +4,18 @@ import { classHelper } from "helpers/utils"
 import sectionStyles from "styles/section.module.scss"
 import styles from "./index.module.scss"
 import { useInView } from "react-intersection-observer"
+import ViewMore from "components/viewMore"
+import { useState } from "react"
 
-const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
+const ExperienceSection = ({ title, data, showCount }: ExperiencesType): JSX.Element => {
+  const [viewAll, setViewAll] = useState(false)
+
   const [sectionRef, sectionInView] = useInView({
     rootMargin: "-100px 0px",
     triggerOnce: true
   })
+
+  const onClick = (): void => setViewAll(true)
 
   return (
     <div className={sectionStyles.section} id="experiences">
@@ -22,9 +28,16 @@ const ExperienceSection = ({ title, data }: ExperiencesType): JSX.Element => {
       >
         <h1 className={sectionStyles.sectionTitle}>{title}</h1>
       </div>
-      {data.map((exp, key) => (
+      {data.slice(0, showCount).map((exp, key) => (
         <Experience key={key} {...exp} id={key} />
       ))}
+      {viewAll || data.length <= showCount ? (
+        data
+          .slice(showCount, data.length)
+          .map((exp, key) => <Experience key={key} {...exp} id={key} />)
+      ) : (
+        <ViewMore onClick={onClick} />
+      )}
     </div>
   )
 }

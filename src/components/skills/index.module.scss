@@ -2,15 +2,20 @@
 @import "styles/breakpoints";
 
 .skillsWrapper {
-  padding-bottom: 100px;
+  padding-bottom: 60px;
+
+  @include md {
+    padding-bottom: 100px;
+  }
 
   .skills {
     display: flex;
-    gap: 60px 36px;
+    gap: 36px 36px;
     flex-wrap: wrap;
     justify-content: space-around;
 
     @include md {
+      gap: 60px 36px;
       justify-content: center;
     }
 

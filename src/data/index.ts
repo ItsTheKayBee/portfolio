@@ -57,6 +57,7 @@ export const portfolioDataObject: PortfolioData = {
   },
   experiences: {
     title: "Experiences",
+    showCount: 2,
     data: [
       {
         title: "LazyPay (PayU Finance)",
@@ -107,6 +108,7 @@ export const portfolioDataObject: PortfolioData = {
   },
   skills: {
     title: "Skills",
+    showCount: 10,
     images: [
       {
         alt: "Next.js",
@@ -152,6 +154,7 @@ export const portfolioDataObject: PortfolioData = {
   },
   projects: {
     title: "Projects",
+    showCount: 4,
     data: [
       {
         title: "Big Picture",
@@ -250,6 +253,7 @@ export const portfolioDataObject: PortfolioData = {
   },
   achievements: {
     title: "Achievements",
+    showCount: 3,
     data: [
       {
         title: "Runner's Up",
@@ -305,6 +309,7 @@ export const portfolioDataObject: PortfolioData = {
   },
   publications: {
     title: "Publications",
+    showCount: 2,
     data: [
       {
         title: "Automated Subjective Answer Evaluation Using Semantic Learning",

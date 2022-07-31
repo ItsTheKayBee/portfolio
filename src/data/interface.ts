@@ -14,11 +14,13 @@ export interface PortfolioData {
 export type ProjectsType = {
   title: string
   data: ProjectsData[]
+  showCount: number
 }
 
 export type AchievementsType = {
   title: string
   data: DataWithButton[]
+  showCount: number
 }
 
 export type PublicationsType = AchievementsType
@@ -34,6 +36,7 @@ export type ContactType = {
 export type SkillsType = {
   title: string
   images: Image[]
+  showCount: number
 }
 
 export type AboutType = {
@@ -44,6 +47,7 @@ export type AboutType = {
 export type ExperiencesType = {
   title: string
   data: DataWithDates[]
+  showCount: number
 }
 
 export type Image = {

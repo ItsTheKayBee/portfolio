@@ -1,15 +1,20 @@
 import Arrow from "components/icon/Arrow"
+import ViewMore from "components/viewMore"
 import { DataWithButton, PublicationsType } from "data/interface"
 import { classHelper } from "helpers/utils"
+import { useState } from "react"
 import { useInView } from "react-intersection-observer"
 import sectionStyles from "styles/section.module.scss"
 import styles from "./index.module.scss"
 
-const Publications = ({ title, data }: PublicationsType): JSX.Element => {
+const Publications = ({ title, data, showCount }: PublicationsType): JSX.Element => {
+  const [viewAll, setViewAll] = useState(false)
+
   const [sectionRef, sectionInView] = useInView({
     rootMargin: "-100px 0px",
     triggerOnce: true
   })
+  const onClick = (): void => setViewAll(true)
 
   return (
     <div className={sectionStyles.section} id="publications">
@@ -22,9 +27,16 @@ const Publications = ({ title, data }: PublicationsType): JSX.Element => {
       >
         <h1 className={sectionStyles.sectionTitle}>{title}</h1>
       </div>
-      {data.map((pub, key) => (
+      {data.slice(0, showCount).map((pub, key) => (
         <Publication key={key} {...pub} id={key} />
       ))}
+      {viewAll || data.length <= showCount ? (
+        data
+          .slice(showCount, data.length)
+          .map((pub, key) => <Publication key={key} {...pub} id={key} />)
+      ) : (
+        <ViewMore onClick={onClick} />
+      )}
     </div>
   )
 }

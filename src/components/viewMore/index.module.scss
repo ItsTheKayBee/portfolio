@@ -1,0 +1,19 @@
+@import "styles/variables";
+
+.viewMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  .button {
+    background-color: transparent;
+    .text {
+      color: #a790e8;
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 600;
+      padding-right: 8px;
+    }
+  }
+}

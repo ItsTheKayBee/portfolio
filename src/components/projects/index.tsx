@@ -1,16 +1,20 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Arrow from "components/icon/Arrow"
 import { ProjectsData, ProjectsType } from "data/interface"
 import sectionStyles from "styles/section.module.scss"
 import styles from "./index.module.scss"
 import { classHelper } from "helpers/utils"
 import { useInView } from "react-intersection-observer"
+import ViewMore from "components/viewMore"
 
-const Projects = ({ title, data }: ProjectsType): JSX.Element => {
+const Projects = ({ title, data, showCount }: ProjectsType): JSX.Element => {
+  const [viewAll, setViewAll] = useState(false)
+
   const [sectionRef, sectionInView] = useInView({
     rootMargin: "-100px 0px",
     triggerOnce: true
   })
+  const onClick = (): void => setViewAll(true)
 
   return (
     <div className={sectionStyles.section} id="projects">
@@ -23,9 +27,16 @@ const Projects = ({ title, data }: ProjectsType): JSX.Element => {
       >
         <h1 className={sectionStyles.sectionTitle}>{title}</h1>
       </div>
-      {data.map((project, key) => (
+      {data.slice(0, showCount).map((project, key) => (
         <Project key={key} {...project} id={key} />
       ))}
+      {viewAll || data.length <= showCount ? (
+        data
+          .slice(showCount, data.length)
+          .map((project, key) => <Project key={key} {...project} id={key} />)
+      ) : (
+        <ViewMore onClick={onClick} />
+      )}
     </div>
   )
 }

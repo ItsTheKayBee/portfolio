@@ -15,7 +15,7 @@
       font-size: 28px;
       line-height: 38px;
       font-weight: 950;
-      margin-bottom: 80px;
+      margin-bottom: 50px;
       font-family: Fuse;
       letter-spacing: 1.5px;
       position: relative;
@@ -28,6 +28,7 @@
       @include md {
         font-size: 40px;
         line-height: 44px;
+        margin-bottom: 80px;
       }
 
       &::after {
@@ -73,12 +74,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 24px;
 
     @include md {
       flex-direction: row;
+      margin-bottom: 100px;
       &.reverse {
         flex-direction: row-reverse;
       }

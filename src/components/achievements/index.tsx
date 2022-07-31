@@ -1,14 +1,20 @@
+import ViewMore from "components/viewMore"
 import { AchievementsType, DataWithButton } from "data/interface"
 import { classHelper } from "helpers/utils"
+import { useState } from "react"
 import { useInView } from "react-intersection-observer"
 import sectionStyles from "styles/section.module.scss"
 import styles from "./index.module.scss"
 
-const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
+const Achievements = ({ title, data, showCount }: AchievementsType): JSX.Element => {
+  const [viewAll, setViewAll] = useState(false)
+
   const [sectionRef, sectionInView] = useInView({
     rootMargin: "-100px 0px",
     triggerOnce: true
   })
+
+  const onClick = (): void => setViewAll(true)
 
   return (
     <div
@@ -25,9 +31,16 @@ const Achievements = ({ title, data }: AchievementsType): JSX.Element => {
         <h1 className={sectionStyles.sectionTitle}>{title}</h1>
       </div>
       <div className={styles.achievements}>
-        {data.map((achievement, key) => (
+        {data.slice(0, showCount).map((achievement, key) => (
           <Achievement key={key} {...achievement} />
         ))}
+        {viewAll || data.length <= showCount ? (
+          data
+            .slice(showCount, data.length)
+            .map((achievement, key) => <Achievement key={key} {...achievement} />)
+        ) : (
+          <ViewMore onClick={onClick} />
+        )}
       </div>
     </div>
   )
