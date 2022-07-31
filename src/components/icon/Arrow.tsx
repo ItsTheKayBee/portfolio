@@ -1,6 +1,6 @@
 import styles from "styles/section.module.scss"
 
-const Arrow = ({ color = "white" }: { color: string }): JSX.Element => {
+const Arrow = ({ color }: { color?: string }): JSX.Element => {
   return (
     <svg
       width="26"
