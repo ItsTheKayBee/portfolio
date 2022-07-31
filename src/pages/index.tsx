@@ -22,6 +22,8 @@ const Projects = dynamic(() => import("../components/projects"))
 const Publications = dynamic(() => import("../components/publications"))
 const Skills = dynamic(() => import("../components/skills"))
 
+const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 const Home: NextPage = () => {
   const [webs, setWebs] = useState<WebType[]>([])
   const [circlePosition, setCirclePosition] = useState({
@@ -68,10 +70,24 @@ const Home: NextPage = () => {
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
         />
-        <link rel="apple-touch-icon" sizes="180x180" href="/site/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/site/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/site/favicon-16x16.png" />
-        <link rel="manifest" href="/site/site.webmanifest" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`${imagePrefix}/site/apple-touch-icon.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${imagePrefix}/site/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${imagePrefix}/site/favicon-16x16.png`}
+        />
+        <link rel="manifest" href={`${imagePrefix}/site/site.webmanifest`} />
       </Head>
 
       <main
@@ -84,7 +100,7 @@ const Home: NextPage = () => {
           <Web web={data} key={key} />
         ))}
         <img
-          src="/images/cursor-circle.svg"
+          src={`${imagePrefix}/images/cursor-circle.svg`}
           alt="tap"
           className={classHelper("cursorCircle", webs.length > 0 ? "hide" : "")}
           style={{ left: circlePosition.x, top: circlePosition.y }}

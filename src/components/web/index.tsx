@@ -3,6 +3,8 @@ import { classHelper } from "helpers/utils"
 import { useEffect, useState } from "react"
 import styles from "./index.module.scss"
 
+const imagePrefix = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 const Web = ({ web }: { web: WebType }): JSX.Element | null => {
   const [visible, setVisible] = useState(true)
   const [destroy, setDestroy] = useState(false)
@@ -24,7 +26,7 @@ const Web = ({ web }: { web: WebType }): JSX.Element | null => {
 
   return !destroy ? (
     <img
-      src="/images/web.svg"
+      src={`${imagePrefix}/images/web.svg`}
       alt="web"
       className={classHelper(styles.web, visible ? styles.active : "")}
       style={{
