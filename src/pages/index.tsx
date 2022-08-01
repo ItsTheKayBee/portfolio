@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         <title>Kunal Bohra | Web Developer</title>
         <meta
           name="description"
-          content="Software developer based in Mumbai. Frontend developer experienced in React.js, Next.js, SCSS, javascript, flutter, react native."
+          content="Software Developer based in Mumbai with 1+ years of experience in React.js, Next.js, SCSS, Javascript, Flutter, React Native and developing large-scale responsive web applications."
         />
         <meta
           name="keywords"
@@ -70,6 +70,9 @@ const Home: NextPage = () => {
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
         />
+        <meta name="title" property="og:title" content="Kunal Bohra | Web Developer" />
+        <meta name="image" property="og:image" content={`${basePath}/site/landing.png`} />
+        <meta name="author" content="Kunal Bohra" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
