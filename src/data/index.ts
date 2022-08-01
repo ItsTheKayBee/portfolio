@@ -322,11 +322,8 @@ export const portfolioDataObject: PortfolioData = {
           url: basePath + "/images/publications/assess.webp",
           alt: "Assess image"
         },
-        description: `Drift in the digitization of education is a prime concern at present to enable quality education
-          to every individual. Now, there are no geographical barriers to the availability of education. 
-          Imparting education is easier through digitization but inconvenient to evaluate. In this paper, we propose 
-          a system where the evaluation of subjective answers for an examination becomes much easier and convenient,
-          also keeping in mind the requirements of specially-abled students online.`
+        description: `Developed an algorithm with 88% efficiency to evaluate subjective 
+          answers and presented the corresponding research paper at ICAST-21 conference.`
       },
       {
         title: "Application of Blockchain Technology to Make Smart Cities Smarter",
@@ -340,10 +337,8 @@ export const portfolioDataObject: PortfolioData = {
           url: basePath + "/images/publications/blockchain.webp",
           alt: "Assess image"
         },
-        description: `Today, urban areas face massive population bursts. A smart city utilizes innovations to coordinate 
-          and oversee physical, social, and business aspects so as to offer better assistance to its occupants while guaranteeing
-          productive and ideal use of accessible assets. This paper highlights the use of blockchain and breaks down
-          how it can be used for making cities more smarter and efficient.`
+        description: `Identified problems and provided solutions to them using blockchain
+          technology in the form of a paper published in the above mentioned book.`
       }
     ]
   },
