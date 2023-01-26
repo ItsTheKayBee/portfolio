@@ -60,10 +60,27 @@ export const portfolioDataObject: PortfolioData = {
     showCount: 2,
     data: [
       {
+        title: "Bookee",
+        subTitle: "SDE2 (Frontend) | Full Time",
+        dates: {
+          startDate: new Date("October 2022")
+        },
+        description: `<ol>
+          <li>Built highly scalable mobile apps in React Native.</li>
+          <li>Used React to build world-class products for the fitness-tech industry.</li>
+          <li>Worked across 4 projects to deliver multiple high quality products in an early stage startup.</li>
+        </ol>`,
+        image: {
+          alt: "Bookee logo",
+          url: basePath + "/images/experiences/bookee.webp"
+        }
+      },
+      {
         title: "LazyPay (PayU Finance)",
         subTitle: "Software Engineer (Frontend) | Full Time",
         dates: {
-          startDate: new Date("August 2021")
+          startDate: new Date("August 2021"),
+          endDate: new Date("September 2022")
         },
         description: `<ol>
           <li>Used Next.js and performance best practices to improve website load time by ~25%.</li>
