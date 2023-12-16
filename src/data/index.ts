@@ -61,7 +61,7 @@ export const portfolioDataObject: PortfolioData = {
     data: [
       {
         title: "Bookee",
-        subTitle: "SDE2 (Frontend) | Full Time",
+        subTitle: "SDE3 (Frontend) | Full Time",
         dates: {
           startDate: new Date("October 2022")
         },
