@@ -6,24 +6,26 @@
     "preci": "rm -rf node_modules",
     "ci": "yarn install --frozen-lockfile",
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-intersection-observer": "^9.3.5",
-    "sass": "^1.49.9"
+    "next": "^16.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-intersection-observer": "^9.16.0",
+    "sass": "^1.99.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.21",
-    "@types/react": "17.0.40",
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "typescript": "4.6.2"
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.2.3",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
   }
 }

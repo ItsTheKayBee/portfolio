@@ -1,4 +1,5 @@
-@import "styles/variables";
+@use "sass:math";
+@use "styles/variables" as *;
 
 $loader-size: 80px;
 $loader-color: radial-gradient(at 0% 0%, #7e33ff, $blue-color);
@@ -40,7 +41,7 @@ $item-rotation: 0deg;
     }
     .item {
       position: absolute;
-      top: ($loader-size - $item-size) / 2;
+      top: math.div($loader-size - $item-size, 2);
       left: 0;
       right: 0;
       margin: auto;

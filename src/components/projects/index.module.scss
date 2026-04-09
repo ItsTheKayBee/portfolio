@@ -1,7 +1,6 @@
 @use "sass:list";
-
-@import "styles/variables";
-@import "styles/breakpoints";
+@use "styles/variables" as *;
+@use "styles/breakpoints" as *;
 
 .video {
   margin-bottom: 24px;
@@ -41,8 +40,8 @@
     transition: all 0.5s ease-in-out;
     @for $i from 1 through 5 {
       &:nth-child(#{$i}) {
-        background-color: nth($bg-colors, $i);
-        color: nth($font-colors, $i);
+        background-color: list.nth($bg-colors, $i);
+        color: list.nth($font-colors, $i);
       }
     }
   }
