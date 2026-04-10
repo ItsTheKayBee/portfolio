@@ -57,8 +57,24 @@ export const portfolioDataObject: PortfolioData = {
   },
   experiences: {
     title: "Experiences",
-    showCount: 2,
+    showCount: 3,
     data: [
+      {
+        title: "Lica World",
+        subTitle: "Senior Frontend Engineer (AI) | Full Time",
+        dates: {
+          startDate: new Date("November 2025")
+        },
+        description: `<ol>
+          <li>Developed the Virtual try-on and Product Display Page (PDP) module to attract e-commerce clients.</li>
+          <li>Built image and video rendering and editing platform using Remotion.</li>
+          <li>Created internal tools for the team to manage all the workflows, thereby improving efficiency.</li>
+        </ol>`,
+        image: {
+          alt: "Lica logo",
+          url: basePath + "/images/experiences/lica.svg"
+        }
+      },
       {
         title: "Bookee",
         subTitle: "SDE3 (Web & Mobile) | Full Time",
