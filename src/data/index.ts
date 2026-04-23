@@ -63,11 +63,11 @@ export const portfolioDataObject: PortfolioData = {
         title: "Lica World",
         subTitle: "Senior Frontend Engineer (AI) | Full Time",
         dates: {
-          startDate: new Date("November 2025")
+          startDate: new Date("November 2024")
         },
         description: `<ol>
-          <li>Developed the Virtual try-on and Product Display Page (PDP) module to attract e-commerce clients.</li>
-          <li>Built image and video rendering and editing platform using Remotion.</li>
+          <li>Built AI-powered virtual try-on and PDP system for e-commerce clients, enabling automated media workflows.</li>
+          <li>Developed high-performance video rendering and editing platform using Remotion.</li>
           <li>Created internal tools for the team to manage all the workflows, thereby improving efficiency.</li>
         </ol>`,
         image: {
@@ -76,15 +76,18 @@ export const portfolioDataObject: PortfolioData = {
         }
       },
       {
-        title: "Bookee",
-        subTitle: "SDE3 (Web & Mobile) | Full Time",
+        title: "Kenko (formerly Bookee)",
+        subTitle: "Senior SDE1 (Web & Mobile) | Full Time",
         dates: {
-          startDate: new Date("October 2022")
+          startDate: new Date("October 2022"),
+          endDate: new Date("November 2024")
         },
         description: `<ol>
-          <li>Built highly scalable mobile apps in React Native.</li>
-          <li>Used React to build world-class products for the fitness-tech industry.</li>
-          <li>Worked across 4 projects to deliver multiple high quality products in an early stage startup.</li>
+          <li>Led team of 4 engineers to migrate platform to Next.js, improving performance by 45%.</li>
+          <li> Spearheaded the launch of products like ‘Bookee Inbox’ and ‘Bookee Kiosk’,
+          increasing MRR from $32k to $55k.</li>
+          <li> Architected payment integrations (Stripe, Adyen) across global markets.</li>
+          <li> Built CI/CD pipelines reducing OTA publish time for 100+ apps by 80%.</li>
         </ol>`,
         image: {
           alt: "Bookee logo",

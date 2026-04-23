@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         <title>Kunal Bohra | Web Developer</title>
         <meta
           name="description"
-          content="Software Developer based in Mumbai with 4.7+ years of experience in React.js, Next.js, SCSS, Javascript, React Native, and developing large-scale responsive web applications."
+          content="Software Developer based in Mumbai with 5+ years of experience in React.js, Next.js, SCSS, Javascript, React Native, and developing large-scale responsive web applications."
         />
         <meta
           name="keywords"
